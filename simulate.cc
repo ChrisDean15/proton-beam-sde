@@ -43,16 +43,14 @@ int main(int argc, char **argv) {
     getline(iss, token, ' ');
     a = atoi(token.c_str());
     if (name == "hydrogen") {
-      Atom tmp(a, z, "./Splines/" + name + "_el_rate.txt",
-               "./Splines/" + name + "_el_angle_cdf.txt");
+      Atom tmp(a, z, "./Splines/" + name + "_el_ruth_rate.txt",
+               "./Splines/" + name + "_el_ruth_angle.txt");
       atoms.push_back(tmp);
     } else {
-      Atom tmp(a, z, "./Splines/" + name + "_el_rate.txt",
+      Atom tmp(a, z, "./Splines/" + name + "_el_ruth_rate.txt",
                "./Splines/" + name + "_ne_rate.txt",
                "./Splines/" + name + "_ne_yield.txt",
-               "./Splines/" + name + "_el_angle_cdf.txt",
-               "./Splines/" + name + "_ne_angle_cdf.txt",
-               "./Splines/" + name + "_ne_energy_cdf.txt",
+               "./Splines/" + name + "_el_ruth_angle.txt",
                "./Splines/" + name + "_ne_energyangle_cdf.txt");
       atoms.push_back(tmp);
     }

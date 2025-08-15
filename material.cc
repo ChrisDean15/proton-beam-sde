@@ -5,24 +5,23 @@
 #ifndef MAT
 #define MAT
 struct Atom {
-  Atom(const int a0, const int z0, const std::string el_r,
-       const std::string ne_r, const std::string ne_y, const std::string el_a,
-       const std::string ne_a, const std::string ne_e, const std::string ne_ea)
-      : a(a0), z(z0), el_rate(el_r), ne_rate(ne_r), ne_yield(ne_y),
-        el_angle_cdf(el_a), ne_angle_cdf(ne_a), ne_energy_cdf(ne_e),
-        ne_energy_angle_ENDF(ne_ea), Constants(a0, z0, 1, 1, 1, 1, 1, 1, 0, 0) {
-  }
+  Atom(const int a0, const int z0, const std::string el_ruth_r,
+       const std::string ne_r, const std::string ne_y,
+       const std::string el_ruth_a, const std::string ne_ea)
+      : a(a0), z(z0), el_ruth_rate(el_ruth_r), ne_rate(ne_r), ne_yield(ne_y),
+        el_ruth_angle_cdf(el_ruth_a), ne_energy_angle_ENDF(ne_ea),
+        Constants(a0, z0, 1, 1, 1, 1, 1, 1, 0, 0) {}
 
   // Constructor for zero non-elastic rate for hydrogen
-  Atom(const int a0, const int z0, const std::string el_r,
-       const std::string el_a)
-      : a(a0), z(z0), el_rate(el_r), ne_rate(), ne_yield(), el_angle_cdf(el_a),
-        ne_angle_cdf(), ne_energy_cdf(), ne_energy_angle_ENDF(), Constants() {}
+  Atom(const int a0, const int z0, const std::string el_ruth_r,
+       const std::string el_ruth_a)
+      : a(a0), z(z0), el_ruth_rate(el_ruth_r), ne_rate(), ne_yield(),
+        el_ruth_angle_cdf(el_ruth_a), ne_energy_angle_ENDF(), Constants() {}
 
   Atom(const Atom &other)
-      : a(other.a), z(other.z), el_rate(other.el_rate), ne_rate(other.ne_rate),
-        ne_yield(other.ne_yield), el_angle_cdf(other.el_angle_cdf),
-        ne_angle_cdf(other.ne_angle_cdf), ne_energy_cdf(other.ne_energy_cdf),
+      : a(other.a), z(other.z), el_ruth_rate(other.el_ruth_rate),
+        ne_rate(other.ne_rate), ne_yield(other.ne_yield),
+        el_ruth_angle_cdf(other.el_ruth_angle_cdf),
         ne_energy_angle_ENDF(other.ne_energy_angle_ENDF),
         Constants(other.Constants) {}
 
@@ -43,10 +42,9 @@ struct Atom {
   }
 
   const int a, z;
-  CS_1d el_rate, ne_rate, ne_yield;
-  CS_2d el_angle_cdf, ne_angle_cdf;
-  CS_3d ne_energy_cdf;
-  CS_3dENDF ne_energy_angle_ENDF;
+  CS_1d el_ruth_rate, ne_rate, ne_yield;
+  CS_2d el_ruth_angle_cdf;
+  CS_3d ne_energy_angle_ENDF;
   AtomConsts Constants;
 };
 
@@ -166,40 +164,19 @@ struct Material {
     return ret; // rate per cm
   }
 
-  double elastic_rate(const double e) const {
+  double rutherford_and_elastic_rate(const double e) const {
     double log_avogadro = log(6) + 23 * log(10);
     double log_barns_to_cmsq = -24 * log(10);
     double a = 0;
     double ret = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
       a += x[i] * at[i].a; // average molar mass
-      ret += at[i].a * x[i] * at[i].el_rate.evaluate(e);
+      ret += at[i].a * x[i] * at[i].el_ruth_rate.evaluate(e);
     }
     double log_molecule_density =
         log(density) + log_avogadro - log(a); // molecules / cm^3
     ret *= exp(log_barns_to_cmsq + log_molecule_density) / a;
     return ret; // rate per cm
-  }
-
-  double rutherford_rate(const double e, const double lb) const {
-    double log_ahbarc = log(197.3 / 137) - 13 * log(10);
-    double log_avogadro = log(6) + 23 * log(10);
-    double mpcsq = 938.346; // mass of proton * speed of light squared, MeV
-    double pv = (2 * mpcsq + e) * e / (mpcsq + e);
-    double a = 0;
-    double az = 0;
-    for (unsigned int i = 0; i < at.size(); i++) {
-      a += x[i] * at[i].a; // average molar mass
-      az += x[i] * at[i].a * at[i].z * at[i].z;
-    }
-    double log_molecule_density =
-        log(density) + log_avogadro - log(a); // molecules / cm^3
-    double sig =
-        exp(2 * (log_ahbarc + log(cos(lb / 2)) - log(pv) - log(sin(lb / 2))) +
-            log_molecule_density) *
-        M_PI;
-    double ret = sig * az / a;
-    return ret;
   }
 
   void compute_new_angle(std::vector<double> &ang, const double alpha,
@@ -258,31 +235,22 @@ struct Material {
     return;
   }
 
-  void elastic_scatter(std::vector<double> &ang, const double e, gsl_rng *gen) {
+  void rutherford_elastic_scatter(std::vector<double> &ang, double &e,
+                                  gsl_rng *gen) {
     double beta = 2 * M_PI * gsl_rng_uniform(gen);
     double rate = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
-      rate += at[i].a * x[i] * at[i].el_rate.evaluate(e);
+      rate += at[i].a * x[i] * at[i].el_ruth_rate.evaluate(e);
     }
     double u = gsl_rng_uniform(gen);
     double ind = 0;
-    double tmp = at[ind].a * x[ind] * at[ind].el_rate.evaluate(e) / rate;
+    double tmp = at[ind].a * x[ind] * at[ind].el_ruth_rate.evaluate(e) / rate;
     while (tmp < u) {
       ind++;
-      tmp += at[ind].a * x[ind] * at[ind].el_rate.evaluate(e) / rate;
+      tmp += at[ind].a * x[ind] * at[ind].el_ruth_rate.evaluate(e) / rate;
     }
-    double alpha = at[ind].el_angle_cdf.sample(e, gen);
-    alpha = at[ind].cm_to_lab_frame(alpha, e, 0);
-    compute_new_angle(ang, alpha, beta);
-    return;
-  }
-
-  void rutherford_scatter(std::vector<double> &ang, const double lb,
-                          gsl_rng *gen) {
-    double beta = 2 * M_PI * gsl_rng_uniform(gen);
-    double u = gsl_rng_uniform(gen);
-    double alpha = acos((pow(cos(lb / 2), 2) * (1 - u) - pow(sin(lb / 2), 2)) /
-                        (1 - u * pow(cos(lb / 2), 2)));
+    double alpha;
+    alpha = at[ind].el_ruth_angle_cdf.sample(e, gen);
     compute_new_angle(ang, alpha, beta);
     return;
   }
