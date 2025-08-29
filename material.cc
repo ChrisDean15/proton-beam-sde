@@ -57,7 +57,7 @@ struct Atom {
     double u2 = gsl_rng_uniform(gen);
     double z1 = cdfc1 * u2 + cdfc2;
     double z2 =
-        (z1 + sqrt(pow(z, 2) - pow(out_rvalue, 2) + 1)) / (out_rvalue + 1);
+        (z1 + sqrt(pow(z1, 2) - pow(out_rvalue, 2) + 1)) / (out_rvalue + 1);
     double out_angle_cm = log(z2) / aval;
     double out_energy_lab =
         out_energy_cm + e / pow(a + 1, 2) +
