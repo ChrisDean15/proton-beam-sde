@@ -224,6 +224,10 @@ struct proton_path {
     int ix = 1;
     int material_index = 0;
     while (energy[ix - 1] > absorption_energy) {
+      while (material_index > 0 &&
+             x[ix - 1][0] < change_points[material_index - 1]) {
+        material_index--;
+      }
       while (x[ix - 1][0] >= change_points[material_index]) {
         material_index++;
       }

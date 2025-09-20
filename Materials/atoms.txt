@@ -1,3 +1,7 @@
+argon 18 40
+calcium 20 40
+carbon 6 12
+fluorine 9 19
 hydrogen 1 1
 nitrogen 7 14
 oxygen 8 16
