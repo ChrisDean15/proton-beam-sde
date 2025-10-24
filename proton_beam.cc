@@ -221,12 +221,13 @@ struct proton_path {
     } else {
       x[ix][2] = x[ix - 1][2] - time_step * (cos(v0) + cos(v1)) / 2;
     }
+    double bethe_block_update = mat.bethe_bloch(energy[ix - 1]) * time_step;
     energy[ix] =
         energy[ix - 1] -
-        fmax(mat.bethe_bloch(energy[ix - 1]) * time_step +
+        fmin(fmax(bethe_block_update +
                  sqrt(time_step) * mat.energy_straggling_sd(energy[ix - 1]) *
                      gsl_ran_gaussian_ziggurat(gen, 1),
-             0);
+             0),2*bethe_block_update);
     energy[ix] = fmax(energy[ix], 0);
     s[ix] = energy[ix - 1] - energy[ix];
     ix++;
