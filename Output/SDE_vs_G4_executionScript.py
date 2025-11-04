@@ -20,8 +20,8 @@ N_primaries = "1E6"
 suffix = ""
 energy1 = 100 # MeV
 energy2 = 150 # MeV
-comparePhysics = True
-
+comparePhysics = True # Set to true if data from BERT and EMY are available to plot comparison between phys lists
+figure_type = ".png"  # Change this to {figure_type} for the article figures
 voxel_volume = 0.001 # cm3
 
 # Adjust parameters according to case:
@@ -66,9 +66,9 @@ if suffix == "" or suffix == "_bone+h2o":
     _ = pymedphys_gamma(g4_dose1, sde_dose1, dta=1, dd=2, th_percent=1, is_local=True, xmin=0, xmax=9,
                            ymin=-2.5, ymax=2.5, zmin=-5, zmax=5)
 
-    f1.savefig(f"../Figures/2DSlice_z_{energy1}MeV{suffix}.png")
-    f2.savefig(f"../Figures/lateral_profiles_{energy1}MeV{suffix}.png")
-    f3.savefig(f"../Figures/gammaTest_{energy1}MeV{suffix}.png")
+    f1.savefig(f"../Output/2DSlice_z_{energy1}MeV{suffix}{figure_type}")
+    f2.savefig(f"../Output/lateral_profiles_{energy1}MeV{suffix}{figure_type}")
+    f3.savefig(f"../Output/gammaTest_{energy1}MeV{suffix}{figure_type}")
 
     # Plots for Energy2:
     f4 = plot_slice(g4_dose2, sde_dose2, 'z', minval=-5, xmin=0, xmax=18, ymin=-10, ymax=10, zmin=-10, zmax=10)
@@ -84,14 +84,14 @@ if suffix == "" or suffix == "_bone+h2o":
     _ = pymedphys_gamma(g4_dose2, sde_dose2, dta=1, dd=2, th_percent=1, is_local=True, xmin=0, xmax=18,
     ymin=-5, ymax=5, zmin=-5, zmax=5)
 
-    f4.savefig(f"../Figures/2DSlice_z_{energy2}MeV{suffix}.png")
-    f5.savefig(f"../Figures/lateral_profiles_{energy2}MeV{suffix}.png")
-    f6.savefig(f"../Figures/gammaTest_{energy2}MeV{suffix}.png")
+    f4.savefig(f"../Output/2DSlice_z_{energy2}MeV{suffix}{figure_type}")
+    f5.savefig(f"../Output/lateral_profiles_{energy2}MeV{suffix}{figure_type}")
+    f6.savefig(f"../Output/gammaTest_{energy2}MeV{suffix}{figure_type}")
 
     # # Comparative plots in 1D:
     f7, f8 = compare_bragg_peaks(sde_dose1, g4_dose1, energy1, sde_dose2, g4_dose2, energy2)
-    f7.savefig(f"../Figures/1DProj_{energy1}_vs_{energy2}MeV{suffix}.png")
-    f8.savefig(f"../Figures/1DSlice_{energy1}_vs_{energy2}MeV{suffix}.png")
+    f7.savefig(f"../Output/1DProj_{energy1}_vs_{energy2}MeV{suffix}{figure_type}")
+    f8.savefig(f"../Output/1DSlice_{energy1}_vs_{energy2}MeV{suffix}{figure_type}")
 
     # Proton range numbers:
     r90_1 = range_comparison(g4_dose1, sde_dose1, 0.9)
@@ -121,24 +121,24 @@ if comparePhysics and suffix == "":
     f12 = plot_multiple_bragg_peaks(g4_dose2, g4_dose_emy2, g4_dose_bert2, sde_dose2, how='slice', xmax=17,
                           names=["QGSP_BIC_EMY", "QGSP_BERT", "SDE"], ref_name='QGSP_BIC_EMZ', maxdif=30)
 
-    f9.savefig(f"../Figures/1DProj_multiComparison_{energy1}MeV.png")
-    f10.savefig(f"../Figures/1DSlice_multiComparison_{energy1}MeV.png")
-    f11.savefig(f"../Figures/1DProj_multiComparison_{energy2}MeV.png")
-    f12.savefig(f"../Figures/1DSlice_multiComparison_{energy2}MeV.png")
+    f9.savefig(f"../Output/1DProj_multiComparison_{energy1}MeV{figure_type}")
+    f10.savefig(f"../Output/1DSlice_multiComparison_{energy1}MeV{figure_type}")
+    f11.savefig(f"../Output/1DProj_multiComparison_{energy2}MeV{figure_type}")
+    f12.savefig(f"../Output/1DSlice_multiComparison_{energy2}MeV{figure_type}")
 
 # # 3 media config, only 100 MeV beam available
 if suffix == "_air+bone+h2o":
     f1 = plot_slice(g4_dose1, sde_dose1, 'z', minval=-5, xmin=0, xmax=14, ymin=-7, ymax=7, zmin=-7, zmax=7)
-    f1.savefig(f"../Figures/2DSlice_z_{energy1}MeV{suffix}.png")
+    f1.savefig(f"../Output/2DSlice_z_{energy1}MeV{suffix}{figure_type}")
     f2, f3 = compare_bragg_peaks(sde_dose1, g4_dose1, energy1, max_diff1=20, max_diff2=30)
-    f2.savefig(f"../Figures/1DProj_{energy1}MeV{suffix}.png")
-    f3.savefig(f"../Figures/1DSlice_{energy1}MeV{suffix}.png")
+    f2.savefig(f"../Output/1DProj_{energy1}MeV{suffix}{figure_type}")
+    f3.savefig(f"../Output/1DSlice_{energy1}MeV{suffix}{figure_type}")
     f4 = plot_lateral_profiles(g4_dose1, sde_dose1, xmin=0, xmax=18, ymin=-7, ymax=7, zmin=-7, zmax=7, lowlim=-1, uplim=1,
                             cuts=cuts_100)
-    f4.savefig(f"../Figures/lateral_profiles_{energy1}MeV{suffix}.png")
+    f4.savefig(f"../Output/lateral_profiles_{energy1}MeV{suffix}{figure_type}")
     f5 = pymedphys_gamma(g4_dose1, sde_dose1, dta=2, dd=3, th_percent=1, is_local=True, xmin=0, xmax=18,
                           ymin=-7, ymax=7, zmin=-7, zmax=7)
-    f5.savefig(f"../Figures/gammaTest_{energy1}MeV{suffix}.png")
+    f5.savefig(f"../Output/gammaTest_{energy1}MeV{suffix}{figure_type}")
 
     # Proton range numbers:
     r90_1 = range_comparison(g4_dose1, sde_dose1, 0.9)

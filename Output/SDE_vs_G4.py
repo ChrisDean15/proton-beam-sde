@@ -56,56 +56,64 @@ def define_ROI(mat, xmin=0, xmax=20, ymin=-10, ymax=10, zmin=-10, zmax=10, voxel
 
 # Compares central slice in a defined axis for both geant4 and SDE
 # set a minval to change the minimum colormap value
+# If only SDE output is needed, set g4_mat = None
 def plot_slice(g4_mat, sde_mat, axis='x', minval=None,
-               xmin=0, xmax=20, ymin=-10, ymax=10, zmin=-10, zmax=10, voxelOrigin=np.array([0, -10, -10])):
-    g4_mat = define_ROI(g4_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
+               xmin=0, xmax=20, ymin=-10, ymax=10, zmin=-10, zmax=10,
+               voxelOrigin=np.array([0, -10, -10])):
+
     sde_mat = define_ROI(sde_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
+    if g4_mat is not None:
+        g4_mat = define_ROI(g4_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
 
     if axis == 'x':
-        g4_slice = g4_mat[g4_mat.shape[0]//2, :, :]
-        sde_slice = sde_mat[sde_mat.shape[0]//2, :, :]
+        idx = 0
+        labels = ('y [cm]', 'z [cm]')
         extent = [ymin, ymax, zmin, zmax]
     elif axis == 'y':
-        g4_slice = g4_mat[:, g4_mat.shape[1]//2, :]
-        sde_slice = sde_mat[:, sde_mat.shape[1]//2, :]
+        idx = 1
+        labels = ('z [cm]', 'x [cm]')
         extent = [xmin, xmax, zmin, zmax]
     else:
-        g4_slice = g4_mat[:, :, g4_mat.shape[2]//2]
-        sde_slice = sde_mat[:, :, sde_mat.shape[2]//2]
+        idx = 2
+        labels = ('y [cm]', 'x [cm]')
         extent = [xmin, xmax, ymin, ymax]
-    # For a common colorbar ignoring infinite values when taking the log
-    with np.errstate(divide='ignore'):
-        g4_log = np.log10(g4_slice)
-        sde_log = np.log10(sde_slice)
 
-    g4_log[np.isneginf(g4_log)] = np.nan
+    slicer = lambda m, i: [m[m.shape[0]//2, :, :], m[:, m.shape[1]//2, :], m[:, :, m.shape[2]//2]][i]
+    sde_slice = slicer(sde_mat, idx)
+    if g4_mat is not None:
+        g4_slice = slicer(g4_mat, idx)
+
+    with np.errstate(divide='ignore'):
+        sde_log = np.log10(sde_slice)
+        if g4_mat is not None:
+            g4_log = np.log10(g4_slice)
     sde_log[np.isneginf(sde_log)] = np.nan
+    if g4_mat is not None:
+        g4_log[np.isneginf(g4_log)] = np.nan
 
     if minval is not None:
         vmin = minval
     else:
-        vmin = np.nanmin([g4_log, sde_log])
+        vmin = np.nanmin([sde_log] + ([g4_log] if g4_mat is not None else []))
+    vmax = np.nanmax([sde_log] + ([g4_log] if g4_mat is not None else []))
 
-    vmax = np.nanmax([g4_log, sde_log])
-
-    f, ax = plt.subplots(1, 2, sharey=True, figsize=(9.2, 5), layout='compressed')
-    im1 = ax[0].imshow(g4_log.T, extent=extent, origin='lower', vmin=vmin, vmax=vmax)
-    im2 = ax[1].imshow(sde_log.T, extent=extent, origin='lower', vmin=vmin, vmax=vmax)
-    f.colorbar(im2, ax=ax.ravel().tolist(), label=r'Log$_{10}$(Dose per primary) [MeV/g]', pad=0.02)
-    if axis=='x':
-        ax[0].set_ylabel('y [cm]')
-        ax[0].set_xlabel('z [cm]')
-        ax[1].set_xlabel('z [cm]')
-    elif axis=='y':
-        ax[0].set_ylabel('z [cm]')
-        ax[0].set_xlabel('x [cm]')
-        ax[1].set_xlabel('x [cm]')
+    if g4_mat is not None:
+        f, ax = plt.subplots(1, 2, sharey=True, figsize=(9.2, 5), layout='compressed')
+        for i, (data, title) in enumerate(zip([g4_log, sde_log], ['Geant4', 'SDE'])):
+            im = ax[i].imshow(data.T, extent=extent, origin='lower', vmin=vmin, vmax=vmax)
+            ax[i].set_title(title, fontweight='bold')
+            ax[i].set_xlabel(labels[1])
+            if i == 0:
+                ax[i].set_ylabel(labels[0])
+        f.colorbar(im, ax=ax.ravel().tolist(),
+                   label=r'Log$_{10}$(Dose per primary) [MeV/g]', pad=0.02)
     else:
-        ax[0].set_ylabel('y [cm]')
-        ax[0].set_xlabel('x [cm]')
-        ax[1].set_xlabel('x [cm]')
-    ax[0].set_title('Geant4', fontweight='bold')
-    ax[1].set_title('SDE', fontweight='bold')
+        f, ax = plt.subplots(figsize=(7.2, 5), layout='compressed')
+        im = ax.imshow(sde_log.T, extent=extent, origin='lower', vmin=vmin, vmax=vmax)
+        f.colorbar(im, label=r'Log$_{10}$(Dose per primary) [MeV/g]', pad=0.02)
+        ax.set_xlabel(labels[1])
+        ax.set_ylabel(labels[0])
+
     return f
 
 # Compares 2D projections
@@ -189,43 +197,53 @@ def plot_multiple_bragg_peaks(g4_mat, *other_mats, how='proj', names=None, ref_n
 
 # Compares lateral profiles at several depth values (cuts 1, 2 and 3 are indices in x)
 # Only show profile between lowlim and uplim horizontal limits
+# If only SDE output is needed, set g4_mat = None
 def plot_lateral_profiles(g4_mat, sde_mat,
                           xmin=0, xmax=20, ymin=-10,
                           ymax=10, zmin=-10, zmax=10,
-                          voxelOrigin=np.array([0, -10, -10]), cuts=None, lowlim=-1.5, uplim=1.5):
+                          voxelOrigin=np.array([0, -10, -10]),
+                          cuts=None, lowlim=-1.5, uplim=1.5):
     if cuts is None:
         cuts = [30, 50, 75]
-    g4_mat = define_ROI(g4_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
+
     sde_mat = define_ROI(sde_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
-    z = np.linspace(zmin, zmax, g4_mat.shape[2])
+    if g4_mat is not None:
+        g4_mat = define_ROI(g4_mat, xmin, xmax, ymin, ymax, zmin, zmax, voxelOrigin)
+        z = np.linspace(zmin, zmax, g4_mat.shape[2])
+    else:
+        z = np.linspace(zmin, zmax, sde_mat.shape[2])
+
     depths = [cut / 10 for cut in cuts]  # cm
-    used_colors = []
     f, ax = plt.subplots(figsize=(7.2, 5), layout='compressed')
     used_colors = []
-    for cut in cuts:
-        # Plot and get colour assigned by Matplotlib
-        line, = ax.plot(z, g4_mat[cut, g4_mat.shape[1] // 2, :])
-        color = line.get_color()
-        used_colors.append(color)
-        ax.scatter(z, sde_mat[cut, sde_mat.shape[1] // 2, :], color=color, marker='^')
 
-    # Legends
+    for cut in cuts:
+        if g4_mat is not None:
+            line, = ax.plot(z, g4_mat[cut, g4_mat.shape[1] // 2, :])
+            color = line.get_color()
+            ax.scatter(z, sde_mat[cut, sde_mat.shape[1] // 2, :], color=color, marker='^')
+        else:
+            line, = ax.plot(z, sde_mat[cut, sde_mat.shape[1] // 2, :])
+            color = line.get_color()
+        used_colors.append(color)
+
+    # Depth legend (always shown)
     depth_lines = [Line2D([0], [0], color=c, lw=2, label=f'{d:.1f} cm')
                    for c, d in zip(used_colors, depths)]
-    model_lines = [
-        Line2D([0], [0], color='k', lw=2, label='Geant4'),
-        Line2D([0], [0], marker='^', color='k', linestyle='None', label='SDE')
-    ]
-
-    # Combine legends
     first_legend = ax.legend(handles=depth_lines, title='Depths', loc='upper right')
     ax.add_artist(first_legend)
-    ax.legend(handles=model_lines, loc='upper left')
+
+    # Only add model legend if Geant4 is present
+    if g4_mat is not None:
+        model_lines = [
+            Line2D([0], [0], color='k', lw=2, label='Geant4'),
+            Line2D([0], [0], marker='^', color='k', linestyle='None', label='SDE')
+        ]
+        ax.legend(handles=model_lines, loc='upper left')
 
     ax.set_xlim(lowlim, uplim)
     ax.set_xlabel('z [cm]')
     ax.set_ylabel(r'Dose per primary [MeV/g]')
-    #ax.set_yscale('log')
     ax.minorticks_on()
     return f
 
@@ -408,5 +426,38 @@ def compare_bragg_peaks(sde_dose1, g4_dose1, energy1, sde_dose2=None, g4_dose2=N
         ax2.plot(x, sde_cdd2, label=f"SDE {energy2} MeV", color='darkred')
         ax2.plot(x, g4_cdd2, label=f"Geant4 {energy2} MeV", linestyle='--', color='darkorange')
         ax2_diff.plot(x, compute_percentage_difference(g4_cdd2, sde_cdd2), label=f'{energy2} MeV', color='darkred')
+
+    return f1, f2
+
+# 1D plots only for the SDE output
+def plot_bragg_peaks_SDE(sde_dose1, energy1, sde_dose2=None, energy2=None):
+    x = np.linspace(0, 20, 200)
+
+    sde_idd1 = np.sum(sde_dose1, axis=(1,2))
+    sde_cdd1 = sde_dose1[:, 100, 100]
+
+    f1, ax1 = plt.subplots(figsize=(7.5, 4), layout='compressed')
+    ax1.plot(x, sde_idd1, label=f"{energy1} MeV", color='darkblue')
+    ax1.set_ylabel(r'Total dose per primary [MeV/g]')
+    ax1.set_xlabel("Depth [cm]")
+    ax1.legend()
+    ax1.minorticks_on()
+
+    f2, ax2 = plt.subplots(figsize=(7.5, 4), layout='compressed')
+    ax2.plot(x, sde_cdd1, label=f"{energy1} MeV", color='darkblue')
+    ax2.set_ylabel(r'Dose per primary [MeV/g]')
+    ax2.set_xlabel("Depth [cm]")
+    ax2.legend()
+    ax2.minorticks_on()
+
+    # Plot higher energy if available
+    if sde_dose2 is not None and energy2 is not None:
+        sde_idd2 = np.sum(sde_dose2, axis=(1,2))
+        sde_cdd2 = sde_dose2[:, 100, 100]
+
+        ax1.plot(x, sde_idd2, label=f"{energy2} MeV", color='darkred')
+        ax2.plot(x, sde_cdd2, label=f"{energy2} MeV", color='darkred')
+        ax1.legend()
+        ax2.legend()
 
     return f1, f2
