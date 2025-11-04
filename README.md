@@ -32,27 +32,34 @@ steps are also set to a moderate resolution. As a result, the simulation can tak
 
 # Post-processing
 
-Default output paths are specified into the `Output` folder, which contains the `plot.py` script for output
+## Python scripts
+
+Default output paths are specified into the `Output` folder, which contains the Python scripts for output
 visualisation. To use it you will need:
 
 - [Python 3](https://www.python.org/) (tested on version 3.12.3), as well as the following Python modules:
 - numpy (tested on version 1.26.4),
 - matplotlib (tested on version 3.10.0),
-- itk (tested on version 5.4.4).
+- itk (tested on version 5.4.4),
+- pymedphys (tested on version 0.40.0),
+- scipy (tested on version 1.14.1)
 
-If you have used the default number of protons, as well as output modes and paths in `sim.cfg`, you can simply
-run `plot.py` to produce heatmaps of the integrated 2d dose, 2d slices through the beam in all three coordinates,
-the integrated 1d dose, as well as the 1d dose through the central voxel of the beam.
+All the necessary functions are written in `SDE_vs_G4.py`, whereas the execution scripts to produce the relevant figures 
+is written in `SDE_vs_G4_executionScript.py` (if the Geant4 files are available) or `SDE_plots.py` (for exclusively
+plotting SDE output). The scripts include integrated and central-axis depth-dose 1D curves, 2D dose distributions, 
+lateral profiles, gamma analysis plots, pass rate calculations and proton range calculations. Simply modify the variables 
+defined at the start of the script according to what you need to plot. More detailed information is found in the comments
+of each script.
 
-# Python
+## Geant4 output generation
 
-The `Python` folder contains an equivalent Python implementation, which still requires precomputed cross
-sections stored in the proect root. The Python implementation is much slower (100k replicates in about an hour
-as opposed to a million in 2 minutes), but useful for prototyping. See `Python/plots_3d.py` for example usage.
+Geant4 is used as reference to assess the accuracy of the SDE. The source code to generate the outputs that are used for 
+comparison are found in the `Geant4-dose-and-secondaries` folder, which has its own README file with a detailed explanation
+of the model and how to run the simulations.
 
 # Nuclear cross sections
 
-The `Splines` folder contains splines fitted to nuclear cross section data for hydroge, oxygen, and nitrogen.
+The `Splines` folder contains splines fitted to nuclear cross section data for hydrogen, oxygen, and nitrogen.
 Eventually these will get replaced with a Python script to generate the same cross sections.
 
 # Materials
