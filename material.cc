@@ -67,7 +67,7 @@ struct Atom {
     e = out_energy_lab;
     alpha = out_angle_lab;
     if (out_energy_cm == 0) {
-        alpha = 1-1e-10; //If outgoing energy is 0, then out_angle_lab should be 1, rounding errors allow it to be slightly above 1 which is invalid.
+        alpha = 1; //If outgoing energy is 0, then out_angle_lab should be 1, rounding errors allow it to be slightly above 1 which is invalid.
       }
   }
 
