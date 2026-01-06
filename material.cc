@@ -67,9 +67,11 @@ struct Atom {
     e = out_energy_lab;
     alpha = out_angle_lab;
     if (out_energy_cm == 0) {
-        e = 0;
-        alpha = 1; //If outgoing energy is 0, then out_angle_lab should be 1, rounding errors allow it to be slightly above 1 which is invalid.
-      }
+      e = 0;
+      alpha = 1; // If outgoing energy is 0, then out_angle_lab should be 1,
+                 // rounding errors allow it to be slightly above 1 which is
+                 // invalid.
+    }
   }
 
   const int a, z;
@@ -102,7 +104,7 @@ struct Material {
       std::stringstream iss;
       iss << line;
       getline(iss, token, ' ');
-      at.push_back(atoms[atoi(token.c_str())]);
+      at.push_back(atoms[atoi(token.c_str()) - 1]);
       getline(iss, token, ' ');
       x.push_back(atof(token.c_str()));
     }
