@@ -13,12 +13,13 @@
 struct proton_path {
 
   proton_path(const double e0, const double dt, const double absorption_e,
-              const std::vector<double> &change_points,
-              const std::vector<int> &interval_materials,
+              const std::vector<double> &change_points_x,
+              const std::vector<double> &change_points_y,
+              const std::vector<std::vector<int>> &interval_materials,
               std::vector<Material> &materials)
       : energy(1), s(1), x(1), omega(1), u(3, 0), z(3, 0), w(3, 0) {
-    int n = solve_track_length(e0, dt, absorption_e, change_points,
-                               interval_materials, materials);
+    int n = solve_track_length(e0, dt, absorption_e, change_points_x,
+                               change_points_y, interval_materials, materials);
     std::vector<double> tmp_x(3, 0);
     std::vector<double> tmp_w(2, 0);
     energy.resize(n, 0);
@@ -36,21 +37,30 @@ struct proton_path {
     return;
   }
 
-  int solve_track_length(const double e0, const double dt,
-                         const double absorption_e,
-                         const std::vector<double> &change_points,
-                         const std::vector<int> &interval_materials,
-                         std::vector<Material> &materials) {
+  int solve_track_length(
+      const double e0, const double dt, const double absorption_e,
+      const std::vector<double> &change_points_x,
+      const std::vector<double> &change_points_y,
+      const std::vector<std::vector<int>> &interval_materials,
+      std::vector<Material> &materials) {
     double e = e0;
     double x = 0;
     int n = 1;
     int material_index = 1;
+    int y_half = 0;
     while (e > absorption_e) {
-      while (x >= change_points[material_index]) {
+      while (x >= change_points_x[material_index]) {
         material_index++;
       }
+      if (change_points_y[material_index] > 0) {
+        y_half = 0;
+      } else {
+        y_half = 1;
+      }
       e -=
-          materials[interval_materials[material_index - 1]].bethe_bloch(e) * dt;
+          materials[interval_materials[material_index - 1][y_half]].bethe_bloch(
+              e) *
+          dt;
       x += dt;
       n++;
     }
@@ -137,8 +147,8 @@ struct proton_path {
   }
 
   double spherical_bm(const double dt, int &ix, gsl_rng *gen,
-                      const Material &mat, const double prev_change,
-                      const double next_change) {
+                      const Material &mat, const double prev_x_change,
+                      const double next_x_change, const double y_change) {
     z[0] = sin(omega[ix - 1][0]) * cos(omega[ix - 1][1]);
     z[1] = sin(omega[ix - 1][0]) * sin(omega[ix - 1][1]);
     z[2] = cos(omega[ix - 1][0]);
@@ -185,35 +195,48 @@ struct proton_path {
 
     // Check for division by zero in x and y position updates
     double denom_xy = (v0 - v1 + w0 - w1) * (v0 - v1 - w0 + w1);
-    double direction;
+    double direction_x, direction_y;
     double time_step = dt;
     if (fabs(denom_xy) > 1e-9) {
-      direction = ((v0 - v1) * (cos(v0) * cos(w0) - cos(v1) * cos(w1)) +
-                   (w0 - w1) * (sin(v0) * sin(w0) - sin(v1) * sin(w1))) /
-                  denom_xy;
-      if (direction < 0 && -(next_change - x[ix - 1][0]) / direction < dt) {
-        time_step = -(next_change - x[ix - 1][0]) / direction;
+      direction_x = ((v0 - v1) * (cos(v0) * cos(w0) - cos(v1) * cos(w1)) +
+                     (w0 - w1) * (sin(v0) * sin(w0) - sin(v1) * sin(w1))) /
+                    denom_xy;
+      direction_y = ((w0 - w1) * (cos(w0) * sin(v0) - cos(w1) * sin(v1)) -
+                     (v0 - v1) * (cos(v0) * sin(w0) - cos(v1) * sin(w1))) /
+                    denom_xy;
+      if (direction_x < 0 &&
+          -(next_x_change - x[ix - 1][0]) / direction_x < dt) {
+        time_step = -(next_x_change - x[ix - 1][0]) / direction_x;
       }
-      if (direction > 0 && (x[ix - 1][0] - prev_change) / direction < dt) {
-        time_step = (x[ix - 1][0] - prev_change) / direction;
+      if (direction_x > 0 &&
+          (x[ix - 1][0] - prev_x_change) / direction_x < dt) {
+        time_step = (x[ix - 1][0] - prev_x_change) / direction_x;
       }
-      x[ix][0] = x[ix - 1][0] - time_step * direction;
-      x[ix][1] = x[ix - 1][1] +
-                 time_step *
-                     ((w0 - w1) * (cos(w0) * sin(v0) - cos(w1) * sin(v1)) -
-                      (v0 - v1) * (cos(v0) * sin(w0) - cos(v1) * sin(w1))) /
-                     denom_xy;
+      if ((direction_y > 0 && x[ix - 1][1] < y_change) ||
+          (direction_y < 0 && x[ix - 1][1] > y_change)) {
+        time_step = fmin(time_step, (y_change - x[ix - 1][1]) / direction_y);
+      }
+      x[ix][0] = x[ix - 1][0] - time_step * direction_x;
+      x[ix][1] = x[ix - 1][1] + time_step * direction_y;
+
     } else {
       // Linear approximation when denominator is too small
-      direction = sin(v0) * cos(w0);
-      if (direction > 0 && (next_change - x[ix - 1][0]) / direction < dt) {
-        time_step = (next_change - x[ix - 1][0]) / direction;
+      direction_x = sin(v0) * cos(w0);
+      direction_y = sin(v0) * sin(w0);
+      if (direction_x > 0 &&
+          (next_x_change - x[ix - 1][0]) / direction_x < dt) {
+        time_step = (next_x_change - x[ix - 1][0]) / direction_x;
       }
-      if (direction < 0 && -(x[ix - 1][0] - prev_change) / direction < dt) {
-        time_step = -(x[ix - 1][0] - prev_change) / direction;
+      if (direction_x < 0 &&
+          -(x[ix - 1][0] - prev_x_change) / direction_x < dt) {
+        time_step = -(x[ix - 1][0] - prev_x_change) / direction_x;
       }
-      x[ix][0] = x[ix - 1][0] + time_step * direction;
-      x[ix][1] = x[ix - 1][1] + time_step * sin(v0) * sin(w0);
+      if ((direction_y > 0 && x[ix - 1][1] < y_change) ||
+          (direction_y < 0 && x[ix - 1][1] > y_change)) {
+        time_step = fmin(time_step, (y_change - x[ix - 1][1]) / direction_y);
+      }
+      x[ix][0] = x[ix - 1][0] + time_step * direction_x;
+      x[ix][1] = x[ix - 1][1] + time_step * direction_y;
     }
     // Z position update
     if (fabs(v0 - v1) > 1e-9) {
@@ -236,8 +259,9 @@ struct proton_path {
   }
 
   int simulate(const double dt, const double absorption_energy,
-               const std::vector<double> &change_points,
-               const std::vector<int> &interval_materials,
+               const std::vector<double> &change_points_x,
+               const std::vector<double> &change_points_y,
+               const std::vector<std::vector<int>> &interval_materials,
                const std::vector<Material> &materials, gsl_rng *gen) {
     double nonelastic_jump_rate;
     double rutherford_elastic_jump_rate;
@@ -245,33 +269,42 @@ struct proton_path {
     double time_step = dt;
     int ix = 1;
     int material_index = 1;
+    int y_half = 0;
+    if (change_points_y[material_index - 1] < 0) {
+      y_half = 1;
+    }
     while (energy[ix - 1] > absorption_energy) {
       time_step = spherical_bm(
-          dt, ix, gen, materials[interval_materials[material_index - 1]],
-          change_points[material_index - 1], change_points[material_index]);
+          dt, ix, gen,
+          materials[interval_materials[material_index - 1][y_half]],
+          change_points_x[material_index - 1], change_points_x[material_index],
+          change_points_y[material_index - 1]);
       if (energy[ix - 1] > absorption_energy) {
         nonelastic_jump_rate =
-            materials[interval_materials[material_index - 1]].nonelastic_rate(
-                energy[ix - 1]);
+            materials[interval_materials[material_index - 1][y_half]]
+                .nonelastic_rate(energy[ix - 1]);
         rutherford_elastic_jump_rate =
-            materials[interval_materials[material_index - 1]]
+            materials[interval_materials[material_index - 1][y_half]]
                 .rutherford_and_elastic_rate(energy[ix - 1]);
         alpha = rutherford_elastic_jump_rate + nonelastic_jump_rate;
         if (gsl_rng_uniform(gen) < 1 - exp(-alpha * time_step)) {
           if (gsl_rng_uniform(gen) < rutherford_elastic_jump_rate / alpha) {
-            materials[interval_materials[material_index - 1]]
+            materials[interval_materials[material_index - 1][y_half]]
                 .rutherford_elastic_scatter(omega[ix - 1], energy[ix - 1], gen);
           } else {
-            materials[interval_materials[material_index - 1]]
+            materials[interval_materials[material_index - 1][y_half]]
                 .nonelastic_scatter(omega[ix - 1], energy[ix - 1], gen);
           }
         }
       }
-      if (fabs(x[ix - 1][0] - change_points[material_index]) < 1e-9) {
+      if (fabs(x[ix - 1][0] - change_points_x[material_index]) < 1e-9) {
         material_index++;
-      } else if (fabs(x[ix - 1][0] - change_points[material_index - 1]) <
+      } else if (fabs(x[ix - 1][0] - change_points_x[material_index - 1]) <
                  1e-9) {
         material_index--;
+      }
+      if (fabs(x[ix - 1][1] - change_points_y[material_index - 1]) < 1e-9) {
+        y_half = (y_half + 1) % 2;
       }
     }
     return ix;
