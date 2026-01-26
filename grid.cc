@@ -116,6 +116,104 @@ struct Grid {
     }
     return;
   }
+  double interp_t_calc(double &x, double v) {
+    if (v>0){   
+      if (((fabs(ceil(x/dx)*dx - x))/v)<1e-8){
+        x+=1e-7;
+        return (ceil(x/dx)*dx+dx - x)/v;
+      } else {
+        return (ceil(x/dx)*dx - x)/v;
+      }
+    } else if (v<0){
+      if (((fabs(floor(x/dx)*dx - x))/v)<1e-8){
+        x+= -1e-7;
+        return (floor(x/dx)*dx - dx - x)/v;
+      } else {
+        return (floor(x/dx)*dx - x)/v;
+      }
+    } else {
+      return 1;
+    }
+  }
+  void add_interp(const std::vector<std::vector<double>> &y,
+           const std::vector<double> &s, const int len) {
+    int ix;
+    unsigned int iy, iz;
+    double interp_x, interp_y, interp_z, t_interp_x, t_interp_y, t_interp_z, t_min,
+        tmp_start_x, tmp_start_y, tmp_start_z, tmp_end_x, tmp_end_y, tmp_end_z,tmp_t_left;
+    for (int i = 1; i < len; i++) {
+      tmp_t_left = 1.0;
+      tmp_start_x = y[i-1][0];
+      tmp_start_y = y[i-1][1];
+      tmp_start_z = y[i-1][2];
+      tmp_end_x = y[i][0];
+      tmp_end_y = y[i][1];
+      tmp_end_z = y[i][2];
+      interp_x = tmp_end_x - tmp_start_x;
+      interp_y = tmp_end_y - tmp_start_y;
+      interp_z = tmp_end_z - tmp_start_z;
+      while (tmp_t_left > 0) {
+      t_interp_x = interp_t_calc(tmp_start_x,interp_x);
+      t_interp_y = interp_t_calc(tmp_start_y,interp_y);
+      t_interp_z = interp_t_calc(tmp_start_z,interp_z);
+      t_min = fmin(fmin(t_interp_x,t_interp_y),t_interp_z);
+      ix = floor(tmp_start_x / dx);
+      iy = floor(fabs(tmp_start_y) / dx);
+      iz = floor(fabs(tmp_start_z) / dx);
+      add_data(ix,iy,iz,s[i]*fmin(t_min,tmp_t_left),tmp_start_y,tmp_start_z);
+      tmp_t_left -= t_min;
+      tmp_start_x += interp_x * t_min;
+      tmp_start_y += interp_y * t_min;
+      tmp_start_z += interp_z * t_min;
+      }
+    }
+    return;
+  }
+  void add_data(int ix, unsigned int iy, unsigned int iz, double value, double y, double z) {
+    std::vector<double> tmp(1, 0);
+    std::vector<std::vector<double>> tmp2(1, tmp);
+    if (ix >= 0) {
+        if (ix >= int(x_pp.size())) {
+          x_pp.resize(ix + 1, tmp2);
+          x_pm.resize(ix + 1, tmp2);
+          x_mp.resize(ix + 1, tmp2);
+          x_mm.resize(ix + 1, tmp2);
+        }
+        if (y >= 0 && z >= 0) {
+          if (iy >= x_pp[ix].size()) {
+            x_pp[ix].resize(iy + 1, tmp);
+          }
+          if (iz >= x_pp[ix][iy].size()) {
+            x_pp[ix][iy].resize(iz + 1, 0);
+          }
+          x_pp[ix][iy][iz] += value;
+        } else if (y >= 0 && z < 0) {
+          if (iy >= x_pm[ix].size()) {
+            x_pm[ix].resize(iy + 1, tmp);
+          }
+          if (iz >= x_pm[ix][iy].size()) {
+            x_pm[ix][iy].resize(iz + 1, 0);
+          }
+          x_pm[ix][iy][iz] += value;
+        } else if (y < 0 && z >= 0) {
+          if (iy >= x_mp[ix].size()) {
+            x_mp[ix].resize(iy + 1, tmp);
+          }
+          if (iz >= x_mp[ix][iy].size()) {
+            x_mp[ix][iy].resize(iz + 1, 0);
+          }
+          x_mp[ix][iy][iz] += value;
+        } else {
+          if (iy >= x_mm[ix].size()) {
+            x_mm[ix].resize(iy + 1, tmp);
+          }
+          if (iz >= x_mm[ix][iy].size()) {
+            x_mm[ix][iy].resize(iz + 1, 0);
+          }
+          x_mm[ix][iy][iz] += value;
+        }
+      }
+  }
 
   double dx;
   std::vector<std::vector<std::vector<double>>> x_pp, x_pm, x_mp, x_mm;
