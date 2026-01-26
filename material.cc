@@ -130,8 +130,6 @@ struct Material {
     double mpcsq = 938.346; // mass of proton * speed of light squared, MeV
     double pv = (2 * mpcsq + e) * e / (mpcsq + e);
     double betasq = (2 * mpcsq + e) * e / pow(mpcsq + e, 2);
-    double c = 29979245800; // speed of light
-    double vel = sqrt(betasq) * c;
     double p = pv / sqrt(betasq); // momentum in MeV / c.
     // effective chi_c_sq is just the sum of individual elements
     double chi_c_sq = 0;
