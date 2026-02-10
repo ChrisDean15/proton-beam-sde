@@ -156,15 +156,9 @@ struct proton_path {
         pow(mat.multiple_scattering_sd(energy[ix - 1], dt), 2), gen);
     double theta = 2 * M_PI * gsl_rng_uniform(gen);
     // Set up defaults for when z is near (0, 0, 1)
-    u[0] = 1;
-    u[1] = 1;
-    u[2] = 1;
-    if (z[0] > 0) {
-      u[0] = -1;
-    }
-    if (z[1] > 0) {
-      u[1] = -1;
-    }
+    u[0] = 1/sqrt(2);
+    u[1] = 1/sqrt(2);
+    u[2] = 0;
     double denom = sqrt(z[0] * z[0] + z[1] * z[1] + (z[2] - 1) * (z[2] - 1));
     if (denom > 1e-10) {
       u[0] = -z[0] / denom;
@@ -219,8 +213,8 @@ struct proton_path {
       x[ix][1] = x[ix - 1][1] + time_step * direction_y;
     } else {
       // Linear approximation when denominator is too small
-      direction_x = sin(v0) * cos(w0);
-      direction_y = sin(v0) * sin(w0);
+      direction_x = (sin(v0) * cos(w0)+sin(v1) * cos(w1))/2;
+      direction_y = (sin(v0) * sin(w0)+sin(v1) * sin(w1))/2;
       if (direction_x > 0) {
         time_step =
             fmin(time_step, (next_x_change - x[ix - 1][0]) / direction_x);
@@ -239,7 +233,7 @@ struct proton_path {
     if (fabs(v0 - v1) > 1e-9) {
       x[ix][2] = x[ix - 1][2] + (sin(v0) - sin(v1)) * time_step / (v0 - v1);
     } else {
-      x[ix][2] = x[ix - 1][2] - time_step * (cos(v0) + cos(v1)) / 2;
+      x[ix][2] = x[ix - 1][2] + time_step * (cos(v0) + cos(v1)) / 2;
     }
     double bethe_block_update = mat.bethe_bloch(energy[ix - 1]) * time_step;
     energy[ix] = energy[ix - 1] -
