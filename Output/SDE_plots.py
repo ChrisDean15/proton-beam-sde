@@ -18,6 +18,7 @@ from SDE_vs_G4 import (
 )
 import numpy as np
 
+from SDE_vs_G4_executionScript import MeV_g_to_Gy
 
 """
 Suffix must be selected to compare appropriate files. The options are:
@@ -31,6 +32,7 @@ suffix = "_water"
 energy1 = 100  # MeV, must always have a value
 energy2 = None  # MeV, can be set to None to skip. Only energy1 plots will be generated.
 voxel_volume = 0.001  # cm3
+MeV_g_to_Gy = 1.60218e-10
 
 # Adjust parameters according to case:
 if suffix == "_slab":
@@ -53,8 +55,8 @@ else:
     cuts_100 = [30, 50, 75]
     cuts_150 = [50, 100, 150]
 
-sde_dose1 = retrieve_sde_output(f"SDE_{N_primaries}_{energy1}MeV{suffix}.txt") / (
-    float(N_primaries) * density_matrix * voxel_volume
+sde_dose1 = MeV_g_to_Gy * retrieve_sde_output(f"SDE_{N_primaries}_{energy1}MeV{suffix}.txt") / (
+    density_matrix * voxel_volume
 )
 f1 = plot_all_slices(
     sde_dose1,
@@ -88,8 +90,8 @@ if energy2 is None:
     f4.savefig(f"../Output/SDE_1DSlice_{energy1}MeV{suffix}.png")
 
 else:
-    sde_dose2 = retrieve_sde_output(f"SDE_{N_primaries}_{energy2}MeV{suffix}.txt") / (
-        float(N_primaries) * density_matrix * voxel_volume
+    sde_dose2 = MeV_g_to_Gy * retrieve_sde_output(f"SDE_{N_primaries}_{energy2}MeV{suffix}.txt") / (
+        density_matrix * voxel_volume
     )
     f5 = plot_all_slices(
         sde_dose2,
