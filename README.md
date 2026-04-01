@@ -95,3 +95,8 @@ For example, water is specified as
 
 because it has density 1, mean excitation energy 75, and is approximately 1/9 hydrogen (atomic number 1) and 8/9 oxygen
 (atomic number 8) by mass.
+
+# Tests
+
+The `Tests` folder contains a stand-alone source file with its own Makefile which runs statistical tests comparing Monte Carlo simulations with analytical or numerical expectations.
+Call `make` in the `Tests` folder to compile tests, then call `./Tests/tests` to run the tests, and `./Tests/plots.R` to create output visualisations.
