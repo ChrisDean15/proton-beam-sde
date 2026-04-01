@@ -18,8 +18,10 @@ struct proton_path {
               const std::vector<std::vector<int>> &interval_materials,
               std::vector<Material> &materials)
       : energy(1), s(1), x(1), omega(1), u(3, 0), z(3, 0), w(3, 0) {
-    int n = solve_track_length(e0, dt, absorption_e, change_points_x,
-                               change_points_y, interval_materials, materials);
+    unsigned int n =
+        solve_central_ode(e0, dt, absorption_e, change_points_x,
+                          change_points_y, interval_materials, materials)
+            .size();
     std::vector<double> tmp_x(3, 0);
     std::vector<double> tmp_w(2, 0);
     energy.resize(n, 0);
@@ -37,18 +39,17 @@ struct proton_path {
     return;
   }
 
-  int solve_track_length(
-      const double e0, const double dt, const double absorption_e,
-      const std::vector<double> &change_points_x,
-      const std::vector<double> &change_points_y,
-      const std::vector<std::vector<int>> &interval_materials,
-      std::vector<Material> &materials) {
-    double e = e0;
+  std::vector<double>
+  solve_central_ode(const double e0, const double dt, const double absorption_e,
+                    const std::vector<double> &change_points_x,
+                    const std::vector<double> &change_points_y,
+                    const std::vector<std::vector<int>> &interval_materials,
+                    std::vector<Material> &materials) {
+    std::vector<double> e(1, e0);
     double x = 0;
-    int n = 1;
     int material_index = 1;
     int y_half = 0;
-    while (e > absorption_e) {
+    while (e.back() > absorption_e) {
       while (x >= change_points_x[material_index]) {
         material_index++;
       }
@@ -57,14 +58,14 @@ struct proton_path {
       } else {
         y_half = 1;
       }
-      e -=
+      e.push_back(
+          e.back() -
           materials[interval_materials[material_index - 1][y_half]].bethe_bloch(
-              e) *
-          dt;
+              e.back()) *
+              dt);
       x += dt;
-      n++;
     }
-    return n;
+    return e;
   }
 
   double log_a(const int k, const int m, const double theta) const {
@@ -156,8 +157,8 @@ struct proton_path {
         pow(mat.multiple_scattering_sd(energy[ix - 1], dt), 2), gen);
     double theta = 2 * M_PI * gsl_rng_uniform(gen);
     // Set up defaults for when z is near (0, 0, 1)
-    u[0] = 1/sqrt(2);
-    u[1] = 1/sqrt(2);
+    u[0] = 1 / sqrt(2);
+    u[1] = 1 / sqrt(2);
     u[2] = 0;
     double denom = sqrt(z[0] * z[0] + z[1] * z[1] + (z[2] - 1) * (z[2] - 1));
     if (denom > 1e-10) {
@@ -213,8 +214,8 @@ struct proton_path {
       x[ix][1] = x[ix - 1][1] + time_step * direction_y;
     } else {
       // Linear approximation when denominator is too small
-      direction_x = (sin(v0) * cos(w0)+sin(v1) * cos(w1))/2;
-      direction_y = (sin(v0) * sin(w0)+sin(v1) * sin(w1))/2;
+      direction_x = (sin(v0) * cos(w0) + sin(v1) * cos(w1)) / 2;
+      direction_y = (sin(v0) * sin(w0) + sin(v1) * sin(w1)) / 2;
       if (direction_x > 0) {
         time_step =
             fmin(time_step, (next_x_change - x[ix - 1][0]) / direction_x);
