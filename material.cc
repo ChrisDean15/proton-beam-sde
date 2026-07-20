@@ -153,7 +153,8 @@ struct Material {
     double omega = chi_c_sq / chi_a_sq;
     double F = 0.98;
     double v = omega / (2 * (1 - F));
-    double ret = sqrt(chi_c_sq * ((1 + v) * log(1 + v) / v - 1) / (1 + F * F)*(dt/0.05));
+    double ret = sqrt(chi_c_sq * ((1 + v) * log(1 + v) / v - 1) / (1 + F * F) *
+                      (dt / 0.05));
     return ret;
   }
 
@@ -181,7 +182,7 @@ struct Material {
     double log_barns_to_cmsq = -24 * log(10);
     double ret = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
-      ret += x[i] * at[i].ne_rate.evaluate(e)/ at[i].a;
+      ret += x[i] * at[i].ne_rate.evaluate(e) / at[i].a;
     }
     double log_molecule_density =
         log(density) + log_avogadro; // molecules / cm^3
@@ -194,7 +195,7 @@ struct Material {
     double log_barns_to_cmsq = -24 * log(10);
     double ret = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
-      ret += x[i] * at[i].el_ruth_rate.evaluate(e)/ at[i].a;
+      ret += x[i] * at[i].el_ruth_rate.evaluate(e) / at[i].a;
     }
     double log_molecule_density =
         log(density) + log_avogadro; // molecules / cm^3
@@ -230,14 +231,14 @@ struct Material {
     double beta = 2 * M_PI * gsl_rng_uniform(gen);
     double rate = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
-      rate += x[i] * at[i].ne_rate.evaluate(e)/at[i].a;
+      rate += x[i] * at[i].ne_rate.evaluate(e) / at[i].a;
     }
     double u = gsl_rng_uniform(gen);
     double ind = 0;
-    double tmp = (x[ind] * at[ind].ne_rate.evaluate(e)/at[ind].a) / rate;
+    double tmp = (x[ind] * at[ind].ne_rate.evaluate(e) / at[ind].a) / rate;
     while (tmp < u) {
       ind++;
-      tmp += (x[ind] * at[ind].ne_rate.evaluate(e)/at[ind].a) / rate;
+      tmp += (x[ind] * at[ind].ne_rate.evaluate(e) / at[ind].a) / rate;
     }
     double alpha;
     // ENDF non-elastic scattering, both energy + angle from CM to LAB
@@ -248,34 +249,37 @@ struct Material {
   }
   void cm_to_lab_energy(double alpha, double &e, double &s, int ind) const {
     double mpcsq = 938.346;
-    double mtcsq = at[ind].a*mpcsq;
+    double mtcsq = at[ind].a * mpcsq;
     double E1 = mpcsq + e;
-    double p1 = std::sqrt(E1*E1-mpcsq*mpcsq);
-    double u = p1/(E1+mtcsq);
-    double invmass = std::sqrt(mpcsq*mpcsq+mtcsq*mtcsq+2*E1*mtcsq);
-    double gamma_u = (E1+mtcsq)/invmass;
-    double EC = (E1*mtcsq+mpcsq*mpcsq)/invmass;
+    double p1 = std::sqrt(E1 * E1 - mpcsq * mpcsq);
+    double u = p1 / (E1 + mtcsq);
+    double invmass = std::sqrt(mpcsq * mpcsq + mtcsq * mtcsq + 2 * E1 * mtcsq);
+    double gamma_u = (E1 + mtcsq) / invmass;
+    double EC = (E1 * mtcsq + mpcsq * mpcsq) / invmass;
     double TanL = tan(alpha);
-    double C1 = u/std::sqrt(1-(mpcsq*mpcsq/(EC*EC)));
-    double CosCM = cos(acos(-(TanL*gamma_u*C1)/std::sqrt(TanL*TanL*gamma_u*gamma_u+1))-atan(1/(TanL*gamma_u)));
-    double out_e = gamma_u*(EC+u*std::sqrt(EC*EC-mpcsq*mpcsq)*CosCM)-mpcsq;
-    s += e-out_e;
+    double C1 = u / std::sqrt(1 - (mpcsq * mpcsq / (EC * EC)));
+    double CosCM = cos(acos(-(TanL * gamma_u * C1) /
+                            std::sqrt(TanL * TanL * gamma_u * gamma_u + 1)) -
+                       atan(1 / (TanL * gamma_u)));
+    double out_e =
+        gamma_u * (EC + u * std::sqrt(EC * EC - mpcsq * mpcsq) * CosCM) - mpcsq;
+    s += e - out_e;
     e = out_e;
     return;
   }
-  void rutherford_elastic_scatter(std::vector<double> &ang, double &e, double &s,
-                                  gsl_rng *gen) const {
+  void rutherford_elastic_scatter(std::vector<double> &ang, double &e,
+                                  double &s, gsl_rng *gen) const {
     double beta = 2 * M_PI * gsl_rng_uniform(gen);
     double rate = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
-      rate += x[i] * at[i].el_ruth_rate.evaluate(e)/at[i].a;
+      rate += x[i] * at[i].el_ruth_rate.evaluate(e) / at[i].a;
     }
     double u = gsl_rng_uniform(gen);
     int ind = 0;
-    double tmp = (x[ind] * at[ind].el_ruth_rate.evaluate(e)/at[ind].a) / rate;
+    double tmp = (x[ind] * at[ind].el_ruth_rate.evaluate(e) / at[ind].a) / rate;
     while (tmp < u) {
       ind++;
-      tmp += (x[ind] * at[ind].el_ruth_rate.evaluate(e)/at[ind].a) / rate;
+      tmp += (x[ind] * at[ind].el_ruth_rate.evaluate(e) / at[ind].a) / rate;
     }
     double alpha;
     alpha = at[ind].el_ruth_angle_cdf.sample(e, gen);
