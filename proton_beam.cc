@@ -282,7 +282,7 @@ struct proton_path {
         if (gsl_rng_uniform(gen) < 1 - exp(-alpha * time_step)) {
           if (gsl_rng_uniform(gen) < rutherford_elastic_jump_rate / alpha) {
             materials[interval_materials[material_index - 1][y_half]]
-                .rutherford_elastic_scatter(omega[ix - 1], energy[ix - 1], gen);
+                .rutherford_elastic_scatter(omega[ix - 1], energy[ix - 1],s[ix-1], gen);
           } else {
             materials[interval_materials[material_index - 1][y_half]]
                 .nonelastic_scatter(omega[ix - 1], energy[ix - 1], gen);

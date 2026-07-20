@@ -75,6 +75,9 @@ struct CS_1d {
           lin_inter_bool = false;
         }
       }
+      if (lin_inter_bool) {
+      rate.push_back(tmp_val_old);
+      }
     }
     file.close();
   }

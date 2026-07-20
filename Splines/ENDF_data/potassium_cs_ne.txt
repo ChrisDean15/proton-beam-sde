@@ -1,0 +1,243 @@
+Retrieved by E4-Web: 2026/06/29,05:53:21                             1 0  0    0
+ 1.903900+4 3.862899+1         -1          0         17          11925 1451    1
+ 0.000000+0 0.000000+0          0          0          0          61925 1451    2
+ 9.986230-1 2.000000+8          1          0      10010       20251925 1451    3
+ 0.000000+0 0.000000+0          0          0        211          21925 1451    4
+ 19-K - 39 SCK - KIT  EVAL-FEB25 Stankovskiy,Konobeyev,Leichtle   1925 1451    5
+ JEFF-4               DIST-      REV1-                            1925 1451    6
+----JEFF-4            Material 1925         REVISION 1            1925 1451    7
+-----Incident proton   data                                       1925 1451    8
+------ENDF-6 Format                                               1925 1451    9
+                                                                  1925 1451   10
+!!!!!!!!!!!!!!!!!!!!!!!!!!!   JEFF-4   !!!!!!!!!!!!!!!!!!!!!!!!!!!1925 1451   11
+TENDL-2023 evaluation was taken as reference as a result          1925 1451   12
+of analysis of neutron production (multiplicities, energy spectra 1925 1451   13
+and double differential cross sections) [1].                      1925 1451   14
+REFERENCES:                                                       1925 1451   15
+                                                                  1925 1451   16
+1. A.Stankovskiy, A.Konobeyev, D.Leichtle, JEFF-4 proton induced  1925 1451   17
+   library, Proc. ND2025, Madrid, Spain (2025).                   1925 1451   18
+                                                                  1925 1451   19
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TENDL-2023 !!!!!!!!!!!!!!!!!!!!!!!!!!!1925 1451   20
+TENDL-2023 (TALYS Evaluated Nuclear Data Library)                 1925 1451   21
+                                                                  1925 1451   22
+K039 proton general purpose library                               1925 1451   23
+                                                                  1925 1451   24
+Author: A.J. Koning, IAEA                                         1925 1451   25
+                                                                  1925 1451   26
+Ref.: A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,         1925 1451   27
+      M. Fleming, and S. van der Marck, TENDL: Complete nuclear   1925 1451   28
+      data library for innovative nuclear science and             1925 1451   29
+      technology, Nuclear Data Sheets 155, 1 (2019).              1925 1451   30
+                                                                  1925 1451   31
+************** G E N E R A L   I N F O R M A T I O N *************1925 1451   32
+                                                                  1925 1451   33
+This evaluated data file is based on a software system built      1925 1451   34
+around the nuclear model code TALYS [kon07], version 2.0. It is   1925 1451   35
+part of a large collection of isotopic evaluations, all created by1925 1451   36
+running the system with either adjusted or default input          1925 1451   37
+parameters. This means that the data in the entire collection have1925 1451   38
+been tested in detail for many isotopes against individual        1925 1451   39
+experimental data, while for other isotopes it is only as good as 1925 1451   40
+the global quality of TALYS at the moment. The mutual quality of  1925 1451   41
+all individual data files is however consistent: The same set of  1925 1451   42
+nuclear models is used and, equally important, the same ENDF-6    1925 1451   43
+formatting procedures for each isotope. The data file has been    1925 1451   44
+created automatically using the ENDF-6 format generator TEFAL.    1925 1451   45
+                                                                  1925 1451   46
+The resulting data file provides a complete representation of     1925 1451   47
+nuclear data needed for transport, activation, damage, heating,   1925 1451   48
+radioactivity, and shielding applications over the incident       1925 1451   49
+proton energy range from 0.25 to 200. MeV.                        1925 1451   50
+                                                                  1925 1451   51
+All transport and activation data for neutrons, charged particles,1925 1451   52
+photons and residual nuclides are filed. This includes cross      1925 1451   53
+sections, angular distributions, double-differential spectra,     1925 1451   54
+isomeric production, discrete and continuum photon production     1925 1451   55
+cross sections, residual production cross sections and recoils.   1925 1451   56
+This general purpose evaluation can thus be used as both          1925 1451   57
+transport and activation library.                                 1925 1451   58
+                                                                  1925 1451   59
+**** N U C L I D E    S P E C I F I C   I N F O R M A T I O N ****1925 1451   60
+                                                                  1925 1451   61
+None                                                              1925 1451   62
+                                                                  1925 1451   63
+***************************** T A L Y S **************************1925 1451   64
+                                                                  1925 1451   65
+TALYS is a computer code system for the prediction and analysis   1925 1451   66
+of nuclear reactions. TALYS simulates reactions that involve      1925 1451   67
+neutrons, gamma-rays, protons, deuterons, tritons, helions and    1925 1451   68
+alpha-particles, in the 1 keV - 200 MeV energy range. This is     1925 1451   69
+achieved by implementing a suite of nuclear reaction models into  1925 1451   70
+a single code system. This nuclear data file is based on a        1925 1451   71
+theoretical analysis that utilizes the optical model, compound    1925 1451   72
+nucleus statistical theory, fission, direct reactions and         1925 1451   73
+pre-equilibrium processes, in combination with databases and      1925 1451   74
+models for nuclear structure. The following output of TALYS is    1925 1451   75
+stored in this data file:                                         1925 1451   76
+                                                                  1925 1451   77
+- Elastic and non-elastic cross sections                          1925 1451   78
+- Elastic scattering angular distributions                        1925 1451   79
+- Recoil data                                                     1925 1451   80
+- Total particle cross sections, e.g. (p,xn), (p,xp),..           1925 1451   81
+- Total particle energy spectra                                   1925 1451   82
+- Total particle double-differential spectra                      1925 1451   83
+- Isomeric and ground state cross sections                        1925 1451   84
+- Residual production cross sections                              1925 1451   85
+                                                                  1925 1451   86
+For a description of the used nuclear models and their            1925 1451   87
+parameterization we refer to [kon19]. If for this specific        1925 1451   88
+nuclide we deviate from the global parameterization, it is made   1925 1451   89
+explicit above under Nuclide Specific Information.                1925 1451   90
+                                                                  1925 1451   91
+***************** F I L E   I N F O R M A T I O N ****************1925 1451   92
+                                                                  1925 1451   93
+##### MF1: GENERAL INFORMATION                                    1925 1451   94
+                                                                  1925 1451   95
+- MT451    : Descriptive data and directory                       1925 1451   96
+                                                                  1925 1451   97
+This text and the full directory of used MF/MT sections.          1925 1451   98
+                                                                  1925 1451   99
+##### MF3: REACTION CROSS SECTIONS                                1925 1451  100
+                                                                  1925 1451  101
+All the data present in the following MT-sections have been       1925 1451  102
+calculated with TALYS, possibly normalized to experimental data.  1925 1451  103
+If the maximal cross section in an excitation function over the   1925 1451  104
+whole energy range does not exceed 1.e-9 b, the MT-number is not  1925 1451  105
+included. Cross sections lower than 1.e-20 b are assumed to have  1925 1451  106
+no physical meaning and are set to zero. All MT numbers extend up 1925 1451  107
+to the highest incident energy.                                   1925 1451  108
+The following reaction channels/MT numbers are generally included:1925 1451  109
+                                                                  1925 1451  110
+- MT2      : Elastic scattering cross section: nuclear +          1925 1451  111
+             interference terms                                   1925 1451  112
+                                                                  1925 1451  113
+Obtained by integrating the "nuclear-plus-interference" angular   1925 1451  114
+distributions of MF=6.  Note that because of the interference     1925 1451  115
+effect, the tabulations in both MF=6 and MF=3 can be negative at  1925 1451  116
+some energies and angles.                                         1925 1451  117
+                                                                  1925 1451  118
+- MT5      : (p,anything) cross section                           1925 1451  119
+                                                                  1925 1451  120
+MT5 contains the reactions which can not be stored in any other   1925 1451  121
+MT-number. The information of MF3/MT5 can be combined with        1925 1451  122
+MF6/MT5 to obtain residual production cross sections particle     1925 1451  123
+production cross sections and (double-)differential cross         1925 1451  124
+sections.                                                         1925 1451  125
+                                                                  1925 1451  126
+##### MF6: PRODUCT ENERGY-ANGLE DISTRIBUTIONS                     1925 1451  127
+                                                                  1925 1451  128
+In MF6 we store all secondary energy, angle, and energy-angle     1925 1451  129
+distributions, as well as all residual and discrete + continuum   1925 1451  130
+photon production cross sections for channels other than capture  1925 1451  131
+(MT102) and reactions to discrete levels (MT51,etc.).             1925 1451  132
+All data are generated with TALYS.                                1925 1451  133
+                                                                  1925 1451  134
+- MT5      : (p,anything) yields and energy-angle distributions   1925 1451  135
+                                                                  1925 1451  136
+MT5 contains, in this order,                                      1925 1451  137
+For neutrons up to alpha particles and photons:                   1925 1451  138
+- the production yields per particle for the whole energy range   1925 1451  139
+- the secondary energy-angle distributions per particles which are1925 1451  140
+  not represented by explicit MT numbers. On a secondary energy   1925 1451  141
+  grid the relative emission spectra are given together with the  1925 1451  142
+  parameters for the Kalbach systematics for angular              1925 1451  143
+  distributions. Inelastic scattering cross sections for discrete 1925 1451  144
+  states have been broadened and added to the continuum spectra.  1925 1451  145
+For each residual product:                                        1925 1451  146
+- the production yields for the whole energy range.               1925 1451  147
+- the recoil                                                      1925 1451  148
+These distributions can be multiplied with MF3/MT5 to get         1925 1451  149
+the production cross sections and (double-)differential cross     1925 1451  150
+sections.                                                         1925 1451  151
+                                                                  1925 1451  152
+##### MF8: RADIOACTIVE DECAY DATA                                 1925 1451  153
+                                                                  1925 1451  154
+For reactions to isomers, MF8 designates where the information    1925 1451  155
+for isomeric versus ground state production, or residual          1925 1451  156
+production can be found, i.e. for each MT number it points to     1925 1451  157
+either MF6, MF9 or MF10.                                          1925 1451  158
+                                                                  1925 1451  159
+##### MF33: COVARIANCES OF NEUTRON CROSS SECTIONS                 1925 1451  160
+                                                                  1925 1451  161
+In MF33, we store the covariances of most, but not all, reaction  1925 1451  162
+channels that are given in MF3. All covariances are generated     1925 1451  163
+with the TASMAN code [kon19], which generates TALYS runs using    1925 1451  164
+a Monte Carlo parameter method.                                   1925 1451  165
+For each MT-number, the information consists of:                  1925 1451  166
+1. Covariances for MTa, Ea and MTa, Ea (variances)                1925 1451  167
+2. Covariances for MTa, Ea and MTa, Eb (correlations for the      1925 1451  168
+   same reaction channel between different energies)              1925 1451  169
+3. Covariances for MTa, Ea and MTb, Ea (correlations between      1925 1451  170
+   different reaction channels for the same energy)               1925 1451  171
+4. Covariances for MTa, Ea and MTb, Eb (correlations between      1925 1451  172
+   different reaction channels for different energies)            1925 1451  173
+Classes 1 and 2 are covered by NI-type subsubsections with        1925 1451  174
+flag LB=5, followed by a LB=8 section which contains              1925 1451  175
+the cross section variances multiplied by 1.e-3. Next, classes 3  1925 1451  176
+and 4 are covered by flag LB=6 to account for the different       1925 1451  177
+energy grids that two correlating MT-sections may have. Since     1925 1451  178
+the total correlation matrix is fully symmetric, we only need to  1925 1451  179
+include the correlation elements between different MT-numbers     1925 1451  180
+once, and we do that in the subsection with the lowest of the     1925 1451  181
+two MT-numbers. We include covariance information for all the     1925 1451  182
+total cross sections, the lumped partial cross sections and the   1925 1451  183
+individual inelastic cross sections per level (MT51,...). We do   1925 1451  184
+not include covariances for MT600 and higher MT-numbers. For the  1925 1451  185
+most important channels, we include cross-channel correlations.   1925 1451  186
+                                                                  1925 1451  187
+***** F I L E   C H E C K I N G   A N D   P R O C E S S I N G ****1925 1451  188
+                                                                  1925 1451  189
+This file has been checked and processed by                       1925 1451  190
+- the BNL checking codes CHECKR-8.24, FIZCON-8.19 and PSYCHE-8.11 1925 1451  191
+  [her08],                                                        1925 1451  192
+- the preprocessing codes PREPRO-2021 [cul21] into a PENDF file,  1925 1451  193
+- the processing code NJOY-2016.68 [mac10] into a PENDF file and a1925 1451  194
+  MCNP (ACE) library,                                             1925 1451  195
+- MCNP for a standard calculation with the ACE library.           1925 1451  196
+                                                                  1925 1451  197
+*********************** R E F E R E N C E S **********************1925 1451  198
+                                                                  1925 1451  199
+[cul21] D.E. Cullen, PREPRO 2021 - ENDF/B Pre-processing codes,   1925 1451  200
+        Technical report IAEA-NDS-0238, IAEA (2021)               1925 1451  201
+[her08] M. Herman, ENDF Utility Codes Release 8.0, (2008)         1925 1451  202
+[kon07] A.J. Koning, S. Hilaire and M.C. Duijvestijn, TALYS-1.0,  1925 1451  203
+        Proceedings of the International Conference on Nuclear    1925 1451  204
+        Data for Science and Technology - ND-2007,                1925 1451  205
+        April 22-27, 2007, Nice, France                           1925 1451  206
+[kon19] A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,       1925 1451  207
+        M. Fleming, and S. van der Marck, TENDL: Complete nuclear 1925 1451  208
+        data library for innovative nuclear science and           1925 1451  209
+        technology, Nuclear Data Sheets 155, 1 (2019)             1925 1451  210
+[mac10] R.E. Macfarlane and A.C. Kahler, Methods for processing   1925 1451  211
+        ENDF/B-VII with NJOY, Nuclear Data Sheets 111, 2739 (2010)1925 1451  212
+                                                                  1925 1451  213
+************************* C O N T E N T S ************************1925 1451  214
+                                                                  1925 1451  215
+                                1        451        222          11925 1451  216
+                                3          5         19          11925 1451  217
+                                                                  1925 1  099999
+                                                                  1925 0  0    0
+ 1.903900+4 3.862899+1          0          0          0          01925 3  5    1
+ 0.000000+0 0.000000+0          0          0          1         471925 3  5    2
+         47          2                                            1925 3  5    3
+ 2.500000+5 1.17869-11 5.000000+5 3.262993-7 1.000000+6 1.977766-51925 3  5    4
+ 2.000000+6 7.893753-5 3.000000+6 1.635483-3 4.000000+6 1.451965-21925 3  5    5
+ 5.000000+6 8.417560-2 6.000000+6 2.463789-1 7.000000+6 4.963251-11925 3  5    6
+ 8.000000+6 6.478080-1 9.000000+6 7.405149-1 1.000000+7 8.017675-11925 3  5    7
+ 1.100000+7 8.470474-1 1.200000+7 8.815334-1 1.300000+7 9.060710-11925 3  5    8
+ 1.400000+7 9.216949-1 1.500000+7 9.305251-1 1.600000+7 9.350719-11925 3  5    9
+ 1.700000+7 9.374787-1 1.800000+7 9.391302-1 1.900000+7 9.405970-11925 3  5   10
+ 2.000000+7 9.418185-1 2.200000+7 9.419919-1 2.400000+7 9.372817-11925 3  5   11
+ 2.600000+7 9.280427-1 2.800000+7 9.162106-1 3.000000+7 9.034169-11925 3  5   12
+ 3.500000+7 8.708611-1 4.000000+7 8.383481-1 4.500000+7 8.070800-11925 3  5   13
+ 5.000000+7 7.780761-1 5.500000+7 7.515580-1 6.000000+7 7.274640-11925 3  5   14
+ 6.500000+7 7.056431-1 7.000000+7 6.859010-1 7.500000+7 6.680370-11925 3  5   15
+ 8.000000+7 6.518500-1 9.000000+7 6.238390-1 1.000000+8 6.005840-11925 3  5   16
+ 1.100000+8 5.810870-1 1.200000+8 5.645670-1 1.300000+8 5.504211-11925 3  5   17
+ 1.400000+8 5.381750-1 1.500000+8 5.274600-1 1.600000+8 5.179861-11925 3  5   18
+ 1.800000+8 5.018891-1 2.000000+8 4.885270-1                      1925 3  5   19
+                                                                  1925 3  099999
+                                                                  1925 0  0    0
+                                                                     0 0  0    0
+                                                                    -1 0  0    0

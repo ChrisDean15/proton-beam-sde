@@ -1,0 +1,183 @@
+Retrieved by E4-Web: 2026/06/29,05:58:32                             1 0  0    0
+ 2.004000+4 3.961929+1         -1          0          0          12025 1451    1
+ 0.000000+0 0.000000+0          0          0          0          62025 1451    2
+ 9.986200-1 1.500000+8          1          0      10010          82025 1451    3
+ 0.000000+0 0.000000+0          0          0        152          22025 1451    4
+ 20-Ca- 40 LANL       EVAL-MAR97 M.B.CHADWICK & P.G.YOUNG         2025 1451    5
+ CH97,CH99            DIST-AUG24 REV1-NOV19            20240830   2025 1451    6
+---- ENDF/B-VIII.1    MATERIAL 2025         REVISION 1            2025 1451    7
+----- INCIDENT-PROTON DATA                                        2025 1451    8
+------ ENDF-6                                                     2025 1451    9
+                                                                  2025 1451   10
+Oct 22,2004, Holly Trellue remade mf6mt5 using corrected gnash    2025 1451   11
+code, to fix an earlier bug. Impact is reduced sec. particle prod.2025 1451   12
+for new ENDF/B-VII release                                        2025 1451   13
+ **************************************************************** 2025 1451   14
+                                                                  2025 1451   15
+ ENDF/B-VI MOD 1 Evaluation, March 1997, M.B. Chadwick and        2025 1451   16
+                 P.G. Young (LANL)                                2025 1451   17
+                                                                  2025 1451   18
+ Produced with FKK/GNASH/GSCAN code in cooperation with ECN Petten2025 1451   19
+                                                                  2025 1451   20
+  This evaluation provides a complete representation of the       2025 1451   21
+nuclear data needed for transport, damage, heating,               2025 1451   22
+radioactivity, and shielding applications over the incident       2025 1451   23
+proton energy range from 1 to 150 MeV.  Production cross          2025 1451   24
+sections and emission spectra are given for neutrons, protons,    2025 1451   25
+deuterons, tritons, alpha particles, gamma rays, and all          2025 1451   26
+residual nuclides produced (A>5) in the reaction chains.          2025 1451   27
+  To summarize, the ENDF sections with non-zero data are:         2025 1451   28
+                                                                  2025 1451   29
+  MF=3 MT=  2  Integral of nuclear plus interference components   2025 1451   30
+               of the elastic scattering cross section            2025 1451   31
+                                                                  2025 1451   32
+       MT=  5  Sum of binary (n,n') and (n,x) reactions           2025 1451   33
+                                                                  2025 1451   34
+  MF=6 MT=  2  Elastic angular distributions given as ratios of   2025 1451   35
+               the differential nuclear-plus-interference to the  2025 1451   36
+               integrated value.                                  2025 1451   37
+                                                                  2025 1451   38
+       MT=  5  Production cross sections and energy-angle         2025 1451   39
+               distributions for emission neutrons, protons,      2025 1451   40
+               deuterons, and alphas; and angle-integrated        2025 1451   41
+               spectra for gamma rays and residual nuclei that    2025 1451   42
+               are stable against particle emission               2025 1451   43
+                                                                  2025 1451   44
+  The evaluation is based on nuclear model calculations that      2025 1451   45
+have been benchmarked to experimental data. We use the GNASH      2025 1451   46
+code system [Yo92], which utilizes Hauser-Feshbach statistical,   2025 1451   47
+preequilibrium and direct-reaction theories. Spherical optical    2025 1451   48
+model calculations are used to obtain particle transmission       2025 1451   49
+coefficients for the Hauser-Feshbach calculations, as well as     2025 1451   50
+for the elastic neutron angular distributions.                    2025 1451   51
+  Cross sections and spectra for producing individual residual    2025 1451   52
+nuclei are included for reactions that exceed a cross section of  2025 1451   53
+approximately 1 nb at any energy. The energy-angle-correlations   2025 1451   54
+for all outgoing particles are based on Kalbach systematics       2025 1451   55
+[Ka88].                                                           2025 1451   56
+  A model was developed to calculate the energy distributions of  2025 1451   57
+all recoil nuclei in the GNASH calculations [Ch96a]. The recoil   2025 1451   58
+energy distributions are represented in the laboratory system in  2025 1451   59
+MT=5, MF=6, and are given as isotropic in the lab system. All     2025 1451   60
+other data in MT=5,MF=6 are given in the center-of-mass system.   2025 1451   61
+This method of representation utilizes the LCT=3 option approved  2025 1451   62
+at the November, 1996, CSEWG meeting..                            2025 1451   63
+  The starting point for this evaluation was the previous         2025 1451   64
+Livermore (1995) evaluation by Chadwick and Young for neutrons up 2025 1451   65
+to 100 MeV [Ch95], and protons up to 250 MeV [Ch96b]. The main    2025 1451   66
+additions in the current work were: (1) Extension of the neutron  2025 1451   67
+calculations to higher energies; (2) Inclusion of direct inelastic2025 1451   68
+scattering to low-lying collective states using ECIS; (3)         2025 1451   69
+inclusion of a renormalization of the calculated results to       2025 1451   70
+circumvent a numerical inaccuracy at higher incident energies     2025 1451   71
+(>150 MeV) which ensure the individual reactions sum to the       2025 1451   72
+evaluated nonelastic cross section; (4) inclusion of A>4 nuclide  2025 1451   73
+production and nuclide energy spectra; (5) inclusion of triton    2025 1451   74
+emission; and (6) utilization of ENDF-6 format.                   2025 1451   75
+  The neutron total cross section was evaluated from available    2025 1451   76
+experimental data.  The evaluation was based primarily on Finlay's2025 1451   77
+1993 high-accuracy measurements [Fi93].                           2025 1451   78
+  The optical potential of Islam [Is88] specially developed for   2025 1451   79
+n+Ca elastic scattering, was used for neutrons from 20 to 60 MeV, 2025 1451   80
+and above this energy the Madland global potential was used       2025 1451   81
+[Ma88]. The Wilmore-Hodgson potential was used for neutrons below 2025 1451   82
+20 MeV [Wi64].  For incident protons, the Islam neutron potential 2025 1451   83
+was modified to account for proton scattering from 20 to 60 MeV,  2025 1451   84
+and again the Madland global potential was used at higher         2025 1451   85
+energies. The Becchetti-Greenlees potential was used for protons  2025 1451   86
+below 20 MeV [Be69].  For deuterons, tritons and alphas the method2025 1451   87
+of Watanabe, which uses a modified Perey potential [Pe63], was    2025 1451   88
+applied at all energies [Ma88].                                   2025 1451   89
+  Direct inelastic scattering to the low-lying collective states  2025 1451   90
+was calculated with the ECIS code. Deformation lengths were taken 2025 1451   91
+from the works of Alarcon and Rapaport [Al87] and Honore et al.   2025 1451   92
+[Ho86], giving: 3- (Ex= 3.736 MeV, delta=1.340), 2+ (Ex=3.904,    2025 1451   93
+delta=0.360), and 5- (Ex=4.492, delta=0.930).                     2025 1451   94
+  While the above optical potentials did describe the experimental2025 1451   95
+neutron and proton nonelastic cross section data fairly well, we  2025 1451   96
+modified these theoretical predictions slightly to better agree   2025 1451   97
+with the measurements, and renormalized the transmission          2025 1451   98
+coefficients accordingly.  The calculated neutron elastic         2025 1451   99
+scattering distributions agree well with experimental data.       2025 1451  100
+  Nuclear level densities were taken from the Ignatyuk model      2025 1451  101
+[Ig75], which includes a washing out of shell effects with        2025 1451  102
+increasing excitation energy, and gamma-ray strength functions    2025 1451  103
+were obtained from the model of Kopecky and Uhl [Ko90].           2025 1451  104
+                                                                  2025 1451  105
+****************************************************************  2025 1451  106
+                                                                  2025 1451  107
+REFERENCES                                                        2025 1451  108
+                                                                  2025 1451  109
+[Al87]  R. Alarcon and J. Rapaport, Nucl.Phys. A462, 445 (1987)   2025 1451  110
+[Be69]  F.D. Becchetti, Jr., and G.W. Greenlees, Phys. Rev.       2025 1451  111
+  182, 1190 (1969)                                                2025 1451  112
+[Ch95]  M.B. Chadwick, "Evaluated cross section libraries and     2025 1451  113
+  kerma factors for neutrons up to 100 MeV on 40Ca and 31P",      2025 1451  114
+  Lawrence Livermore National Laboratory report UCRL-ID-122753    2025 1451  115
+  (1995)                                                          2025 1451  116
+[Ch96a] M.B. Chadwick, P.G. Young, R.E. MacFarlane, and A.J.      2025 1451  117
+  Koning, "High-Energy Nuclear Data Libraries for Accelerator-    2025 1451  118
+  Driven Technologies:  Calculational Method for Heavy Recoils,"  2025 1451  119
+  Proc. of 2nd Int. Conf. on Accelerator Driven Transmutation     2025 1451  120
+  Technology and Applications, Kalmar, Sweden, 3-7 June 1996      2025 1451  121
+[Ch96b] M.B. Chadwick and P.G. Young, ``Proton nuclear            2025 1451  122
+  interactions with 12C, 14N, 16O, 31P, 40Ca for radiotherapy     2025 1451  123
+  applications: evaluated data libraries up to 250 MeV'', Los Alam2025 1451  124
+  National Laboratory report LA-UR-96-0498.                       2025 1451  125
+[Ch97]  M.B. Chadwick and P.G. Young, "GNASH Calculations of      2025 1451  126
+  n,p + 40Ca and Benchmarking of Results" in APT PROGRESS REPORT: 2025 1451  127
+  1 February - 1 March 1997, internal Los Alamos National         2025 1451  128
+  Laboratory memo T-2-97/M-10, 7 Mar. 1997 from R.E. MacFarlane to2025 1451  129
+  L. Waters.                                                      2025 1451  130
+[Ch99]  M.B. Chadwick, P.G. Young, R.E. MacFarlane, et al., Los   2025 1451  131
+  National Laboratory report LA-UR-99-1222 (1999)                 2025 1451  132
+[Fi93]  R.W. Finley, W.P. Abfalterer, G.Fink, et al., Phys.Rev.C  2025 1451  133
+  47, 237 (1993)                                                  2025 1451  134
+[Fu91]  C. Y. Fu and D. M. Hetrick, Evaluation of neutron cross   2025 1451  135
+  sections of Ca for Release 0 of ENDF/B-VI, 1991.                2025 1451  136
+[Ho86]  G.M. Honore et al., Phys.Rev.C 33, 1129 (1986)            2025 1451  137
+[Ig75]  A. V. Ignatyuk, G. N. Smirenkin, and A. S. Tishin,        2025 1451  138
+  Sov. J. Nucl. Phys. 21, 255 (1975)                              2025 1451  139
+[Is88]  M.S. Islam, R.W. Finlay, J.S. Petler, et al., Phys.Med.   2025 1451  140
+  Biol. 33, 315 (1988)                                            2025 1451  141
+[Ka88]  C. Kalbach, Phys.Rev.C 37, 2350 (1988); see also          2025 1451  142
+  C. Kalbach and F. M. Mann, Phys.Rev.C 23, 112 (1981)            2025 1451  143
+[Ko90]  J. Kopecky and M. Uhl, Phys.Rev.C 41, 1941 (1990)         2025 1451  144
+[Ma88]  D.G. Madland, "Recent Results in the Development of a     2025 1451  145
+  Global Medium-Energy Nucleon-Nucleus Optical-Model Potential,"  2025 1451  146
+  Proc. OECD/NEANDC Specialist's Mtg. on Preequilibrium Nuclear   2025 1451  147
+  Reactions, Semmering, Austria, 10-12 Feb. 1988, NEANDC-245 'U'  2025 1451  148
+  (1988)                                                          2025 1451  149
+[Pe63]  C.M. Perey and F.G. Perey, Phys.Rev. 132, 755 (1963)      2025 1451  150
+[Wi64]  D. Wilmore and P.E. Hodgson, Nucl. Phys. 55, 673 (1964)   2025 1451  151
+[Yo92]  P.G. Young, E.D. Arthur, and M.B. Chadwick,               2025 1451  152
+  "Comprehensive Nuclear Model Calculations: Introduction to the  2025 1451  153
+  Theory and Use of the GNASH Code," LA-12343-MS (1992)           2025 1451  154
+                                                                  2025 1451  155
+ ************************ C O N T E N T S ************************2025 1451  156
+                                1        451        161          12025 1451  157
+                                3          2         18          12025 1451  158
+ 0.000000+0 0.000000+0          0          0          0          02025 1  099999
+ 0.000000+0 0.000000+0          0          0          0          02025 0  0    0
+ 2.004000+4 3.961929+1          0          0          0          02025 3  2    1
+ 0.000000+0 0.000000+0          0          0          1         442025 3  2    2
+         44          2                                            2025 3  2    3
+ 1.000000+6-2.050742-4 2.000000+6-1.724425-3 3.000000+6-3.479923-22025 3  2    4
+ 4.000000+6-1.077994-1 5.000000+6-5.503312-2 6.000000+6 1.886507-22025 3  2    5
+ 7.000000+6 3.392995-2 8.000000+6-6.470846-3 9.000000+6-7.348453-22025 3  2    6
+ 1.000000+7-1.448622-1 1.100000+7-2.095528-1 1.200000+7-2.625670-12025 3  2    7
+ 1.300000+7-3.031032-1 1.400000+7-3.309036-1 1.500000+7-3.477891-12025 3  2    8
+ 1.600000+7-3.565736-1 1.700000+7-3.593487-1 1.800000+7-3.579615-12025 3  2    9
+ 1.900000+7-3.532998-1 2.000000+7-3.284387-1 2.200000+7-3.088632-12025 3  2   10
+ 2.400000+7-2.852124-1 2.600000+7-2.602036-1 2.800000+7-2.359788-12025 3  2   11
+ 3.000000+7-2.133073-1 3.500000+7-1.646560-1 4.000000+7-1.271139-12025 3  2   12
+ 4.500000+7-9.902845-2 5.000000+7-7.816842-2 5.500000+7-6.280514-22025 3  2   13
+ 6.000000+7-5.138807-2 6.500000+7-4.281801-2 7.000000+7-3.725997-22025 3  2   14
+ 7.500000+7-3.187748-2 8.000000+7-2.763183-2 8.500000+7-2.423233-22025 3  2   15
+ 9.000000+7-2.149913-2 9.500000+7-1.928750-2 1.000000+8-1.747147-22025 3  2   16
+ 1.100000+8-1.469275-2 1.200000+8-1.263268-2 1.300000+8-1.098866-22025 3  2   17
+ 1.400000+8-9.511660-3 1.500000+8-8.103935-3                      2025 3  2   18
+ 0.000000+0 0.000000+0          0          0          0          02025 3  099999
+ 0.000000+0 0.000000+0          0          0          0          02025 0  0    0
+ 0.000000+0 0.000000+0          0          0          0          0   0 0  0    0
+ 0.000000+0 0.000000+0          0          0          0          0  -1 0  0    0

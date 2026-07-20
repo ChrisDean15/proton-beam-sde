@@ -1,0 +1,455 @@
+Retrieved by E4-Web: 2026/06/29,05:54:42                             1 0  0    0
+ 1.202400+4 2.377900+1         -1          0         17          11225 1451    1
+ 0.000000+0 0.000000+0          0          0          0          61225 1451    2
+ 9.986230-1 2.000000+8          1          0      10010       20251225 1451    3
+ 0.000000+0 0.000000+0          0          0        423          21225 1451    4
+ 12-Mg- 24 SCK - KIT  EVAL-FEB25 Stankovskiy,Konobeyev,Leichtle   1225 1451    5
+ JEFF-4               DIST-      REV1-                            1225 1451    6
+----JEFF-4            Material 1225         REVISION 1            1225 1451    7
+-----Incident proton   data                                       1225 1451    8
+------ENDF-6 Format                                               1225 1451    9
+                                                                  1225 1451   10
+!!!!!!!!!!!!!!!!!!!!!!!!!!!   JEFF-4   !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451   11
+TENDL-2023 evaluation was taken as reference as a result          1225 1451   12
+of analysis of neutron production (multiplicities, energy spectra 1225 1451   13
+and double differential cross sections) [1].                      1225 1451   14
+Residual product multiplicities in MF=6, MT=5 were replaced by    1225 1451   15
+PADF-2 evaluations [2] as follows. Since PADF-2 uses  MF=10, MT=5 1225 1451   16
+representation for residual product cross sections, their         1225 1451   17
+multiplicities were obtained by dividing by the total nonelastic  1225 1451   18
+reaction cross section MF=3, MT=5 from the reference evaluation,  1225 1451   19
+and written using the reference energy grid from MF=6, MT=5.      1225 1451   20
+Residual products from PADF-2 evaluation, which are not available 1225 1451   21
+in reference evaluation, were added to MF=6, MT=5 using LAW=0.    1225 1451   22
+There were few cases of residual products from reference file     1225 1451   23
+in ground and metastable state, for which PADF-2 evaluation       1225 1451   24
+considers only a single state, therefore reference multiplicities 1225 1451   25
+were not altered. Same concerns photon production, which is not   1225 1451   26
+provided in PADF-2.                                               1225 1451   27
+                                                                  1225 1451   28
+REFERENCES:                                                       1225 1451   29
+                                                                  1225 1451   30
+1. A.Stankovskiy, A.Konobeyev, D.Leichtle, JEFF-4 proton induced  1225 1451   31
+   library, Proc. ND2025, Madrid, Spain (2025).                   1225 1451   32
+2. A.Konobeyev, D.Leichtle, KIT Scientific working papers 204,    1225 1451   33
+   ISSN: 2194-1629 (2022).                                        1225 1451   34
+                                                                  1225 1451   35
+!!!!!!!!!!!!!!!!!!!!!!!!!!!   PADF-2   !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451   36
+                                                                  1225 1451   37
+             Proton Activation Data File -2                       1225 1451   38
+             ------------------------------                       1225 1451   39
+                                                                  1225 1451   40
+Authors: A.Yu.Konobeyev, D.Leichtle                               1225 1451   41
+                                                                  1225 1451   42
+                                                                  1225 1451   43
+                                                                  1225 1451   44
+Data evaluation was peformed using experimental data [1-27] and   1225 1451   45
+results of model calculations.                                    1225 1451   46
+                                                                  1225 1451   47
+Cross sections were calculated using various codes and nuclear    1225 1451   48
+models [28-32]. Results served both for comparison and control,   1225 1451   49
+and were used directly for evaluation.                            1225 1451   50
+                                                                  1225 1451   51
+The following codes were used:                                    1225 1451   52
+                                                                  1225 1451   53
+ - ALICE/ASH with emission of heavy clusters [28],                1225 1451   54
+                                                                  1225 1451   55
+ - TALYS [29] applying different models for the calculation of    1225 1451   56
+   nuclear level density with ldmodel parameter from 1 to 3,      1225 1451   57
+                                                                  1225 1451   58
+ - TALYS-G [30] implementing the GDH model of M.Blann,            1225 1451   59
+                                                                  1225 1451   60
+ - CEM03 [31],                                                    1225 1451   61
+                                                                  1225 1451   62
+ - PHITS [32]                                                     1225 1451   63
+                                                                  1225 1451   64
+The latest versions of TALYS and PHITS codes used correspond to   1225 1451   65
+the time of the evaluation.                                       1225 1451   66
+                                                                  1225 1451   67
+                                                                  1225 1451   68
+                                                                  1225 1451   69
+                                                                  1225 1451   70
+References                                                        1225 1451   71
+                                                                  1225 1451   72
+1. V.N.Aleksandrov, M.P.Semenova, V.G.Semenov, The production of  1225 1451   73
+Be-7 at middle energy protons interaction with light nuclei,      1225 1451   74
+Vopr.Atomn.Nauki i Tekhn., Ser.Yad..Fiz..Issledo., Issue.8/16,    1225 1451   75
+p.17 (1990)                                                       1225 1451   76
+                                                                  1225 1451   77
+2. F.Baros, S.Regnier, Measurement of cross sections for Na-22,   1225 1451   78
+Ne-20-22 and Ar-36-42 in the spallation of Mg, Al, Si, Ca and     1225 1451   79
+Fe. production ratios of some cosmogenic nuclides in meteorites,  1225 1451   80
+Journal de Physique, vol.45, p.855 (1984)                         1225 1451   81
+                                                                  1225 1451   82
+3. F.O.Bartell, S.Softky, Excitation functions for deuterons and  1225 1451   83
+protons on Mg, Phys. Rev., vol.84, p.463 (1951)                   1225 1451   84
+                                                                  1225 1451   85
+4. R.E.Batzel, G.H.Coleman, Cross sections for the formation of   1225 1451   86
+22Na from aluminium and magnesium bombarded with protons, Phys.   1225 1451   87
+Rev., vol.93, p.280 (1954)                                        1225 1451   88
+                                                                  1225 1451   89
+5. A.Belhout, J.Kiener, A.Coc, J.Duprat, C.Engrand, C.Fitoussi,   1225 1451   90
+M.Gounelle, A.Lefebvre-Schuhl, N.de Sereville, V.Tatischeff,      1225 1451   91
+J.-P.Thibaud, M.Chabot, F.Hammache, H.Benhabiles-Mezhoud,         1225 1451   92
+Gamma-ray production by proton and alpha-particle induced         1225 1451   93
+reactions on C-12, O-16, Mg-24 and Fe, Phys. Rev. C, vol.76,      1225 1451   94
+p.034607 (2007)                                                   1225 1451   95
+                                                                  1225 1451   96
+6. R.Bimbot, H.Gauvin, Spallation reactions of light nuclei       1225 1451   97
+induced by protons from 50, 100 to 153 MeV, Comptes Rendus,       1225 1451   98
+Serie B, Physique, vol.273, p.1054 (1971)                         1225 1451   99
+                                                                  1225 1451  100
+7. R.Bodemann, H.-J.Lange, I.Leya, R.Michel, T.Schiekel,          1225 1451  101
+R.Rosel, U.Herpers, H.J.Hofmann, B.Dittrich, M.Suter, W.Woelfli,  1225 1451  102
+B.Holmqvist, H.Conde, P.Malmborg, Production of residual nuclei   1225 1451  103
+by proton-induced reactions on C, N, O, Mg, Al and Si, Nucl.      1225 1451  104
+Instr. Meth. Phys. Res. B, vol.82, p.9 (1993)                     1225 1451  105
+                                                                  1225 1451  106
+8. B.Dittrich, U.Herpers, H.J.Hofmann, W.Wolfli, R.Bodemann,      1225 1451  107
+M.Lupke, R.Michel, P.Dragovitsch, D.Filges, AMS measurements of   1225 1451  108
+thin-target cross sections for the production of 10-Be and 26-Al  1225 1451  109
+by high-energy protons, Nucl. Instr. Meth. Phys. Res. B, vol.52,  1225 1451  110
+p.588 (1990)                                                      1225 1451  111
+                                                                  1225 1451  112
+9. I.Dostrovsky, H.Gauvin, M.Lefort, (p,xp) and (p,xpya)          1225 1451  113
+reactions of 156-MeV protons with light targets (A=11 to A=27),   1225 1451  114
+Phys. Rev., vol.169, p.836 (1968)                                 1225 1451  115
+                                                                  1225 1451  116
+10. M.Furukawa, K.Shizuri, K.Komura, K.Sakamoto, S.Tanaka,        1225 1451  117
+Production of 26-Al and 22-Na from proton bombardment of Si, Al   1225 1451  118
+and Mg, Nucl. Phys. A, vol.174, p.539 (1971)                      1225 1451  119
+                                                                  1225 1451  120
+11. G.W.Greenless, A.E.Souch, The scattering of 9.6 MeV protons   1225 1451  121
+by Mg, Proc.Physical Society (London), Section A, vol.69, p.686   1225 1451  122
+(1956)                                                            1225 1451  123
+                                                                  1225 1451  124
+12. W.Gruhle, B.Kober, The reactions 0-16(P, A), Ne-20(P, A),     1225 1451  125
+and Mg-24(P, A), Nucl. Phys. A, vol.286, p.523 (1977)             1225 1451  126
+                                                                  1225 1451  127
+13. H.R.Heydegger, A.L.Turkevich, A.Van Ginneken, P.H.Walpole,    1225 1451  128
+Production of Be-7, Na-22 and Mg-28 from Mg, Al and SiO(2)        1225 1451  129
+protons between 82 and 800 MeV, Phys. Rev. C, vol.14, p.1506      1225 1451  130
+(1976)                                                            1225 1451  131
+                                                                  1225 1451  132
+14. A.J.T.Jull, S.Cloudt, D.J.Donahue, J.M.Sisterson, R.C.Reedy,  1225 1451  133
+J.Masarik, 14C depth profiles in apollo 15 and 17 core and lunar  1225 1451  134
+rock 68815, Geochimica et Cosmochimica Acta, vol.62, p.3025       1225 1451  135
+(1998)                                                            1225 1451  136
+                                                                  1225 1451  137
+15. R.G.Korteling, A.A.Caretto JR, Energy dependence of Na22 and  1225 1451  138
+Na24 production cross sections with 100- to 400-MeV protons,      1225 1451  139
+Phys. Rev. C, vol.1, p.1960 (1970)                                1225 1451  140
+                                                                  1225 1451  141
+16. M.C.Lagunas-Solar, O.F.Carvacho, Cyclotron production of PET  1225 1451  142
+radionuclides: 18F (109.77 min; beta+ 96.9%; EC 3.1%) from        1225 1451  143
+high-energy protons on natural magnesium targets, Appl. Rad.      1225 1451  144
+Isot., vol.41, p.349 (1990)                                       1225 1451  145
+                                                                  1225 1451  146
+17. I.Leya, H.Busemann, H.Baur, R.Wieler, M.Gloris, S.Neumann,    1225 1451  147
+R.Michel, F.Sudbrock, U.Herpers, Cross sections for the           1225 1451  148
+proton-induced production of He and Ne isotopes from magnesium,   1225 1451  149
+aluminum and silicon, Nucl. Instr. Meth. Phys. Res. B, vol.145,   1225 1451  150
+p.449 (1998)                                                      1225 1451  151
+                                                                  1225 1451  152
+18. R.H.Lindsay, E.F.Neuzil, (p,Be7) reaction in Al and Mg from   1225 1451  153
+27 to 31.5 MeV, Phys. Rev., vol.127, p.1269 (1962)                1225 1451  154
+                                                                  1225 1451  155
+19. K.Matsuda, Y.Nagahara, Y.Oda, N.Yamamuro, S.Kobayashi, The    1225 1451  156
+elastic and inelastic scattering of protons by magnesium in the   1225 1451  157
+energy range from 7.3 MeV to 15.9 MeV, Nucl. Phys., vol.27,       1225 1451  158
+Issue.1, p.1 (1961)                                               1225 1451  159
+                                                                  1225 1451  160
+20. J.W.Meadows, R.B.Holt, Excitation functions for proton        1225 1451  161
+reactions with sodium and magnesium, Phys. Rev., vol.83, p.47     1225 1451  162
+(1951)                                                            1225 1451  163
+                                                                  1225 1451  164
+21. J.W.Meadows, R.B.Holt, Some excitation functions for protons  1225 1451  165
+ON magnesium, Phys. Rev., vol.83, p.1257 (1951)                   1225 1451  166
+                                                                  1225 1451  167
+22. R.Michel, R.Bodemann, H.Busemann, R.Daunke, M.Gloris,         1225 1451  168
+H.-J.Lange, B.Klug, A.Krins, I.Leya, M.Luepke, S.Neumann,         1225 1451  169
+H.Reinhardt, M.Schnatz-Buettgen, U.Herpers, Th.Schiekel,          1225 1451  170
+F.Sudbrock, B.Holmqvist, H.Conde, P.Malmborg, M.Suter,            1225 1451  171
+B.Dittrich-Hannen, P.-W.Kubik, H.-A.Sinal, D.Filges, Cross        1225 1451  172
+sections for the production of residual nuclides by low- and      1225 1451  173
+medium-energy protons from the target elements C, N, O, Mg, Al,   1225 1451  174
+Si, Ca, Ti, V, Mn, Fe, Co, Ni, Cu, Sr, Y, Zr, Nb, Ba and Au,      1225 1451  175
+Nucl. Instr. Meth. Phys. Res. B, vol.129, p.153 (1997)            1225 1451  176
+                                                                  1225 1451  177
+23. P.Pulfer, determination of absolute production cross          1225 1451  178
+sections for proton induced reactions in the energy range 15 to   1225 1451  179
+72 MeV and at 1820 MeV.- (in german), : Pulfer (1979)             1225 1451  180
+                                                                  1225 1451  181
+24. G.V.S.Rayudu, Formation cross sections of various             1225 1451  182
+radionuclides from Ni, Fe, Si, Mg, O and C for protons of         1225 1451  183
+energies between 130 and 400 MeV, Canadian Journal of Chemistry,  1225 1451  184
+vol.42, p.1149 (1964)                                             1225 1451  185
+                                                                  1225 1451  186
+25. J.M.Sisterson, K.Kim, A.Beverding, P.A.J.Englert,             1225 1451  187
+M.W.Caffee, J.Vincent, C.Castaneda, R.C.Reedy, Measuring          1225 1451  188
+excitation functions needed to interpret cosmogenic nuclide       1225 1451  189
+production in lunar rocks, Conf.on Appl.of Accel.in Res.and       1225 1451  190
+Ind., Denton, USA, 1996, p.811 (1996)                             1225 1451  191
+                                                                  1225 1451  192
+26. J.R.Walton, D.Heymann, A.Yaniv, D.Edgerley, M.W.Rowe, Cross   1225 1451  193
+sections for He and Ne isotopes in natural Mg, Al, and Si, He     1225 1451  194
+isotopes in Ca-F(2), Ar isotopes in natural Ca and radionuclides  1225 1451  195
+in natural Al, Si, Ti, Cr and stainless steel induced by 12-To    1225 1451  196
+45-MeV protons, Journal of Geophysical Research, vol.81, p.5689   1225 1451  197
+(1976)                                                            1225 1451  198
+                                                                  1225 1451  199
+27. R.L.Wilson, D.J.Frantsvog, A.R.Kunselman, C.Detraz,           1225 1451  200
+C.S.Zasdins, Excitation functions of reactions induced by 1H and  1225 1451  201
+2H ions on natural Mg, Al and Si, Phys. Rev. C, vol.13, p.976     1225 1451  202
+(1976)                                                            1225 1451  203
+                                                                  1225 1451  204
+28. A.Yu. Konobeyev, U. Fischer, Simulation of heavy cluster      1225 1451  205
+emission in nucleon induced reactions on targets from C to Bi at  1225 1451  206
+intermediate energies, KIT Scientific Report 7684 (2014),         1225 1451  207
+https://doi.org/10.5445/KSP/1000043611                            1225 1451  208
+                                                                  1225 1451  209
+29. A.J. Koning, S. Hilaire, M.C. Duijvestijn, TALYS-1.0, Proc.   1225 1451  210
+Int. Conf. on Nucl. Data for Sci. and Technol., April 22-27, 2007 1225 1451  211
+Nice, EDP Sciences, p. 211 (2008),                                1225 1451  212
+https://doi.org/10.1051/ndata:07767                               1225 1451  213
+                                                                  1225 1451  214
+30. TALYS with implemented GDH model,                             1225 1451  215
+https://www.inr.kit.edu/940.php                                   1225 1451  216
+                                                                  1225 1451  217
+31. S.G. Mashnik, L.M. Kerby, MCNP6 simulation of light and       1225 1451  218
+medium nuclei fragmentation at intermediate energies, EPJ Web     1225 1451  219
+of Conferences, vol.117, p. 03008 (2016),                         1225 1451  220
+https://doi.org/10.1051/epjconf/201611703008                      1225 1451  221
+                                                                  1225 1451  222
+32. T. Sato, Y. Iwamoto, Sh. Hashimoto, T. Ogawa, T. Furuta,      1225 1451  223
+Shin-ichiro Abe, T. Kai, Pi-En Tsai, H.N. Ratliff, N. Matsuda,    1225 1451  224
+H. Iwase, N. Shigyo, L. Sihver, K. Niita, Features of particle    1225 1451  225
+and heavy ion transport code system (PHITS), J. Nucl. Sci.        1225 1451  226
+Technol. 55, p. 684 (2018).,                                      1225 1451  227
+https://doi.org/10.1080/00223131.2017.1419890                     1225 1451  228
+                                                                  1225 1451  229
+                                                                  1225 1451  230
+                                                                  1225 1451  231
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TENDL-2023 !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451  232
+TENDL-2023 (TALYS Evaluated Nuclear Data Library)                 1225 1451  233
+                                                                  1225 1451  234
+Mg024 proton general purpose library                              1225 1451  235
+                                                                  1225 1451  236
+Author: A.J. Koning, IAEA                                         1225 1451  237
+                                                                  1225 1451  238
+Ref.: A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,         1225 1451  239
+      M. Fleming, and S. van der Marck, TENDL: Complete nuclear   1225 1451  240
+      data library for innovative nuclear science and             1225 1451  241
+      technology, Nuclear Data Sheets 155, 1 (2019).              1225 1451  242
+                                                                  1225 1451  243
+************** G E N E R A L   I N F O R M A T I O N *************1225 1451  244
+                                                                  1225 1451  245
+This evaluated data file is based on a software system built      1225 1451  246
+around the nuclear model code TALYS [kon07], version 2.0. It is   1225 1451  247
+part of a large collection of isotopic evaluations, all created by1225 1451  248
+running the system with either adjusted or default input          1225 1451  249
+parameters. This means that the data in the entire collection have1225 1451  250
+been tested in detail for many isotopes against individual        1225 1451  251
+experimental data, while for other isotopes it is only as good as 1225 1451  252
+the global quality of TALYS at the moment. The mutual quality of  1225 1451  253
+all individual data files is however consistent: The same set of  1225 1451  254
+nuclear models is used and, equally important, the same ENDF-6    1225 1451  255
+formatting procedures for each isotope. The data file has been    1225 1451  256
+created automatically using the ENDF-6 format generator TEFAL.    1225 1451  257
+                                                                  1225 1451  258
+The resulting data file provides a complete representation of     1225 1451  259
+nuclear data needed for transport, activation, damage, heating,   1225 1451  260
+radioactivity, and shielding applications over the incident       1225 1451  261
+proton energy range from 0.25 to 200. MeV.                        1225 1451  262
+                                                                  1225 1451  263
+All transport and activation data for neutrons, charged particles,1225 1451  264
+photons and residual nuclides are filed. This includes cross      1225 1451  265
+sections, angular distributions, double-differential spectra,     1225 1451  266
+isomeric production, discrete and continuum photon production     1225 1451  267
+cross sections, residual production cross sections and recoils.   1225 1451  268
+This general purpose evaluation can thus be used as both          1225 1451  269
+transport and activation library.                                 1225 1451  270
+                                                                  1225 1451  271
+**** N U C L I D E    S P E C I F I C   I N F O R M A T I O N ****1225 1451  272
+                                                                  1225 1451  273
+None                                                              1225 1451  274
+                                                                  1225 1451  275
+***************************** T A L Y S **************************1225 1451  276
+                                                                  1225 1451  277
+TALYS is a computer code system for the prediction and analysis   1225 1451  278
+of nuclear reactions. TALYS simulates reactions that involve      1225 1451  279
+neutrons, gamma-rays, protons, deuterons, tritons, helions and    1225 1451  280
+alpha-particles, in the 1 keV - 200 MeV energy range. This is     1225 1451  281
+achieved by implementing a suite of nuclear reaction models into  1225 1451  282
+a single code system. This nuclear data file is based on a        1225 1451  283
+theoretical analysis that utilizes the optical model, compound    1225 1451  284
+nucleus statistical theory, fission, direct reactions and         1225 1451  285
+pre-equilibrium processes, in combination with databases and      1225 1451  286
+models for nuclear structure. The following output of TALYS is    1225 1451  287
+stored in this data file:                                         1225 1451  288
+                                                                  1225 1451  289
+- Elastic and non-elastic cross sections                          1225 1451  290
+- Elastic scattering angular distributions                        1225 1451  291
+- Recoil data                                                     1225 1451  292
+- Total particle cross sections, e.g. (p,xn), (p,xp),..           1225 1451  293
+- Total particle energy spectra                                   1225 1451  294
+- Total particle double-differential spectra                      1225 1451  295
+- Isomeric and ground state cross sections                        1225 1451  296
+- Residual production cross sections                              1225 1451  297
+                                                                  1225 1451  298
+For a description of the used nuclear models and their            1225 1451  299
+parameterization we refer to [kon19]. If for this specific        1225 1451  300
+nuclide we deviate from the global parameterization, it is made   1225 1451  301
+explicit above under Nuclide Specific Information.                1225 1451  302
+                                                                  1225 1451  303
+***************** F I L E   I N F O R M A T I O N ****************1225 1451  304
+                                                                  1225 1451  305
+##### MF1: GENERAL INFORMATION                                    1225 1451  306
+                                                                  1225 1451  307
+- MT451    : Descriptive data and directory                       1225 1451  308
+                                                                  1225 1451  309
+This text and the full directory of used MF/MT sections.          1225 1451  310
+                                                                  1225 1451  311
+##### MF3: REACTION CROSS SECTIONS                                1225 1451  312
+                                                                  1225 1451  313
+All the data present in the following MT-sections have been       1225 1451  314
+calculated with TALYS, possibly normalized to experimental data.  1225 1451  315
+If the maximal cross section in an excitation function over the   1225 1451  316
+whole energy range does not exceed 1.e-9 b, the MT-number is not  1225 1451  317
+included. Cross sections lower than 1.e-20 b are assumed to have  1225 1451  318
+no physical meaning and are set to zero. All MT numbers extend up 1225 1451  319
+to the highest incident energy.                                   1225 1451  320
+The following reaction channels/MT numbers are generally included:1225 1451  321
+                                                                  1225 1451  322
+- MT2      : Elastic scattering cross section: nuclear +          1225 1451  323
+             interference terms                                   1225 1451  324
+                                                                  1225 1451  325
+Obtained by integrating the "nuclear-plus-interference" angular   1225 1451  326
+distributions of MF=6.  Note that because of the interference     1225 1451  327
+effect, the tabulations in both MF=6 and MF=3 can be negative at  1225 1451  328
+some energies and angles.                                         1225 1451  329
+                                                                  1225 1451  330
+- MT5      : (p,anything) cross section                           1225 1451  331
+                                                                  1225 1451  332
+MT5 contains the reactions which can not be stored in any other   1225 1451  333
+MT-number. The information of MF3/MT5 can be combined with        1225 1451  334
+MF6/MT5 to obtain residual production cross sections particle     1225 1451  335
+production cross sections and (double-)differential cross         1225 1451  336
+sections.                                                         1225 1451  337
+                                                                  1225 1451  338
+##### MF6: PRODUCT ENERGY-ANGLE DISTRIBUTIONS                     1225 1451  339
+                                                                  1225 1451  340
+In MF6 we store all secondary energy, angle, and energy-angle     1225 1451  341
+distributions, as well as all residual and discrete + continuum   1225 1451  342
+photon production cross sections for channels other than capture  1225 1451  343
+(MT102) and reactions to discrete levels (MT51,etc.).             1225 1451  344
+All data are generated with TALYS.                                1225 1451  345
+                                                                  1225 1451  346
+- MT5      : (p,anything) yields and energy-angle distributions   1225 1451  347
+                                                                  1225 1451  348
+MT5 contains, in this order,                                      1225 1451  349
+For neutrons up to alpha particles and photons:                   1225 1451  350
+- the production yields per particle for the whole energy range   1225 1451  351
+- the secondary energy-angle distributions per particles which are1225 1451  352
+  not represented by explicit MT numbers. On a secondary energy   1225 1451  353
+  grid the relative emission spectra are given together with the  1225 1451  354
+  parameters for the Kalbach systematics for angular              1225 1451  355
+  distributions. Inelastic scattering cross sections for discrete 1225 1451  356
+  states have been broadened and added to the continuum spectra.  1225 1451  357
+For each residual product:                                        1225 1451  358
+- the production yields for the whole energy range.               1225 1451  359
+- the recoil                                                      1225 1451  360
+These distributions can be multiplied with MF3/MT5 to get         1225 1451  361
+the production cross sections and (double-)differential cross     1225 1451  362
+sections.                                                         1225 1451  363
+                                                                  1225 1451  364
+##### MF8: RADIOACTIVE DECAY DATA                                 1225 1451  365
+                                                                  1225 1451  366
+For reactions to isomers, MF8 designates where the information    1225 1451  367
+for isomeric versus ground state production, or residual          1225 1451  368
+production can be found, i.e. for each MT number it points to     1225 1451  369
+either MF6, MF9 or MF10.                                          1225 1451  370
+                                                                  1225 1451  371
+##### MF33: COVARIANCES OF NEUTRON CROSS SECTIONS                 1225 1451  372
+                                                                  1225 1451  373
+In MF33, we store the covariances of most, but not all, reaction  1225 1451  374
+channels that are given in MF3. All covariances are generated     1225 1451  375
+with the TASMAN code [kon19], which generates TALYS runs using    1225 1451  376
+a Monte Carlo parameter method.                                   1225 1451  377
+For each MT-number, the information consists of:                  1225 1451  378
+1. Covariances for MTa, Ea and MTa, Ea (variances)                1225 1451  379
+2. Covariances for MTa, Ea and MTa, Eb (correlations for the      1225 1451  380
+   same reaction channel between different energies)              1225 1451  381
+3. Covariances for MTa, Ea and MTb, Ea (correlations between      1225 1451  382
+   different reaction channels for the same energy)               1225 1451  383
+4. Covariances for MTa, Ea and MTb, Eb (correlations between      1225 1451  384
+   different reaction channels for different energies)            1225 1451  385
+Classes 1 and 2 are covered by NI-type subsubsections with        1225 1451  386
+flag LB=5, followed by a LB=8 section which contains              1225 1451  387
+the cross section variances multiplied by 1.e-3. Next, classes 3  1225 1451  388
+and 4 are covered by flag LB=6 to account for the different       1225 1451  389
+energy grids that two correlating MT-sections may have. Since     1225 1451  390
+the total correlation matrix is fully symmetric, we only need to  1225 1451  391
+include the correlation elements between different MT-numbers     1225 1451  392
+once, and we do that in the subsection with the lowest of the     1225 1451  393
+two MT-numbers. We include covariance information for all the     1225 1451  394
+total cross sections, the lumped partial cross sections and the   1225 1451  395
+individual inelastic cross sections per level (MT51,...). We do   1225 1451  396
+not include covariances for MT600 and higher MT-numbers. For the  1225 1451  397
+most important channels, we include cross-channel correlations.   1225 1451  398
+                                                                  1225 1451  399
+***** F I L E   C H E C K I N G   A N D   P R O C E S S I N G ****1225 1451  400
+                                                                  1225 1451  401
+This file has been checked and processed by                       1225 1451  402
+- the BNL checking codes CHECKR-8.24, FIZCON-8.19 and PSYCHE-8.11 1225 1451  403
+  [her08],                                                        1225 1451  404
+- the preprocessing codes PREPRO-2021 [cul21] into a PENDF file,  1225 1451  405
+- the processing code NJOY-2016.68 [mac10] into a PENDF file and a1225 1451  406
+  MCNP (ACE) library,                                             1225 1451  407
+- MCNP for a standard calculation with the ACE library.           1225 1451  408
+                                                                  1225 1451  409
+*********************** R E F E R E N C E S **********************1225 1451  410
+                                                                  1225 1451  411
+[cul21] D.E. Cullen, PREPRO 2021 - ENDF/B Pre-processing codes,   1225 1451  412
+        Technical report IAEA-NDS-0238, IAEA (2021)               1225 1451  413
+[her08] M. Herman, ENDF Utility Codes Release 8.0, (2008)         1225 1451  414
+[kon07] A.J. Koning, S. Hilaire and M.C. Duijvestijn, TALYS-1.0,  1225 1451  415
+        Proceedings of the International Conference on Nuclear    1225 1451  416
+        Data for Science and Technology - ND-2007,                1225 1451  417
+        April 22-27, 2007, Nice, France                           1225 1451  418
+[kon19] A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,       1225 1451  419
+        M. Fleming, and S. van der Marck, TENDL: Complete nuclear 1225 1451  420
+        data library for innovative nuclear science and           1225 1451  421
+        technology, Nuclear Data Sheets 155, 1 (2019)             1225 1451  422
+[mac10] R.E. Macfarlane and A.C. Kahler, Methods for processing   1225 1451  423
+        ENDF/B-VII with NJOY, Nuclear Data Sheets 111, 2739 (2010)1225 1451  424
+                                                                  1225 1451  425
+************************* C O N T E N T S ************************1225 1451  426
+                                                                  1225 1451  427
+                                1        451        434          11225 1451  428
+                                3          2         19          11225 1451  429
+                                                                  1225 1  099999
+                                                                  1225 0  0    0
+ 1.202400+4 2.377900+1          0          0          0          01225 3  2    1
+ 0.000000+0 0.000000+0          0          0          1         471225 3  2    2
+         47          2                                            1225 3  2    3
+ 2.500000+5-1.008080-4 5.000000+5-1.008080-4 1.000000+6-3.899173-31225 3  2    4
+ 2.000000+6 8.241531-3 3.000000+6-1.398109-2 4.000000+6-1.732044-11225 3  2    5
+ 5.000000+6-2.914679-1 6.000000+6-2.807716-1 7.000000+6-2.780488-11225 3  2    6
+ 8.000000+6-2.665849-1 9.000000+6-2.468755-1 1.000000+7-2.221796-11225 3  2    7
+ 1.100000+7-1.959312-1 1.200000+7-1.712572-1 1.300000+7-1.483327-11225 3  2    8
+ 1.400000+7-1.277027-1 1.500000+7-1.090855-1 1.600000+7-9.209670-21225 3  2    9
+ 1.700000+7-7.645856-2 1.800000+7-6.204321-2 1.900000+7-4.877124-21225 3  2   10
+ 2.000000+7-3.656883-2 2.200000+7-1.522021-2 2.400000+7 2.335518-31225 3  2   11
+ 2.600000+7 1.656545-2 2.800000+7 2.800368-2 3.000000+7 3.713646-21225 3  2   12
+ 3.500000+7 5.231506-2 4.000000+7 5.976606-2 4.500000+7 6.225235-21225 3  2   13
+ 5.000000+7 6.163590-2 5.500000+7 5.916369-2 6.000000+7 5.565670-21225 3  2   14
+ 6.500000+7 5.165036-2 7.000000+7 4.748685-2 7.500000+7 4.338120-21225 3  2   15
+ 8.000000+7 3.946557-2 9.000000+7 3.245741-2 1.000000+8 2.665523-21225 3  2   16
+ 1.100000+8 2.199241-2 1.200000+8 1.832363-2 1.300000+8 1.546652-21225 3  2   17
+ 1.400000+8 1.326398-2 1.500000+8 1.157659-2 1.600000+8 1.028953-21225 3  2   18
+ 1.800000+8 8.568066-3 2.000000+8 7.582191-3                      1225 3  2   19
+                                                                  1225 3  099999
+                                                                  1225 0  0    0
+                                                                     0 0  0    0
+                                                                    -1 0  0    0
