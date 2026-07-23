@@ -16,6 +16,10 @@ cut_off = 0.0001
 #Exclude cross section data above Gaussian_SD_cut_off's of this standard deviation. Should be at least 2.5x
 #but can be fitted parameter
 Gaussian_SD_cut_off = 2.5
+## Timestep used for lynch_dahl small scattering SD, this should match the lynch_dahl_timestep
+# in the config file
+lynch_dahl_timestep = 0.05
+
 #Reads in atom data, should be in the format Element, Z, A, extra empty lines will throw error
 with open(File_name) as f:
     for line in f:
@@ -33,15 +37,13 @@ for data in element_data:
         Z_targ = data[1]
         Z_inc = 1
 
-
-
         # SD of multiple scattering contribution, individual scattering should start at 2.5SD. Taken with track length step 0.5mm (first constant in chi_c_sq).
         def multiple_scattering_sd(e, z,a):
             mpcsq = 938.346  # mass of proton * speed of light squared, MeV
             pv = (2 * mpcsq + e) * e / (mpcsq + e)
             betasq = (2 * mpcsq + e) * e / ((mpcsq + e) ** 2)
             p = pv / math.sqrt(betasq) #momentum in MeV / c.
-            chi_c_sq = 0.05*z*(z+1)*0.157/(a*pv*pv)
+            chi_c_sq = lynch_dahl_timestep*z*(z+1)*0.157/(a*pv*pv)
             chi_a_sq_vec = 2.007e-5 * (z**(2 / 3)) * (1 + 3.34 * (z / (137 * math.sqrt(betasq)))**2) / (p * p)
             omega = chi_c_sq / chi_a_sq_vec
             F = 0.98
