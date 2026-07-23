@@ -1,0 +1,1530 @@
+Retrieved by E4-Web: 2026/06/29,05:54:19                             1 0  0    0
+ 1.202400+4 2.377900+1         -1          0         17          11225 1451    1
+ 0.000000+0 0.000000+0          0          0          0          61225 1451    2
+ 9.986230-1 2.000000+8          1          0      10010       20251225 1451    3
+ 0.000000+0 0.000000+0          0          0        423          21225 1451    4
+ 12-Mg- 24 SCK - KIT  EVAL-FEB25 Stankovskiy,Konobeyev,Leichtle   1225 1451    5
+ JEFF-4               DIST-      REV1-                            1225 1451    6
+----JEFF-4            Material 1225         REVISION 1            1225 1451    7
+-----Incident proton   data                                       1225 1451    8
+------ENDF-6 Format                                               1225 1451    9
+                                                                  1225 1451   10
+!!!!!!!!!!!!!!!!!!!!!!!!!!!   JEFF-4   !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451   11
+TENDL-2023 evaluation was taken as reference as a result          1225 1451   12
+of analysis of neutron production (multiplicities, energy spectra 1225 1451   13
+and double differential cross sections) [1].                      1225 1451   14
+Residual product multiplicities in MF=6, MT=5 were replaced by    1225 1451   15
+PADF-2 evaluations [2] as follows. Since PADF-2 uses  MF=10, MT=5 1225 1451   16
+representation for residual product cross sections, their         1225 1451   17
+multiplicities were obtained by dividing by the total nonelastic  1225 1451   18
+reaction cross section MF=3, MT=5 from the reference evaluation,  1225 1451   19
+and written using the reference energy grid from MF=6, MT=5.      1225 1451   20
+Residual products from PADF-2 evaluation, which are not available 1225 1451   21
+in reference evaluation, were added to MF=6, MT=5 using LAW=0.    1225 1451   22
+There were few cases of residual products from reference file     1225 1451   23
+in ground and metastable state, for which PADF-2 evaluation       1225 1451   24
+considers only a single state, therefore reference multiplicities 1225 1451   25
+were not altered. Same concerns photon production, which is not   1225 1451   26
+provided in PADF-2.                                               1225 1451   27
+                                                                  1225 1451   28
+REFERENCES:                                                       1225 1451   29
+                                                                  1225 1451   30
+1. A.Stankovskiy, A.Konobeyev, D.Leichtle, JEFF-4 proton induced  1225 1451   31
+   library, Proc. ND2025, Madrid, Spain (2025).                   1225 1451   32
+2. A.Konobeyev, D.Leichtle, KIT Scientific working papers 204,    1225 1451   33
+   ISSN: 2194-1629 (2022).                                        1225 1451   34
+                                                                  1225 1451   35
+!!!!!!!!!!!!!!!!!!!!!!!!!!!   PADF-2   !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451   36
+                                                                  1225 1451   37
+             Proton Activation Data File -2                       1225 1451   38
+             ------------------------------                       1225 1451   39
+                                                                  1225 1451   40
+Authors: A.Yu.Konobeyev, D.Leichtle                               1225 1451   41
+                                                                  1225 1451   42
+                                                                  1225 1451   43
+                                                                  1225 1451   44
+Data evaluation was peformed using experimental data [1-27] and   1225 1451   45
+results of model calculations.                                    1225 1451   46
+                                                                  1225 1451   47
+Cross sections were calculated using various codes and nuclear    1225 1451   48
+models [28-32]. Results served both for comparison and control,   1225 1451   49
+and were used directly for evaluation.                            1225 1451   50
+                                                                  1225 1451   51
+The following codes were used:                                    1225 1451   52
+                                                                  1225 1451   53
+ - ALICE/ASH with emission of heavy clusters [28],                1225 1451   54
+                                                                  1225 1451   55
+ - TALYS [29] applying different models for the calculation of    1225 1451   56
+   nuclear level density with ldmodel parameter from 1 to 3,      1225 1451   57
+                                                                  1225 1451   58
+ - TALYS-G [30] implementing the GDH model of M.Blann,            1225 1451   59
+                                                                  1225 1451   60
+ - CEM03 [31],                                                    1225 1451   61
+                                                                  1225 1451   62
+ - PHITS [32]                                                     1225 1451   63
+                                                                  1225 1451   64
+The latest versions of TALYS and PHITS codes used correspond to   1225 1451   65
+the time of the evaluation.                                       1225 1451   66
+                                                                  1225 1451   67
+                                                                  1225 1451   68
+                                                                  1225 1451   69
+                                                                  1225 1451   70
+References                                                        1225 1451   71
+                                                                  1225 1451   72
+1. V.N.Aleksandrov, M.P.Semenova, V.G.Semenov, The production of  1225 1451   73
+Be-7 at middle energy protons interaction with light nuclei,      1225 1451   74
+Vopr.Atomn.Nauki i Tekhn., Ser.Yad..Fiz..Issledo., Issue.8/16,    1225 1451   75
+p.17 (1990)                                                       1225 1451   76
+                                                                  1225 1451   77
+2. F.Baros, S.Regnier, Measurement of cross sections for Na-22,   1225 1451   78
+Ne-20-22 and Ar-36-42 in the spallation of Mg, Al, Si, Ca and     1225 1451   79
+Fe. production ratios of some cosmogenic nuclides in meteorites,  1225 1451   80
+Journal de Physique, vol.45, p.855 (1984)                         1225 1451   81
+                                                                  1225 1451   82
+3. F.O.Bartell, S.Softky, Excitation functions for deuterons and  1225 1451   83
+protons on Mg, Phys. Rev., vol.84, p.463 (1951)                   1225 1451   84
+                                                                  1225 1451   85
+4. R.E.Batzel, G.H.Coleman, Cross sections for the formation of   1225 1451   86
+22Na from aluminium and magnesium bombarded with protons, Phys.   1225 1451   87
+Rev., vol.93, p.280 (1954)                                        1225 1451   88
+                                                                  1225 1451   89
+5. A.Belhout, J.Kiener, A.Coc, J.Duprat, C.Engrand, C.Fitoussi,   1225 1451   90
+M.Gounelle, A.Lefebvre-Schuhl, N.de Sereville, V.Tatischeff,      1225 1451   91
+J.-P.Thibaud, M.Chabot, F.Hammache, H.Benhabiles-Mezhoud,         1225 1451   92
+Gamma-ray production by proton and alpha-particle induced         1225 1451   93
+reactions on C-12, O-16, Mg-24 and Fe, Phys. Rev. C, vol.76,      1225 1451   94
+p.034607 (2007)                                                   1225 1451   95
+                                                                  1225 1451   96
+6. R.Bimbot, H.Gauvin, Spallation reactions of light nuclei       1225 1451   97
+induced by protons from 50, 100 to 153 MeV, Comptes Rendus,       1225 1451   98
+Serie B, Physique, vol.273, p.1054 (1971)                         1225 1451   99
+                                                                  1225 1451  100
+7. R.Bodemann, H.-J.Lange, I.Leya, R.Michel, T.Schiekel,          1225 1451  101
+R.Rosel, U.Herpers, H.J.Hofmann, B.Dittrich, M.Suter, W.Woelfli,  1225 1451  102
+B.Holmqvist, H.Conde, P.Malmborg, Production of residual nuclei   1225 1451  103
+by proton-induced reactions on C, N, O, Mg, Al and Si, Nucl.      1225 1451  104
+Instr. Meth. Phys. Res. B, vol.82, p.9 (1993)                     1225 1451  105
+                                                                  1225 1451  106
+8. B.Dittrich, U.Herpers, H.J.Hofmann, W.Wolfli, R.Bodemann,      1225 1451  107
+M.Lupke, R.Michel, P.Dragovitsch, D.Filges, AMS measurements of   1225 1451  108
+thin-target cross sections for the production of 10-Be and 26-Al  1225 1451  109
+by high-energy protons, Nucl. Instr. Meth. Phys. Res. B, vol.52,  1225 1451  110
+p.588 (1990)                                                      1225 1451  111
+                                                                  1225 1451  112
+9. I.Dostrovsky, H.Gauvin, M.Lefort, (p,xp) and (p,xpya)          1225 1451  113
+reactions of 156-MeV protons with light targets (A=11 to A=27),   1225 1451  114
+Phys. Rev., vol.169, p.836 (1968)                                 1225 1451  115
+                                                                  1225 1451  116
+10. M.Furukawa, K.Shizuri, K.Komura, K.Sakamoto, S.Tanaka,        1225 1451  117
+Production of 26-Al and 22-Na from proton bombardment of Si, Al   1225 1451  118
+and Mg, Nucl. Phys. A, vol.174, p.539 (1971)                      1225 1451  119
+                                                                  1225 1451  120
+11. G.W.Greenless, A.E.Souch, The scattering of 9.6 MeV protons   1225 1451  121
+by Mg, Proc.Physical Society (London), Section A, vol.69, p.686   1225 1451  122
+(1956)                                                            1225 1451  123
+                                                                  1225 1451  124
+12. W.Gruhle, B.Kober, The reactions 0-16(P, A), Ne-20(P, A),     1225 1451  125
+and Mg-24(P, A), Nucl. Phys. A, vol.286, p.523 (1977)             1225 1451  126
+                                                                  1225 1451  127
+13. H.R.Heydegger, A.L.Turkevich, A.Van Ginneken, P.H.Walpole,    1225 1451  128
+Production of Be-7, Na-22 and Mg-28 from Mg, Al and SiO(2)        1225 1451  129
+protons between 82 and 800 MeV, Phys. Rev. C, vol.14, p.1506      1225 1451  130
+(1976)                                                            1225 1451  131
+                                                                  1225 1451  132
+14. A.J.T.Jull, S.Cloudt, D.J.Donahue, J.M.Sisterson, R.C.Reedy,  1225 1451  133
+J.Masarik, 14C depth profiles in apollo 15 and 17 core and lunar  1225 1451  134
+rock 68815, Geochimica et Cosmochimica Acta, vol.62, p.3025       1225 1451  135
+(1998)                                                            1225 1451  136
+                                                                  1225 1451  137
+15. R.G.Korteling, A.A.Caretto JR, Energy dependence of Na22 and  1225 1451  138
+Na24 production cross sections with 100- to 400-MeV protons,      1225 1451  139
+Phys. Rev. C, vol.1, p.1960 (1970)                                1225 1451  140
+                                                                  1225 1451  141
+16. M.C.Lagunas-Solar, O.F.Carvacho, Cyclotron production of PET  1225 1451  142
+radionuclides: 18F (109.77 min; beta+ 96.9%; EC 3.1%) from        1225 1451  143
+high-energy protons on natural magnesium targets, Appl. Rad.      1225 1451  144
+Isot., vol.41, p.349 (1990)                                       1225 1451  145
+                                                                  1225 1451  146
+17. I.Leya, H.Busemann, H.Baur, R.Wieler, M.Gloris, S.Neumann,    1225 1451  147
+R.Michel, F.Sudbrock, U.Herpers, Cross sections for the           1225 1451  148
+proton-induced production of He and Ne isotopes from magnesium,   1225 1451  149
+aluminum and silicon, Nucl. Instr. Meth. Phys. Res. B, vol.145,   1225 1451  150
+p.449 (1998)                                                      1225 1451  151
+                                                                  1225 1451  152
+18. R.H.Lindsay, E.F.Neuzil, (p,Be7) reaction in Al and Mg from   1225 1451  153
+27 to 31.5 MeV, Phys. Rev., vol.127, p.1269 (1962)                1225 1451  154
+                                                                  1225 1451  155
+19. K.Matsuda, Y.Nagahara, Y.Oda, N.Yamamuro, S.Kobayashi, The    1225 1451  156
+elastic and inelastic scattering of protons by magnesium in the   1225 1451  157
+energy range from 7.3 MeV to 15.9 MeV, Nucl. Phys., vol.27,       1225 1451  158
+Issue.1, p.1 (1961)                                               1225 1451  159
+                                                                  1225 1451  160
+20. J.W.Meadows, R.B.Holt, Excitation functions for proton        1225 1451  161
+reactions with sodium and magnesium, Phys. Rev., vol.83, p.47     1225 1451  162
+(1951)                                                            1225 1451  163
+                                                                  1225 1451  164
+21. J.W.Meadows, R.B.Holt, Some excitation functions for protons  1225 1451  165
+ON magnesium, Phys. Rev., vol.83, p.1257 (1951)                   1225 1451  166
+                                                                  1225 1451  167
+22. R.Michel, R.Bodemann, H.Busemann, R.Daunke, M.Gloris,         1225 1451  168
+H.-J.Lange, B.Klug, A.Krins, I.Leya, M.Luepke, S.Neumann,         1225 1451  169
+H.Reinhardt, M.Schnatz-Buettgen, U.Herpers, Th.Schiekel,          1225 1451  170
+F.Sudbrock, B.Holmqvist, H.Conde, P.Malmborg, M.Suter,            1225 1451  171
+B.Dittrich-Hannen, P.-W.Kubik, H.-A.Sinal, D.Filges, Cross        1225 1451  172
+sections for the production of residual nuclides by low- and      1225 1451  173
+medium-energy protons from the target elements C, N, O, Mg, Al,   1225 1451  174
+Si, Ca, Ti, V, Mn, Fe, Co, Ni, Cu, Sr, Y, Zr, Nb, Ba and Au,      1225 1451  175
+Nucl. Instr. Meth. Phys. Res. B, vol.129, p.153 (1997)            1225 1451  176
+                                                                  1225 1451  177
+23. P.Pulfer, determination of absolute production cross          1225 1451  178
+sections for proton induced reactions in the energy range 15 to   1225 1451  179
+72 MeV and at 1820 MeV.- (in german), : Pulfer (1979)             1225 1451  180
+                                                                  1225 1451  181
+24. G.V.S.Rayudu, Formation cross sections of various             1225 1451  182
+radionuclides from Ni, Fe, Si, Mg, O and C for protons of         1225 1451  183
+energies between 130 and 400 MeV, Canadian Journal of Chemistry,  1225 1451  184
+vol.42, p.1149 (1964)                                             1225 1451  185
+                                                                  1225 1451  186
+25. J.M.Sisterson, K.Kim, A.Beverding, P.A.J.Englert,             1225 1451  187
+M.W.Caffee, J.Vincent, C.Castaneda, R.C.Reedy, Measuring          1225 1451  188
+excitation functions needed to interpret cosmogenic nuclide       1225 1451  189
+production in lunar rocks, Conf.on Appl.of Accel.in Res.and       1225 1451  190
+Ind., Denton, USA, 1996, p.811 (1996)                             1225 1451  191
+                                                                  1225 1451  192
+26. J.R.Walton, D.Heymann, A.Yaniv, D.Edgerley, M.W.Rowe, Cross   1225 1451  193
+sections for He and Ne isotopes in natural Mg, Al, and Si, He     1225 1451  194
+isotopes in Ca-F(2), Ar isotopes in natural Ca and radionuclides  1225 1451  195
+in natural Al, Si, Ti, Cr and stainless steel induced by 12-To    1225 1451  196
+45-MeV protons, Journal of Geophysical Research, vol.81, p.5689   1225 1451  197
+(1976)                                                            1225 1451  198
+                                                                  1225 1451  199
+27. R.L.Wilson, D.J.Frantsvog, A.R.Kunselman, C.Detraz,           1225 1451  200
+C.S.Zasdins, Excitation functions of reactions induced by 1H and  1225 1451  201
+2H ions on natural Mg, Al and Si, Phys. Rev. C, vol.13, p.976     1225 1451  202
+(1976)                                                            1225 1451  203
+                                                                  1225 1451  204
+28. A.Yu. Konobeyev, U. Fischer, Simulation of heavy cluster      1225 1451  205
+emission in nucleon induced reactions on targets from C to Bi at  1225 1451  206
+intermediate energies, KIT Scientific Report 7684 (2014),         1225 1451  207
+https://doi.org/10.5445/KSP/1000043611                            1225 1451  208
+                                                                  1225 1451  209
+29. A.J. Koning, S. Hilaire, M.C. Duijvestijn, TALYS-1.0, Proc.   1225 1451  210
+Int. Conf. on Nucl. Data for Sci. and Technol., April 22-27, 2007 1225 1451  211
+Nice, EDP Sciences, p. 211 (2008),                                1225 1451  212
+https://doi.org/10.1051/ndata:07767                               1225 1451  213
+                                                                  1225 1451  214
+30. TALYS with implemented GDH model,                             1225 1451  215
+https://www.inr.kit.edu/940.php                                   1225 1451  216
+                                                                  1225 1451  217
+31. S.G. Mashnik, L.M. Kerby, MCNP6 simulation of light and       1225 1451  218
+medium nuclei fragmentation at intermediate energies, EPJ Web     1225 1451  219
+of Conferences, vol.117, p. 03008 (2016),                         1225 1451  220
+https://doi.org/10.1051/epjconf/201611703008                      1225 1451  221
+                                                                  1225 1451  222
+32. T. Sato, Y. Iwamoto, Sh. Hashimoto, T. Ogawa, T. Furuta,      1225 1451  223
+Shin-ichiro Abe, T. Kai, Pi-En Tsai, H.N. Ratliff, N. Matsuda,    1225 1451  224
+H. Iwase, N. Shigyo, L. Sihver, K. Niita, Features of particle    1225 1451  225
+and heavy ion transport code system (PHITS), J. Nucl. Sci.        1225 1451  226
+Technol. 55, p. 684 (2018).,                                      1225 1451  227
+https://doi.org/10.1080/00223131.2017.1419890                     1225 1451  228
+                                                                  1225 1451  229
+                                                                  1225 1451  230
+                                                                  1225 1451  231
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TENDL-2023 !!!!!!!!!!!!!!!!!!!!!!!!!!!1225 1451  232
+TENDL-2023 (TALYS Evaluated Nuclear Data Library)                 1225 1451  233
+                                                                  1225 1451  234
+Mg024 proton general purpose library                              1225 1451  235
+                                                                  1225 1451  236
+Author: A.J. Koning, IAEA                                         1225 1451  237
+                                                                  1225 1451  238
+Ref.: A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,         1225 1451  239
+      M. Fleming, and S. van der Marck, TENDL: Complete nuclear   1225 1451  240
+      data library for innovative nuclear science and             1225 1451  241
+      technology, Nuclear Data Sheets 155, 1 (2019).              1225 1451  242
+                                                                  1225 1451  243
+************** G E N E R A L   I N F O R M A T I O N *************1225 1451  244
+                                                                  1225 1451  245
+This evaluated data file is based on a software system built      1225 1451  246
+around the nuclear model code TALYS [kon07], version 2.0. It is   1225 1451  247
+part of a large collection of isotopic evaluations, all created by1225 1451  248
+running the system with either adjusted or default input          1225 1451  249
+parameters. This means that the data in the entire collection have1225 1451  250
+been tested in detail for many isotopes against individual        1225 1451  251
+experimental data, while for other isotopes it is only as good as 1225 1451  252
+the global quality of TALYS at the moment. The mutual quality of  1225 1451  253
+all individual data files is however consistent: The same set of  1225 1451  254
+nuclear models is used and, equally important, the same ENDF-6    1225 1451  255
+formatting procedures for each isotope. The data file has been    1225 1451  256
+created automatically using the ENDF-6 format generator TEFAL.    1225 1451  257
+                                                                  1225 1451  258
+The resulting data file provides a complete representation of     1225 1451  259
+nuclear data needed for transport, activation, damage, heating,   1225 1451  260
+radioactivity, and shielding applications over the incident       1225 1451  261
+proton energy range from 0.25 to 200. MeV.                        1225 1451  262
+                                                                  1225 1451  263
+All transport and activation data for neutrons, charged particles,1225 1451  264
+photons and residual nuclides are filed. This includes cross      1225 1451  265
+sections, angular distributions, double-differential spectra,     1225 1451  266
+isomeric production, discrete and continuum photon production     1225 1451  267
+cross sections, residual production cross sections and recoils.   1225 1451  268
+This general purpose evaluation can thus be used as both          1225 1451  269
+transport and activation library.                                 1225 1451  270
+                                                                  1225 1451  271
+**** N U C L I D E    S P E C I F I C   I N F O R M A T I O N ****1225 1451  272
+                                                                  1225 1451  273
+None                                                              1225 1451  274
+                                                                  1225 1451  275
+***************************** T A L Y S **************************1225 1451  276
+                                                                  1225 1451  277
+TALYS is a computer code system for the prediction and analysis   1225 1451  278
+of nuclear reactions. TALYS simulates reactions that involve      1225 1451  279
+neutrons, gamma-rays, protons, deuterons, tritons, helions and    1225 1451  280
+alpha-particles, in the 1 keV - 200 MeV energy range. This is     1225 1451  281
+achieved by implementing a suite of nuclear reaction models into  1225 1451  282
+a single code system. This nuclear data file is based on a        1225 1451  283
+theoretical analysis that utilizes the optical model, compound    1225 1451  284
+nucleus statistical theory, fission, direct reactions and         1225 1451  285
+pre-equilibrium processes, in combination with databases and      1225 1451  286
+models for nuclear structure. The following output of TALYS is    1225 1451  287
+stored in this data file:                                         1225 1451  288
+                                                                  1225 1451  289
+- Elastic and non-elastic cross sections                          1225 1451  290
+- Elastic scattering angular distributions                        1225 1451  291
+- Recoil data                                                     1225 1451  292
+- Total particle cross sections, e.g. (p,xn), (p,xp),..           1225 1451  293
+- Total particle energy spectra                                   1225 1451  294
+- Total particle double-differential spectra                      1225 1451  295
+- Isomeric and ground state cross sections                        1225 1451  296
+- Residual production cross sections                              1225 1451  297
+                                                                  1225 1451  298
+For a description of the used nuclear models and their            1225 1451  299
+parameterization we refer to [kon19]. If for this specific        1225 1451  300
+nuclide we deviate from the global parameterization, it is made   1225 1451  301
+explicit above under Nuclide Specific Information.                1225 1451  302
+                                                                  1225 1451  303
+***************** F I L E   I N F O R M A T I O N ****************1225 1451  304
+                                                                  1225 1451  305
+##### MF1: GENERAL INFORMATION                                    1225 1451  306
+                                                                  1225 1451  307
+- MT451    : Descriptive data and directory                       1225 1451  308
+                                                                  1225 1451  309
+This text and the full directory of used MF/MT sections.          1225 1451  310
+                                                                  1225 1451  311
+##### MF3: REACTION CROSS SECTIONS                                1225 1451  312
+                                                                  1225 1451  313
+All the data present in the following MT-sections have been       1225 1451  314
+calculated with TALYS, possibly normalized to experimental data.  1225 1451  315
+If the maximal cross section in an excitation function over the   1225 1451  316
+whole energy range does not exceed 1.e-9 b, the MT-number is not  1225 1451  317
+included. Cross sections lower than 1.e-20 b are assumed to have  1225 1451  318
+no physical meaning and are set to zero. All MT numbers extend up 1225 1451  319
+to the highest incident energy.                                   1225 1451  320
+The following reaction channels/MT numbers are generally included:1225 1451  321
+                                                                  1225 1451  322
+- MT2      : Elastic scattering cross section: nuclear +          1225 1451  323
+             interference terms                                   1225 1451  324
+                                                                  1225 1451  325
+Obtained by integrating the "nuclear-plus-interference" angular   1225 1451  326
+distributions of MF=6.  Note that because of the interference     1225 1451  327
+effect, the tabulations in both MF=6 and MF=3 can be negative at  1225 1451  328
+some energies and angles.                                         1225 1451  329
+                                                                  1225 1451  330
+- MT5      : (p,anything) cross section                           1225 1451  331
+                                                                  1225 1451  332
+MT5 contains the reactions which can not be stored in any other   1225 1451  333
+MT-number. The information of MF3/MT5 can be combined with        1225 1451  334
+MF6/MT5 to obtain residual production cross sections particle     1225 1451  335
+production cross sections and (double-)differential cross         1225 1451  336
+sections.                                                         1225 1451  337
+                                                                  1225 1451  338
+##### MF6: PRODUCT ENERGY-ANGLE DISTRIBUTIONS                     1225 1451  339
+                                                                  1225 1451  340
+In MF6 we store all secondary energy, angle, and energy-angle     1225 1451  341
+distributions, as well as all residual and discrete + continuum   1225 1451  342
+photon production cross sections for channels other than capture  1225 1451  343
+(MT102) and reactions to discrete levels (MT51,etc.).             1225 1451  344
+All data are generated with TALYS.                                1225 1451  345
+                                                                  1225 1451  346
+- MT5      : (p,anything) yields and energy-angle distributions   1225 1451  347
+                                                                  1225 1451  348
+MT5 contains, in this order,                                      1225 1451  349
+For neutrons up to alpha particles and photons:                   1225 1451  350
+- the production yields per particle for the whole energy range   1225 1451  351
+- the secondary energy-angle distributions per particles which are1225 1451  352
+  not represented by explicit MT numbers. On a secondary energy   1225 1451  353
+  grid the relative emission spectra are given together with the  1225 1451  354
+  parameters for the Kalbach systematics for angular              1225 1451  355
+  distributions. Inelastic scattering cross sections for discrete 1225 1451  356
+  states have been broadened and added to the continuum spectra.  1225 1451  357
+For each residual product:                                        1225 1451  358
+- the production yields for the whole energy range.               1225 1451  359
+- the recoil                                                      1225 1451  360
+These distributions can be multiplied with MF3/MT5 to get         1225 1451  361
+the production cross sections and (double-)differential cross     1225 1451  362
+sections.                                                         1225 1451  363
+                                                                  1225 1451  364
+##### MF8: RADIOACTIVE DECAY DATA                                 1225 1451  365
+                                                                  1225 1451  366
+For reactions to isomers, MF8 designates where the information    1225 1451  367
+for isomeric versus ground state production, or residual          1225 1451  368
+production can be found, i.e. for each MT number it points to     1225 1451  369
+either MF6, MF9 or MF10.                                          1225 1451  370
+                                                                  1225 1451  371
+##### MF33: COVARIANCES OF NEUTRON CROSS SECTIONS                 1225 1451  372
+                                                                  1225 1451  373
+In MF33, we store the covariances of most, but not all, reaction  1225 1451  374
+channels that are given in MF3. All covariances are generated     1225 1451  375
+with the TASMAN code [kon19], which generates TALYS runs using    1225 1451  376
+a Monte Carlo parameter method.                                   1225 1451  377
+For each MT-number, the information consists of:                  1225 1451  378
+1. Covariances for MTa, Ea and MTa, Ea (variances)                1225 1451  379
+2. Covariances for MTa, Ea and MTa, Eb (correlations for the      1225 1451  380
+   same reaction channel between different energies)              1225 1451  381
+3. Covariances for MTa, Ea and MTb, Ea (correlations between      1225 1451  382
+   different reaction channels for the same energy)               1225 1451  383
+4. Covariances for MTa, Ea and MTb, Eb (correlations between      1225 1451  384
+   different reaction channels for different energies)            1225 1451  385
+Classes 1 and 2 are covered by NI-type subsubsections with        1225 1451  386
+flag LB=5, followed by a LB=8 section which contains              1225 1451  387
+the cross section variances multiplied by 1.e-3. Next, classes 3  1225 1451  388
+and 4 are covered by flag LB=6 to account for the different       1225 1451  389
+energy grids that two correlating MT-sections may have. Since     1225 1451  390
+the total correlation matrix is fully symmetric, we only need to  1225 1451  391
+include the correlation elements between different MT-numbers     1225 1451  392
+once, and we do that in the subsection with the lowest of the     1225 1451  393
+two MT-numbers. We include covariance information for all the     1225 1451  394
+total cross sections, the lumped partial cross sections and the   1225 1451  395
+individual inelastic cross sections per level (MT51,...). We do   1225 1451  396
+not include covariances for MT600 and higher MT-numbers. For the  1225 1451  397
+most important channels, we include cross-channel correlations.   1225 1451  398
+                                                                  1225 1451  399
+***** F I L E   C H E C K I N G   A N D   P R O C E S S I N G ****1225 1451  400
+                                                                  1225 1451  401
+This file has been checked and processed by                       1225 1451  402
+- the BNL checking codes CHECKR-8.24, FIZCON-8.19 and PSYCHE-8.11 1225 1451  403
+  [her08],                                                        1225 1451  404
+- the preprocessing codes PREPRO-2021 [cul21] into a PENDF file,  1225 1451  405
+- the processing code NJOY-2016.68 [mac10] into a PENDF file and a1225 1451  406
+  MCNP (ACE) library,                                             1225 1451  407
+- MCNP for a standard calculation with the ACE library.           1225 1451  408
+                                                                  1225 1451  409
+*********************** R E F E R E N C E S **********************1225 1451  410
+                                                                  1225 1451  411
+[cul21] D.E. Cullen, PREPRO 2021 - ENDF/B Pre-processing codes,   1225 1451  412
+        Technical report IAEA-NDS-0238, IAEA (2021)               1225 1451  413
+[her08] M. Herman, ENDF Utility Codes Release 8.0, (2008)         1225 1451  414
+[kon07] A.J. Koning, S. Hilaire and M.C. Duijvestijn, TALYS-1.0,  1225 1451  415
+        Proceedings of the International Conference on Nuclear    1225 1451  416
+        Data for Science and Technology - ND-2007,                1225 1451  417
+        April 22-27, 2007, Nice, France                           1225 1451  418
+[kon19] A.J. Koning, D. Rochman, J.-Ch. Sublet, N. Dzysiuk,       1225 1451  419
+        M. Fleming, and S. van der Marck, TENDL: Complete nuclear 1225 1451  420
+        data library for innovative nuclear science and           1225 1451  421
+        technology, Nuclear Data Sheets 155, 1 (2019)             1225 1451  422
+[mac10] R.E. Macfarlane and A.C. Kahler, Methods for processing   1225 1451  423
+        ENDF/B-VII with NJOY, Nuclear Data Sheets 111, 2739 (2010)1225 1451  424
+                                                                  1225 1451  425
+************************* C O N T E N T S ************************1225 1451  426
+                                                                  1225 1451  427
+                                1        451        434          11225 1451  428
+                                6          2       1094          11225 1451  429
+                                                                  1225 1  099999
+                                                                  1225 0  0    0
+ 1.202400+4 2.377900+1          0          2          2          01225 6  2    1
+ 1.001000+3 9.986235-1          0          5          1          21225 6  2    2
+          2          2                                            1225 6  2    3
+ 2.500000+5 1.000000+0 2.000000+8 1.000000+0                      1225 6  2    4
+ 5.000000-1 0.000000+0          0          0          1         351225 6  2    5
+         35          2                                            1225 6  2    6
+ 0.000000+0 2.500000+5         12          0        176         881225 6  2    7
+-1.000000+0-3.222042-1-9.993908-1-3.224005-1-9.975641-1-3.229905-11225 6  2    8
+-9.945219-1-3.239767-1-9.902681-1-3.253626-1-9.848077-1-3.271553-11225 6  2    9
+-9.781476-1-3.293618-1-9.702957-1-3.319921-1-9.612617-1-3.350575-11225 6  2   10
+-9.510565-1-3.385715-1-9.396927-1-3.425500-1-9.271839-1-2.602581-11225 6  2   11
+-9.135455-1-2.639811-1-8.987941-1-2.680985-1-8.829476-1-2.726299-11225 6  2   12
+-8.660255-1-2.775967-1-8.480482-1-2.830232-1-8.290376-1-2.889368-11225 6  2   13
+-8.090171-1-2.953673-1-7.880108-1-3.023464-1-7.660446-1-3.099156-11225 6  2   14
+-7.431448-1-3.181106-1-7.193399-1-3.269790-1-6.946585-1-2.243831-11225 6  2   15
+-6.691307-1-2.312967-1-6.427876-1-2.387745-1-6.156614-1-2.468583-11225 6  2   16
+-5.877854-1-2.556035-1-5.591930-1-1.325310-1-5.299193-1-1.376506-11225 6  2   17
+-5.000001-1-1.431964-1-4.694716-1-1.492080-1-4.383711-1-1.557294-11225 6  2   18
+-4.067367-1-0.000000+0-3.746067-1-0.000000+0-3.420201-1 5.324161-21225 6  2   19
+-3.090170-1 1.141583-1-2.756374-1 1.579234-1-2.419220-1 2.312705-11225 6  2   20
+-2.079118-1 3.101958-1-1.736482-1 3.981828-1-1.391732-1 4.728917-11225 6  2   21
+-1.045285-1 5.816179-1-6.975660-2 6.770194-1-3.489946-2 7.806876-11225 6  2   22
+-4.371139-8 9.013313-1 3.489938-2 1.037700+0 6.975651-2 1.152377+01225 6  2   23
+ 1.045284-1 1.286658+0 1.391731-1 1.433713+0 1.736481-1 1.555835+01225 6  2   24
+ 2.079117-1 1.693349+0 2.419219-1 1.795307+0 2.756373-1 1.900535+01225 6  2   25
+ 3.090170-1 1.960064+0 3.420200-1 2.011022+0 3.746065-1 2.059348+01225 6  2   26
+ 4.067366-1 2.016020+0 4.383712-1 1.945534+0 4.694715-1 1.717017+01225 6  2   27
+ 5.000000-1 1.549545+0 5.299193-1 1.162933+0 5.591928-1 6.711323-11225 6  2   28
+ 5.877852-1-0.000000+0 6.156614-1-0.000000+0 6.427876-1-2.524963+01225 6  2   29
+ 6.691306-1-2.943046+0 6.946584-1-3.455715+0 7.193397-1-4.090245+01225 6  2   30
+ 7.431448-1-4.883540+0 7.660444-1-5.886319+0 7.880108-1-7.169397+01225 6  2   31
+ 8.090170-1-8.833238+0 8.290375-1-1.102321+1 8.480481-1-0.000000+01225 6  2   32
+ 8.660254-1-0.000000+0 8.829476-1 2.519459+0 8.987941-1 9.361654+01225 6  2   33
+ 9.135454-1 1.744728+1 9.271839-1 2.459508+1 9.396926-1 2.636478+11225 6  2   34
+ 9.510565-1 1.441052+1 9.612617-1-0.000000+0 9.702957-1-0.000000+01225 6  2   35
+ 9.781476-1-0.000000+0 9.848077-1-0.000000+0 9.902681-1-0.000000+01225 6  2   36
+ 9.945219-1-0.000000+0                                            1225 6  2   37
+ 0.000000+0 5.000000+5         12          0        176         881225 6  2   38
+-1.000000+0-3.222042-1-9.993908-1-3.224005-1-9.975641-1-3.229905-11225 6  2   39
+-9.945219-1-3.239767-1-9.902681-1-3.253626-1-9.848077-1-3.271553-11225 6  2   40
+-9.781476-1-3.293618-1-9.702957-1-3.319921-1-9.612617-1-3.350575-11225 6  2   41
+-9.510565-1-3.385715-1-9.396927-1-3.425500-1-9.271839-1-2.602581-11225 6  2   42
+-9.135455-1-2.639811-1-8.987941-1-2.680985-1-8.829476-1-2.726299-11225 6  2   43
+-8.660255-1-2.775967-1-8.480482-1-2.830232-1-8.290376-1-2.889368-11225 6  2   44
+-8.090171-1-2.953673-1-7.880108-1-3.023464-1-7.660446-1-3.099156-11225 6  2   45
+-7.431448-1-3.181106-1-7.193399-1-3.269790-1-6.946585-1-2.243831-11225 6  2   46
+-6.691307-1-2.312967-1-6.427876-1-2.387745-1-6.156614-1-2.468583-11225 6  2   47
+-5.877854-1-2.556035-1-5.591930-1-1.325310-1-5.299193-1-1.376506-11225 6  2   48
+-5.000001-1-1.431964-1-4.694716-1-1.492080-1-4.383711-1-1.557294-11225 6  2   49
+-4.067367-1-0.000000+0-3.746067-1-0.000000+0-3.420201-1 5.324161-21225 6  2   50
+-3.090170-1 1.141583-1-2.756374-1 1.579234-1-2.419220-1 2.312705-11225 6  2   51
+-2.079118-1 3.101958-1-1.736482-1 3.981828-1-1.391732-1 4.728917-11225 6  2   52
+-1.045285-1 5.816179-1-6.975660-2 6.770194-1-3.489946-2 7.806876-11225 6  2   53
+-4.371139-8 9.013313-1 3.489938-2 1.037700+0 6.975651-2 1.152377+01225 6  2   54
+ 1.045284-1 1.286658+0 1.391731-1 1.433713+0 1.736481-1 1.555835+01225 6  2   55
+ 2.079117-1 1.693349+0 2.419219-1 1.795307+0 2.756373-1 1.900535+01225 6  2   56
+ 3.090170-1 1.960064+0 3.420200-1 2.011022+0 3.746065-1 2.059348+01225 6  2   57
+ 4.067366-1 2.016020+0 4.383712-1 1.945534+0 4.694715-1 1.717017+01225 6  2   58
+ 5.000000-1 1.549545+0 5.299193-1 1.162933+0 5.591928-1 6.711323-11225 6  2   59
+ 5.877852-1-0.000000+0 6.156614-1-0.000000+0 6.427876-1-2.524963+01225 6  2   60
+ 6.691306-1-2.943046+0 6.946584-1-3.455715+0 7.193397-1-4.090245+01225 6  2   61
+ 7.431448-1-4.883540+0 7.660444-1-5.886319+0 7.880108-1-7.169397+01225 6  2   62
+ 8.090170-1-8.833238+0 8.290375-1-1.102321+1 8.480481-1-0.000000+01225 6  2   63
+ 8.660254-1-0.000000+0 8.829476-1 2.519459+0 8.987941-1 9.361654+01225 6  2   64
+ 9.135454-1 1.744728+1 9.271839-1 2.459508+1 9.396926-1 2.636478+11225 6  2   65
+ 9.510565-1 1.441052+1 9.612617-1-0.000000+0 9.702957-1-0.000000+01225 6  2   66
+ 9.781476-1-0.000000+0 9.848077-1-0.000000+0 9.902681-1-0.000000+01225 6  2   67
+ 9.945219-1-0.000000+0                                            1225 6  2   68
+ 0.000000+0 1.000000+6         12          0        176         881225 6  2   69
+-1.000000+0-2.398678-1-9.993908-1-2.400143-1-9.975641-1-2.404514-11225 6  2   70
+-9.945219-1-2.411826-1-9.902681-1-2.427391-1-9.848077-1-2.440720-11225 6  2   71
+-9.781476-1-2.462371-1-9.702957-1-2.487350-1-9.612617-1-2.510230-11225 6  2   72
+-9.510565-1-2.541918-1-9.396927-1-2.577187-1-9.271839-1-2.610615-11225 6  2   73
+-9.135455-1-2.647794-1-8.987941-1-2.688909-1-8.829476-1-2.728299-11225 6  2   74
+-8.660255-1-2.771800-1-8.480482-1-2.813601-1-8.290376-1-2.859634-11225 6  2   75
+-8.090171-1-2.897488-1-7.880108-1-2.939626-1-7.660446-1-2.979388-11225 6  2   76
+-7.431448-1-3.016701-1-7.193399-1-3.051080-1-6.946585-1-3.082156-11225 6  2   77
+-6.691307-1-3.101917-1-6.427876-1-3.116768-1-6.156614-1-3.118084-11225 6  2   78
+-5.877854-1-3.112257-1-5.591930-1-3.089783-1-5.299193-1-3.057289-11225 6  2   79
+-5.000001-1-3.003939-1-4.694716-1-2.926836-1-4.383711-1-2.832747-11225 6  2   80
+-4.067367-1-2.697828-1-3.746067-1-2.549281-1-3.420201-1-2.350125-11225 6  2   81
+-3.090170-1-2.129181-1-2.756374-1-1.844763-1-2.419220-1-1.527109-11225 6  2   82
+-2.079118-1-1.142761-1-1.736482-1-7.111122-2-1.391732-1-1.927829-21225 6  2   83
+-1.045285-1 3.808448-2-6.975660-2 1.043091-1-3.489946-2 1.793516-11225 6  2   84
+-4.371139-8 2.641511-1 3.489938-2 3.593626-1 6.975651-2 4.657046-11225 6  2   85
+ 1.045284-1 5.841185-1 1.391731-1 7.154847-1 1.736481-1 8.599333-11225 6  2   86
+ 2.079117-1 1.018155+0 2.419219-1 1.190839+0 2.756373-1 1.377587+01225 6  2   87
+ 3.090170-1 1.578369+0 3.420200-1 1.792028+0 3.746065-1 2.017605+01225 6  2   88
+ 4.067366-1 2.252592+0 4.383712-1 2.494271+0 4.694715-1 2.736721+01225 6  2   89
+ 5.000000-1 2.975387+0 5.299193-1 3.201176+0 5.591928-1 3.402534+01225 6  2   90
+ 5.877852-1 3.566348+0 6.156614-1 3.674123+0 6.427876-1 3.705149+01225 6  2   91
+ 6.691306-1 3.628731+0 6.946584-1 3.412570+0 7.193397-1 3.016806+01225 6  2   92
+ 7.431448-1 2.390524+0 7.660444-1 1.482653+0 7.880108-1 2.268391-11225 6  2   93
+ 8.090170-1-1.426048+0 8.290375-1-3.559203+0 8.480481-1-6.127356+01225 6  2   94
+ 8.660254-1-9.273504+0 8.829476-1-1.275512+1 8.987941-1-1.625079+11225 6  2   95
+ 9.135454-1-1.948611+1 9.271839-1-2.119057+1 9.396926-1-2.002281+11225 6  2   96
+ 9.510565-1-1.389744+1 9.612617-1 1.801531+0 9.702957-1 2.996169+11225 6  2   97
+ 9.781476-1 7.104239+1 9.848077-1 1.100281+2 9.902681-1 8.144167+11225 6  2   98
+ 9.945219-1-2.082819+2                                            1225 6  2   99
+ 0.000000+0 2.000000+6         12          0        176         881225 6  2  100
+-1.000000+0 1.285841-1-9.993908-1 1.298617-1-9.975641-1 1.336993-11225 6  2  101
+-9.945219-1 1.401186-1-9.902681-1 1.490031-1-9.848077-1 1.604781-11225 6  2  102
+-9.781476-1 1.744536-1-9.702957-1 1.907764-1-9.612617-1 2.096096-11225 6  2  103
+-9.510565-1 2.307484-1-9.396927-1 2.542253-1-9.271839-1 2.798532-11225 6  2  104
+-9.135455-1 3.077614-1-8.987941-1 3.376990-1-8.829476-1 3.695735-11225 6  2  105
+-8.660255-1 4.033740-1-8.480482-1 4.390155-1-8.290376-1 4.762457-11225 6  2  106
+-8.090171-1 5.149669-1-7.880108-1 5.549936-1-7.660446-1 5.962970-11225 6  2  107
+-7.431448-1 6.384891-1-7.193399-1 6.815060-1-6.946585-1 7.249936-11225 6  2  108
+-6.691307-1 7.687428-1-6.427876-1 8.124136-1-6.156614-1 8.557147-11225 6  2  109
+-5.877854-1 8.983052-1-5.591930-1 9.396783-1-5.299193-1 9.794602-11225 6  2  110
+-5.000001-1 1.016978+0-4.694716-1 1.051797+0-4.383711-1 1.083268+01225 6  2  111
+-4.067367-1 1.110629+0-3.746067-1 1.132964+0-3.420201-1 1.149463+01225 6  2  112
+-3.090170-1 1.159313+0-2.756374-1 1.160937+0-2.419220-1 1.153576+01225 6  2  113
+-2.079118-1 1.135315+0-1.736482-1 1.104969+0-1.391732-1 1.060753+01225 6  2  114
+-1.045285-1 1.000571+0-6.975660-2 9.221433-1-3.489946-2 8.235137-11225 6  2  115
+-4.371139-8 7.014053-1 3.489938-2 5.530304-1 6.975651-2 3.748767-11225 6  2  116
+ 1.045284-1 1.634874-1 1.391731-1-8.522923-2 1.736481-1-3.762283-11225 6  2  117
+ 2.079117-1-7.144204-1 2.419219-1-1.105440+0 2.756373-1-1.555475+01225 6  2  118
+ 3.090170-1-2.071303+0 3.420200-1-2.660229+0 3.746065-1-3.330375+01225 6  2  119
+ 4.067366-1-4.090180+0 4.383712-1-4.948802+0 4.694715-1-5.915688+01225 6  2  120
+ 5.000000-1-7.000472+0 5.299193-1-8.212605+0 5.591928-1-9.560848+01225 6  2  121
+ 5.877852-1-1.105289+1 6.156614-1-1.269350+1 6.427876-1-1.448358+11225 6  2  122
+ 6.691306-1-1.641826+1 6.946584-1-1.848255+1 7.193397-1-2.064837+11225 6  2  123
+ 7.431448-1-2.286727+1 7.660444-1-2.506204+1 7.880108-1-2.711405+11225 6  2  124
+ 8.090170-1-2.884644+1 8.290375-1-2.999779+1 8.480481-1-3.019032+11225 6  2  125
+ 8.660254-1-2.888043+1 8.829476-1-2.529037+1 8.987941-1-1.832272+11225 6  2  126
+ 9.135454-1-6.452673+0 9.271839-1 1.240869+1 9.396926-1 4.098573+11225 6  2  127
+ 9.510565-1 8.268855+1 9.612617-1 1.405240+2 9.702957-1 2.155381+21225 6  2  128
+ 9.781476-1 2.976544+2 9.848077-1 3.447357+2 9.902681-1 2.106815+21225 6  2  129
+ 9.945219-1-5.335346+2                                            1225 6  2  130
+ 0.000000+0 3.000000+6         12          0        176         881225 6  2  131
+-1.000000+0 1.920053+0-9.993908-1 1.915050+0-9.975641-1 1.900120+01225 6  2  132
+-9.945219-1 1.875461+0-9.902681-1 1.841419+0-9.848077-1 1.798430+01225 6  2  133
+-9.781476-1 1.747058+0-9.702957-1 1.687918+0-9.612617-1 1.621700+01225 6  2  134
+-9.510565-1 1.549128+0-9.396927-1 1.470929+0-9.271839-1 1.387845+01225 6  2  135
+-9.135455-1 1.300572+0-8.987941-1 1.209800+0-8.829476-1 1.116153+01225 6  2  136
+-8.660255-1 1.020202+0-8.480482-1 9.224859-1-8.290376-1 8.234615-11225 6  2  137
+-8.090171-1 7.235444-1-7.880108-1 6.230950-1-7.660446-1 5.224288-11225 6  2  138
+-7.431448-1 4.218087-1-7.193399-1 3.214862-1-6.946585-1 2.216734-11225 6  2  139
+-6.691307-1 1.225640-1-6.427876-1 2.435584-2-6.156614-1-7.275412-21225 6  2  140
+-5.877854-1-1.686223-1-5.591930-1-2.629731-1-5.299193-1-3.555901-11225 6  2  141
+-5.000001-1-4.462477-1-4.694716-1-5.345666-1-4.383711-1-6.202497-11225 6  2  142
+-4.067367-1-7.028124-1-3.746067-1-7.818689-1-3.420201-1-8.568102-11225 6  2  143
+-3.090170-1-9.270021-1-2.756374-1-9.916859-1-2.419220-1-1.050093+01225 6  2  144
+-2.079118-1-1.101150+0-1.736482-1-1.143835+0-1.391732-1-1.176875+01225 6  2  145
+-1.045285-1-1.198807+0-6.975660-2-1.207964+0-3.489946-2-1.202499+01225 6  2  146
+-4.371139-8-1.180382+0 3.489938-2-1.139081+0 6.975651-2-1.075938+01225 6  2  147
+ 1.045284-1-9.877977-1 1.391731-1-8.710458-1 1.736481-1-7.218243-11225 6  2  148
+ 2.079117-1-5.353491-1 2.419219-1-3.064437-1 2.756373-1-2.933527-21225 6  2  149
+ 3.090170-1 3.031779-1 3.420200-1 6.985893-1 3.746065-1 1.165869+01225 6  2  150
+ 4.067366-1 1.715133+0 4.383712-1 2.358024+0 4.694715-1 3.107781+01225 6  2  151
+ 5.000000-1 3.979570+0 5.299193-1 4.990729+0 5.591928-1 6.161039+01225 6  2  152
+ 5.877852-1 7.513041+0 6.156614-1 9.072083+0 6.427876-1 1.086696+11225 6  2  153
+ 6.691306-1 1.292953+1 6.946584-1 1.529463+1 7.193397-1 1.799943+11225 6  2  154
+ 7.431448-1 2.108186+1 7.660444-1 2.457820+1 7.880108-1 2.851775+11225 6  2  155
+ 8.090170-1 3.291507+1 8.290375-1 3.775651+1 8.480481-1 4.297867+11225 6  2  156
+ 8.660254-1 4.843256+1 8.829476-1 5.382385+1 8.987941-1 5.861554+11225 6  2  157
+ 9.135454-1 6.186531+1 9.271839-1 6.194862+1 9.396926-1 5.608472+11225 6  2  158
+ 9.510565-1 3.952127+1 9.612617-1 4.121802+0 9.702957-1-6.407899+11225 6  2  159
+ 9.781476-1-1.884711+2 9.848077-1-4.058699+2 9.902681-1-7.571334+21225 6  2  160
+ 9.945219-1-1.168884+3                                            1225 6  2  161
+ 0.000000+0 4.000000+6         12          0        176         881225 6  2  162
+-1.000000+0 2.995565+0-9.993908-1 2.963534+0-9.975641-1 2.870529+01225 6  2  163
+-9.945219-1 2.725174+0-9.902681-1 2.539906+0-9.848077-1 2.328761+01225 6  2  164
+-9.781476-1 2.105292+0-9.702957-1 1.881062+0-9.612617-1 1.664897+01225 6  2  165
+-9.510565-1 1.462779+0-9.396927-1 1.278127+0-9.271839-1 1.112383+01225 6  2  166
+-9.135455-1 9.655343-1-8.987941-1 8.366364-1-8.829476-1 7.242039-11225 6  2  167
+-8.660255-1 6.265274-1-8.480482-1 5.418213-1-8.290376-1 4.683812-11225 6  2  168
+-8.090171-1 4.046339-1-7.880108-1 3.491688-1-7.660446-1 3.007456-11225 6  2  169
+-7.431448-1 2.582908-1-7.193399-1 2.208823-1-6.946585-1 1.877365-11225 6  2  170
+-6.691307-1 1.581870-1-6.427876-1 1.316734-1-6.156614-1 1.077231-11225 6  2  171
+-5.877854-1 8.594134-2-5.591930-1 6.599820-2-5.299193-1 4.762051-21225 6  2  172
+-5.000001-1 3.058114-2-4.694716-1 1.469596-2-4.383711-1-1.864145-41225 6  2  173
+-4.067367-1-1.418037-2-3.746067-1-2.738198-2-3.420201-1-3.985492-21225 6  2  174
+-3.090170-1-5.164941-2-2.756374-1-6.278761-2-2.419220-1-7.327902-21225 6  2  175
+-2.079118-1-8.311705-2-1.736482-1-9.227098-2-1.391732-1-1.006998-11225 6  2  176
+-1.045285-1-1.083425-1-6.975660-2-1.151213-1-3.489946-2-1.209403-11225 6  2  177
+-4.371139-8-1.256810-1 3.489938-2-1.292046-1 6.975651-2-1.313382-11225 6  2  178
+ 1.045284-1-1.318877-1 1.391731-1-1.306234-1 1.736481-1-1.272658-11225 6  2  179
+ 2.079117-1-1.214981-1 2.419219-1-1.129468-1 2.756373-1-1.011674-11225 6  2  180
+ 3.090170-1-8.564973-2 3.420200-1-6.578638-2 3.746065-1-4.085698-21225 6  2  181
+ 4.067366-1-1.001949-2 4.383712-1 2.769951-2 4.694715-1 7.347625-21225 6  2  182
+ 5.000000-1 1.286813-1 5.299193-1 1.949346-1 5.591928-1 2.741512-11225 6  2  183
+ 5.877852-1 3.685960-1 6.156614-1 4.809568-1 6.427876-1 6.144330-11225 6  2  184
+ 6.691306-1 7.728319-1 6.946584-1 9.607111-1 7.193397-1 1.183511+01225 6  2  185
+ 7.431448-1 1.447737+0 7.660444-1 1.761134+0 7.880108-1 2.132843+01225 6  2  186
+ 8.090170-1 2.573529+0 8.290375-1 3.095266+0 8.480481-1 3.711306+01225 6  2  187
+ 8.660254-1 4.435055+0 8.829476-1 5.278163+0 8.987941-1 6.246480+01225 6  2  188
+ 9.135454-1 7.332030+0 9.271839-1 8.497394+0 9.396926-1 9.644524+01225 6  2  189
+ 9.510565-1 1.055160+1 9.612617-1 1.074321+1 9.702957-1 9.208761+01225 6  2  190
+ 9.781476-1 3.776860+0 9.848077-1-1.035610+1 9.902681-1-4.411538+11225 6  2  191
+ 9.945219-1-1.221016+2                                            1225 6  2  192
+ 0.000000+0 5.000000+6         12          0        176         881225 6  2  193
+-1.000000+0 3.313810-1-9.993908-1 3.346643-1-9.975641-1 3.446932-11225 6  2  194
+-9.945219-1 3.620175-1-9.902681-1 3.876056-1-9.848077-1 4.229241-11225 6  2  195
+-9.781476-1 4.700270-1-9.702957-1 5.316455-1-9.612617-1 6.111321-11225 6  2  196
+-9.510565-1 7.120660-1-9.396927-1 8.368375-1-9.271839-1 9.832683-11225 6  2  197
+-9.135455-1 1.138237+0-8.987941-1 1.270643+0-8.829476-1 1.334426+01225 6  2  198
+-8.660255-1 1.294382+0-8.480482-1 1.158005+0-8.290376-1 9.710581-11225 6  2  199
+-8.090171-1 7.814438-1-7.880108-1 6.161412-1-7.660446-1 4.826359-11225 6  2  200
+-7.431448-1 3.784564-1-7.193399-1 2.980227-1-6.946585-1 2.357650-11225 6  2  201
+-6.691307-1 1.871033-1-6.427876-1 1.485481-1-6.156614-1 1.175170-11225 6  2  202
+-5.877854-1 9.212255-2-5.591930-1 7.098480-2-5.299193-1 5.309243-21225 6  2  203
+-5.000001-1 3.769924-2-4.694716-1 2.425174-2-4.383711-1 1.233733-21225 6  2  204
+-4.067367-1 1.647961-3-3.746067-1-8.046357-3-3.420201-1-1.691928-21225 6  2  205
+-3.090170-1-2.509378-2-2.756374-1-3.266437-2-2.419220-1-3.969339-21225 6  2  206
+-2.079118-1-4.622468-2-1.736482-1-5.228170-2-1.391732-1-5.787621-21225 6  2  207
+-1.045285-1-6.300659-2-6.975660-2-6.765863-2-3.489946-2-7.181325-21225 6  2  208
+-4.371139-8-7.543886-2 3.489938-2-7.849450-2 6.975651-2-8.093192-21225 6  2  209
+ 1.045284-1-8.269150-2 1.391731-1-8.369885-2 1.736481-1-8.386638-21225 6  2  210
+ 2.079117-1-8.308794-2 2.419219-1-8.123604-2 2.756373-1-7.815182-21225 6  2  211
+ 3.090170-1-7.364354-2 3.420200-1-6.747758-2 3.746065-1-5.936605-21225 6  2  212
+ 4.067366-1-4.895400-2 4.383712-1-3.580579-2 4.694715-1-1.938175-21225 6  2  213
+ 5.000000-1 9.698460-4 5.299193-1 2.606057-2 5.591928-1 5.688118-21225 6  2  214
+ 5.877852-1 9.464863-2 6.156614-1 1.408535-1 6.427876-1 1.973278-11225 6  2  215
+ 6.691306-1 2.663156-1 6.946584-1 3.505864-1 7.193397-1 4.535483-11225 6  2  216
+ 7.431448-1 5.794232-1 7.660444-1 7.334615-1 7.880108-1 9.222122-11225 6  2  217
+ 8.090170-1 1.153864+0 8.290375-1 1.438646+0 8.480481-1 1.789313+01225 6  2  218
+ 8.660254-1 2.221612+0 8.829476-1 2.754648+0 8.987941-1 3.411040+01225 6  2  219
+ 9.135454-1 4.216032+0 9.271839-1 5.194853+0 9.396926-1 6.365054+01225 6  2  220
+ 9.510565-1 7.717696+0 9.612617-1 9.170989+0 9.702957-1 1.045491+11225 6  2  221
+ 9.781476-1 1.081168+1 9.848077-1 8.164973+0 9.902681-1-3.399029+01225 6  2  222
+ 9.945219-1-4.216265+1                                            1225 6  2  223
+ 0.000000+0 6.000000+6         12          0        176         881225 6  2  224
+-1.000000+0-3.402578-2-9.993908-1-3.356251-2-9.975641-1-3.216375-21225 6  2  225
+-9.945219-1-2.980099-2-9.902681-1-2.642374-2-9.848077-1-2.195506-21225 6  2  226
+-9.781476-1-1.628334-2-9.702957-1-9.252061-3-9.612617-1-6.464382-41225 6  2  227
+-9.510565-1 9.828337-3-9.396927-1 2.256737-2-9.271839-1 3.809591-21225 6  2  228
+-9.135455-1 5.709110-2-8.987941-1 8.038402-2-8.829476-1 1.088917-11225 6  2  229
+-8.660255-1 1.433854-1-8.480482-1 1.839265-1-8.290376-1 2.287899-11225 6  2  230
+-8.090171-1 2.730379-1-7.880108-1 3.079649-1-7.660446-1 3.236814-11225 6  2  231
+-7.431448-1 3.150134-1-7.193399-1 2.854293-1-6.946585-1 2.442311-11225 6  2  232
+-6.691307-1 2.005585-1-6.427876-1 1.600481-1-6.156614-1 1.249508-11225 6  2  233
+-5.877854-1 9.548654-2-5.591930-1 7.099760-2-5.299193-1 5.058977-21225 6  2  234
+-5.000001-1 3.341558-2-4.694716-1 1.876816-2-4.383711-1 6.091171-31225 6  2  235
+-4.067367-1-5.037568-3-3.746067-1-1.493406-2-3.420201-1-2.382759-21225 6  2  236
+-3.090170-1-3.188276-2-2.756374-1-3.921362-2-2.419220-1-4.589759-21225 6  2  237
+-2.079118-1-5.198101-2-1.736482-1-5.748883-2-1.391732-1-6.242974-21225 6  2  238
+-1.045285-1-6.679963-2-6.975660-2-7.058520-2-3.489946-2-7.376625-21225 6  2  239
+-4.371139-8-7.631922-2 3.489938-2-7.821681-2 6.975651-2-7.943033-21225 6  2  240
+ 1.045284-1-7.993216-2 1.391731-1-7.969071-2 1.736481-1-7.867576-21225 6  2  241
+ 2.079117-1-7.685072-2 2.419219-1-7.417712-2 2.756373-1-7.060269-21225 6  2  242
+ 3.090170-1-6.606398-2 3.420200-1-6.047207-2 3.746065-1-5.370625-21225 6  2  243
+ 4.067366-1-4.560151-2 4.383712-1-3.593298-2 4.694715-1-2.439298-21225 6  2  244
+ 5.000000-1-1.056987-2 5.299193-1 6.076996-3 5.591928-1 2.626650-21225 6  2  245
+ 5.877852-1 5.092734-2 6.156614-1 8.125985-2 6.427876-1 1.188077-11225 6  2  246
+ 6.691306-1 1.655385-1 6.946584-1 2.239660-1 7.193397-1 2.972861-11225 6  2  247
+ 7.431448-1 3.895665-1 7.660444-1 5.059921-1 7.880108-1 6.532028-11225 6  2  248
+ 8.090170-1 8.397331-1 8.290375-1 1.076599+0 8.480481-1 1.378122+01225 6  2  249
+ 8.660254-1 1.762966+0 8.829476-1 2.255517+0 8.987941-1 2.887513+01225 6  2  250
+ 9.135454-1 3.700143+0 9.271839-1 4.745776+0 9.396926-1 6.088984+01225 6  2  251
+ 9.510565-1 7.803353+0 9.612617-1 9.955188+0 9.702957-1 1.254780+11225 6  2  252
+ 9.781476-1 1.534437+1 9.848077-1 1.728933+1 9.902681-1 1.446241+11225 6  2  253
+ 9.945219-1-8.278110+0                                            1225 6  2  254
+ 0.000000+0 7.000000+6         12          0        176         881225 6  2  255
+-1.000000+0-9.169632-2-9.993908-1-9.137642-2-9.975641-1-9.041820-21225 6  2  256
+-9.945219-1-8.882417-2-9.902681-1-8.659852-2-9.848077-1-8.374480-21225 6  2  257
+-9.781476-1-8.026379-2-9.702957-1-7.615139-2-9.612617-1-7.139341-21225 6  2  258
+-9.510565-1-6.596109-2-9.396927-1-5.980487-2-9.271839-1-5.284389-21225 6  2  259
+-9.135455-1-4.495535-2-8.987941-1-3.595975-2-8.829476-1-2.560598-21225 6  2  260
+-8.660255-1-1.355372-2-8.480482-1 6.263789-4-8.290376-1 1.742045-21225 6  2  261
+-8.090171-1 3.724670-2-7.880108-1 6.015121-2-7.660446-1 8.523142-21225 6  2  262
+-7.431448-1 1.098965-1-7.193399-1 1.296382-1-6.946585-1 1.394476-11225 6  2  263
+-6.691307-1 1.367824-1-6.427876-1 1.233580-1-6.156614-1 1.036742-11225 6  2  264
+-5.877854-1 8.215056-2-5.591930-1 6.157906-2-5.299193-1 4.316239-21225 6  2  265
+-5.000001-1 2.712799-2-4.694716-1 1.325912-2-4.383711-1 1.203087-31225 6  2  266
+-4.067367-1-9.387868-3-3.746067-1-1.880329-2-3.420201-1-2.726700-21225 6  2  267
+-3.090170-1-3.493775-2-2.756374-1-4.192272-2-2.419220-1-4.828494-21225 6  2  268
+-2.079118-1-5.405541-2-1.736482-1-5.923608-2-1.391732-1-6.381071-21225 6  2  269
+-1.045285-1-6.774628-2-6.975660-2-7.099952-2-3.489946-2-7.351901-21225 6  2  270
+-4.371139-8-7.525025-2 3.489938-2-7.613779-2 6.975651-2-7.612948-21225 6  2  271
+ 1.045284-1-7.517904-2 1.391731-1-7.324754-2 1.736481-1-7.030964-21225 6  2  272
+ 2.079117-1-6.635314-2 2.419219-1-6.138150-2 2.756373-1-5.541794-21225 6  2  273
+ 3.090170-1-4.849725-2 3.420200-1-4.066945-2 3.746065-1-3.198978-21225 6  2  274
+ 4.067366-1-2.250839-2 4.383712-1-1.224559-2 4.694715-1-1.186061-31225 6  2  275
+ 5.000000-1 1.076708-2 5.299193-1 2.381497-2 5.591928-1 3.830548-21225 6  2  276
+ 5.877852-1 5.477758-2 6.156614-1 7.401810-2 6.427876-1 9.712573-21225 6  2  277
+ 6.691306-1 1.255974-1 6.946584-1 1.614398-1 7.193397-1 2.073148-11225 6  2  278
+ 7.431448-1 2.667290-1 7.660444-1 3.442931-1 7.880108-1 4.460620-11225 6  2  279
+ 8.090170-1 5.800115-1 8.290375-1 7.566795-1 8.480481-1 9.900728-11225 6  2  280
+ 8.660254-1 1.298940+0 8.829476-1 1.708598+0 8.987941-1 2.253448+01225 6  2  281
+ 9.135454-1 2.980541+0 9.271839-1 3.954562+0 9.396926-1 5.264310+01225 6  2  282
+ 9.510565-1 7.030766+0 9.612617-1 9.413898+0 9.702957-1 1.260750+11225 6  2  283
+ 9.781476-1 1.677718+1 9.848077-1 2.176727+1 9.902681-1 2.580897+11225 6  2  284
+ 9.945219-1 1.923887+1                                            1225 6  2  285
+ 0.000000+0 8.000000+6         12          0        176         881225 6  2  286
+-1.000000+0-1.168182-1-9.993908-1-1.164861-1-9.975641-1-1.154936-11225 6  2  287
+-9.945219-1-1.138516-1-9.902681-1-1.115783-1-9.848077-1-1.086976-11225 6  2  288
+-9.781476-1-1.052375-1-9.702957-1-1.012299-1-9.612617-1-9.670540-21225 6  2  289
+-9.510565-1-9.169371-2-9.396927-1-8.621820-2-9.271839-1-8.029187-21225 6  2  290
+-9.135455-1-7.391210-2-8.987941-1-6.705335-2-8.829476-1-5.965810-21225 6  2  291
+-8.660255-1-5.162468-2-8.480482-1-4.279410-2-8.290376-1-3.293299-21225 6  2  292
+-8.090171-1-2.172383-2-7.880108-1-8.769461-3-7.660446-1 6.341533-31225 6  2  293
+-7.431448-1 2.384823-2-7.193399-1 4.339544-2-6.946585-1 6.337602-21225 6  2  294
+-6.691307-1 8.045989-2-6.427876-1 9.037752-2-6.156614-1 9.039383-21225 6  2  295
+-5.877854-1 8.134478-2-5.591930-1 6.676210-2-5.299193-1 5.033503-21225 6  2  296
+-5.000001-1 3.441387-2-4.694716-1 1.999744-2-4.383711-1 7.269440-31225 6  2  297
+-4.067367-1-3.941791-3-3.746067-1-1.390827-2-3.420201-1-2.288456-21225 6  2  298
+-3.090170-1-3.107449-2-2.756374-1-3.861974-2-2.419220-1-4.560671-21225 6  2  299
+-2.079118-1-5.207463-2-1.736482-1-5.802343-2-1.391732-1-6.342051-21225 6  2  300
+-1.045285-1-6.820754-2-6.975660-2-7.230507-2-3.489946-2-7.561790-21225 6  2  301
+-4.371139-8-7.803968-2 3.489938-2-7.945623-2 6.975651-2-7.975189-21225 6  2  302
+ 1.045284-1-7.881429-2 1.391731-1-7.653768-2 1.736481-1-7.283285-21225 6  2  303
+ 2.079117-1-6.762873-2 2.419219-1-6.088533-2 2.756373-1-5.259690-21225 6  2  304
+ 3.090170-1-4.280543-2 3.420200-1-3.161296-2 3.746065-1-1.917987-21225 6  2  305
+ 4.067366-1-5.742850-3 4.383712-1 8.410225-3 4.694715-1 2.294802-21225 6  2  306
+ 5.000000-1 3.755243-2 5.299193-1 5.197673-2 5.591928-1 6.611624-21225 6  2  307
+ 5.877852-1 8.007490-2 6.156614-1 9.422334-2 6.427876-1 1.092490-11225 6  2  308
+ 6.691306-1 1.262165-1 6.946584-1 1.466540-1 7.193397-1 1.726875-11225 6  2  309
+ 7.431448-1 2.072267-1 7.660444-1 2.542374-1 7.880108-1 3.190913-11225 6  2  310
+ 8.090170-1 4.090753-1 8.290375-1 5.340674-1 8.480481-1 7.075037-11225 6  2  311
+ 8.660254-1 9.477671-1 8.829476-1 1.280209+0 8.987941-1 1.740163+01225 6  2  312
+ 9.135454-1 2.377450+0 9.271839-1 3.263193+0 9.396926-1 4.500247+01225 6  2  313
+ 9.510565-1 6.238831+0 9.612617-1 8.699952+0 9.702957-1 1.220715+11225 6  2  314
+ 9.781476-1 1.721377+1 9.848077-1 2.424409+1 9.902681-1 3.328072+11225 6  2  315
+ 9.945219-1 3.971440+1                                            1225 6  2  316
+ 0.000000+0 9.000000+6         12          0        176         881225 6  2  317
+-1.000000+0-1.300389-1-9.993908-1-1.296905-1-9.975641-1-1.286505-11225 6  2  318
+-9.945219-1-1.269335-1-9.902681-1-1.245638-1-9.848077-1-1.215733-11225 6  2  319
+-9.781476-1-1.180013-1-9.702957-1-1.138926-1-9.612617-1-1.092951-11225 6  2  320
+-9.510565-1-1.042582-1-9.396927-1-9.882887-2-9.271839-1-9.305073-21225 6  2  321
+-9.135455-1-8.695867-2-8.987941-1-8.057626-2-8.829476-1-7.390925-21225 6  2  322
+-8.660255-1-6.694032-2-8.480482-1-5.962088-2-8.290376-1-5.185992-21225 6  2  323
+-8.090171-1-4.351060-2-7.880108-1-3.435411-2-7.660446-1-2.408363-21225 6  2  324
+-7.431448-1-1.230157-2-7.193399-1 1.439516-3-6.946585-1 1.747661-21225 6  2  325
+-6.691307-1 3.563580-2-6.427876-1 5.451539-2-6.156614-1 7.083572-21225 6  2  326
+-5.877854-1 8.010343-2-5.591930-1 7.938485-2-5.299193-1 6.971657-21225 6  2  327
+-5.000001-1 5.498416-2-4.694716-1 3.895431-2-4.383711-1 2.377920-21225 6  2  328
+-4.067367-1 1.020024-2-3.746067-1-1.788644-3-3.420201-1-1.246456-21225 6  2  329
+-3.090170-1-2.214144-2-2.756374-1-3.107947-2-2.419220-1-3.946352-21225 6  2  330
+-2.079118-1-4.740224-2-1.736482-1-5.493953-2-1.391732-1-6.206105-21225 6  2  331
+-1.045285-1-6.870566-2-6.975660-2-7.477240-2-3.489946-2-8.012656-21225 6  2  332
+-4.371139-8-8.460655-2 3.489938-2-8.803116-2 6.975651-2-9.020456-21225 6  2  333
+ 1.045284-1-9.092460-2 1.391731-1-8.998967-2 1.736481-1-8.720608-21225 6  2  334
+ 2.079117-1-8.239605-2 2.419219-1-7.540803-2 2.756373-1-6.612472-21225 6  2  335
+ 3.090170-1-5.447751-2 3.420200-1-4.046683-2 3.746065-1-2.418327-21225 6  2  336
+ 4.067366-1-5.849707-3 4.383712-1 1.413325-2 4.694715-1 3.514831-21225 6  2  337
+ 5.000000-1 5.635838-2 5.299193-1 7.678820-2 5.591928-1 9.551080-21225 6  2  338
+ 5.877852-1 1.118865-1 6.156614-1 1.257453-1 6.427876-1 1.374300-11225 6  2  339
+ 6.691306-1 1.477495-1 6.946584-1 1.579327-1 7.193397-1 1.696806-11225 6  2  340
+ 7.431448-1 1.853467-1 7.660444-1 2.082276-1 7.880108-1 2.429737-11225 6  2  341
+ 8.090170-1 2.961232-1 8.290375-1 3.768602-1 8.480481-1 4.980313-11225 6  2  342
+ 8.660254-1 6.776392-1 8.829476-1 9.410312-1 8.987941-1 1.324243+01225 6  2  343
+ 9.135454-1 1.879133+0 9.271839-1 2.681567+0 9.396926-1 3.844588+01225 6  2  344
+ 9.510565-1 5.539923+0 9.612617-1 8.034144+0 9.702957-1 1.174919+11225 6  2  345
+ 9.781476-1 1.736123+1 9.848077-1 2.593363+1 9.902681-1 3.888996+11225 6  2  346
+ 9.945219-1 5.603688+1                                            1225 6  2  347
+ 0.000000+0 1.000000+7         12          0        176         881225 6  2  348
+-1.000000+0-1.310677-1-9.993908-1-1.307269-1-9.975641-1-1.297094-11225 6  2  349
+-9.945219-1-1.280328-1-9.902681-1-1.257242-1-9.848077-1-1.228205-11225 6  2  350
+-9.781476-1-1.193673-1-9.702957-1-1.154150-1-9.612617-1-1.110191-11225 6  2  351
+-9.510565-1-1.062361-1-9.396927-1-1.011231-1-9.271839-1-9.573273-21225 6  2  352
+-9.135455-1-9.011295-2-8.987941-1-8.430239-2-8.829476-1-7.832938-21225 6  2  353
+-8.660255-1-7.220829-2-8.480482-1-6.593458-2-8.290376-1-5.948291-21225 6  2  354
+-8.090171-1-5.279945-2-7.880108-1-4.579466-2-7.660446-1-3.833256-21225 6  2  355
+-7.431448-1-3.021701-2-7.193399-1-2.117624-2-6.946585-1-1.085465-21225 6  2  356
+-6.691307-1 1.165276-3-6.427876-1 1.524603-2-6.156614-1 3.136117-21225 6  2  357
+-5.877854-1 4.841097-2-5.591930-1 6.342351-2-5.299193-1 7.189810-21225 6  2  358
+-5.000001-1 7.059586-2-4.694716-1 6.046950-2-4.383711-1 4.561328-21225 6  2  359
+-4.067367-1 2.986517-2-3.746067-1 1.520118-2-3.420201-1 2.117388-31225 6  2  360
+-3.090170-1-9.578566-3-2.756374-1-2.026568-2-2.419220-1-3.029529-21225 6  2  361
+-2.079118-1-3.992218-2-1.736482-1-4.929467-2-1.391732-1-5.846599-21225 6  2  362
+-1.045285-1-6.740529-2-6.975660-2-7.601112-2-3.489946-2-8.412150-21225 6  2  363
+-4.371139-8-9.152398-2 3.489938-2-9.796543-2 6.975651-2-1.031611-11225 6  2  364
+ 1.045284-1-1.068051-1 1.391731-1-1.085818-1 1.736481-1-1.081765-11225 6  2  365
+ 2.079117-1-1.052882-1 2.419219-1-9.963975-2 2.756373-1-9.098896-21225 6  2  366
+ 3.090170-1-7.913949-2 3.420200-1-6.395016-2 3.746065-1-4.534935-21225 6  2  367
+ 4.067366-1-2.336199-2 4.383712-1 1.833373-3 4.694715-1 2.979386-21225 6  2  368
+ 5.000000-1 5.962348-2 5.299193-1 8.977791-2 5.591928-1 1.180680-11225 6  2  369
+ 5.877852-1 1.421526-1 6.156614-1 1.604344-1 6.427876-1 1.726621-11225 6  2  370
+ 6.691306-1 1.797222-1 6.946584-1 1.830100-1 7.193397-1 1.840852-11225 6  2  371
+ 7.431448-1 1.847937-1 7.660444-1 1.876857-1 7.880108-1 1.965651-11225 6  2  372
+ 8.090170-1 2.171387-1 8.290375-1 2.578448-1 8.480481-1 3.309654-11225 6  2  373
+ 8.660254-1 4.542249-1 8.829476-1 6.531509-1 8.987941-1 9.647290-11225 6  2  374
+ 9.135454-1 1.443113+0 9.271839-1 2.168903+0 9.396926-1 3.264659+01225 6  2  375
+ 9.510565-1 4.921329+0 9.612617-1 7.445099+0 9.702957-1 1.134270+11225 6  2  376
+ 9.781476-1 1.748153+1 9.848077-1 2.739011+1 9.902681-1 4.374931+11225 6  2  377
+ 9.945219-1 7.033405+1                                            1225 6  2  378
+ 0.000000+0 1.200000+7         12          0        176         881225 6  2  379
+-1.000000+0-1.200432-1-9.993908-1-1.197343-1-9.975641-1-1.188143-11225 6  2  380
+-9.945219-1-1.173022-1-9.902681-1-1.152283-1-9.848077-1-1.126334-11225 6  2  381
+-9.781476-1-1.095666-1-9.702957-1-1.060836-1-9.612617-1-1.022434-11225 6  2  382
+-9.510565-1-9.810637-2-9.396927-1-9.373121-2-9.271839-1-8.917288-21225 6  2  383
+-9.135455-1-8.447991-2-8.987941-1-7.969148-2-8.829476-1-7.483876-21225 6  2  384
+-8.660255-1-6.993908-2-8.480482-1-6.499924-2-8.290376-1-6.001152-21225 6  2  385
+-8.090171-1-5.495403-2-7.880108-1-4.978907-2-7.660446-1-4.446091-21225 6  2  386
+-7.431448-1-3.889175-2-7.193399-1-3.297630-2-6.946585-1-2.657196-21225 6  2  387
+-6.691307-1-1.948747-2-6.427876-1-1.147164-2-6.156614-1-2.216466-31225 6  2  388
+-5.877854-1 8.580853-3-5.591930-1 2.099757-2-5.299193-1 3.435220-21225 6  2  389
+-5.000001-1 4.640220-2-4.694716-1 5.328340-2-4.383711-1 5.185259-21225 6  2  390
+-4.067367-1 4.278982-2-3.746067-1 2.979578-2-3.420201-1 1.617365-21225 6  2  391
+-3.090170-1 3.377610-3-2.756374-1-8.426207-3-2.419220-1-1.955825-21225 6  2  392
+-2.079118-1-3.039574-2-1.736482-1-4.121804-2-1.391732-1-5.217423-21225 6  2  393
+-1.045285-1-6.328874-2-6.975660-2-7.447675-2-3.489946-2-8.555757-21225 6  2  394
+-4.371139-8-9.627098-2 3.489938-2-1.062872-1 6.975651-2-1.152223-11225 6  2  395
+ 1.045284-1-1.226499-1 1.391731-1-1.281184-1 1.736481-1-1.311673-11225 6  2  396
+ 2.079117-1-1.313449-1 2.419219-1-1.282262-1 2.756373-1-1.214331-11225 6  2  397
+ 3.090170-1-1.106499-1 3.420200-1-9.563331-2 3.746065-1-7.622206-21225 6  2  398
+ 4.067366-1-5.233541-2 4.383712-1-2.397568-2 4.694715-1 8.747009-31225 6  2  399
+ 5.000000-1 4.548371-2 5.299193-1 8.527651-2 5.591928-1 1.258374-11225 6  2  400
+ 5.877852-1 1.629586-1 6.156614-1 1.915936-1 6.427876-1 2.089250-11225 6  2  401
+ 6.691306-1 2.158478-1 6.946584-1 2.149134-1 7.193397-1 2.081546-11225 6  2  402
+ 7.431448-1 1.969217-1 7.660444-1 1.827667-1 7.880108-1 1.683826-11225 6  2  403
+ 8.090170-1 1.584609-1 8.290375-1 1.606100-1 8.480481-1 1.865557-11225 6  2  404
+ 8.660254-1 2.538543-1 8.829476-1 3.884617-1 8.987941-1 6.287017-11225 6  2  405
+ 9.135454-1 1.031605+0 9.271839-1 1.683297+0 9.396926-1 2.716703+01225 6  2  406
+ 9.510565-1 4.342534+0 9.612617-1 6.906260+0 9.702957-1 1.099628+11225 6  2  407
+ 9.781476-1 1.766114+1 9.848077-1 2.886494+1 9.902681-1 4.846601+11225 6  2  408
+ 9.945219-1 8.398825+1                                            1225 6  2  409
+ 0.000000+0 1.400000+7         12          0        176         881225 6  2  410
+-1.000000+0-8.971316-2-9.993908-1-8.945864-2-9.975641-1-8.870170-21225 6  2  411
+-9.945219-1-8.746386-2-9.902681-1-8.577925-2-9.848077-1-8.369403-21225 6  2  412
+-9.781476-1-8.126248-2-9.702957-1-7.854469-2-9.612617-1-7.560409-21225 6  2  413
+-9.510565-1-7.250395-2-9.396927-1-6.930304-2-9.271839-1-6.605447-21225 6  2  414
+-9.135455-1-6.280252-2-8.987941-1-5.957929-2-8.829476-1-5.640498-21225 6  2  415
+-8.660255-1-5.328657-2-8.480482-1-5.021785-2-8.290376-1-4.718059-21225 6  2  416
+-8.090171-1-4.414582-2-7.880108-1-4.107634-2-7.660446-1-3.792913-21225 6  2  417
+-7.431448-1-3.465837-2-7.193399-1-3.121806-2-6.946585-1-2.756383-21225 6  2  418
+-6.691307-1-2.365421-2-6.427876-1-1.944925-2-6.156614-1-1.490788-21225 6  2  419
+-5.877854-1-9.983245-3-5.591930-1-4.622575-3-5.299193-1 1.213190-31225 6  2  420
+-5.000001-1 7.462421-3-4.694716-1 1.373405-2-4.383711-1 1.895410-21225 6  2  421
+-4.067367-1 2.140795-2-3.746067-1 1.993147-2-3.420201-1 1.509048-21225 6  2  422
+-3.090170-1 8.354810-3-2.756374-1 6.961543-4-2.419220-1-7.640475-31225 6  2  423
+-2.079118-1-1.675528-2-1.736482-1-2.679857-2-1.391732-1-3.784867-21225 6  2  424
+-1.045285-1-4.987811-2-6.975660-2-6.274991-2-3.489946-2-7.622351-21225 6  2  425
+-4.371139-8-8.996209-2 3.489938-2-1.035406-1 6.975651-2-1.164587-11225 6  2  426
+ 1.045284-1-1.281532-1 1.391731-1-1.380164-1 1.736481-1-1.454150-11225 6  2  427
+ 2.079117-1-1.497183-1 2.419219-1-1.503216-1 2.756373-1-1.466805-11225 6  2  428
+ 3.090170-1-1.383393-1 3.420200-1-1.249658-1 3.746065-1-1.063752-11225 6  2  429
+ 4.067366-1-8.255649-2 4.383712-1-5.367575-2 4.694715-1-2.007531-21225 6  2  430
+ 5.000000-1 1.775324-2 5.299193-1 5.914638-2 5.591928-1 1.030253-11225 6  2  431
+ 5.877852-1 1.469932-1 6.156614-1 1.859974-1 6.427876-1 2.138248-11225 6  2  432
+ 6.691306-1 2.283743-1 6.946584-1 2.316458-1 7.193397-1 2.251326-11225 6  2  433
+ 7.431448-1 2.089109-1 7.660444-1 1.831096-1 7.880108-1 1.491592-11225 6  2  434
+ 8.090170-1 1.106952-1 8.290375-1 7.450872-2 8.480481-1 5.181331-21225 6  2  435
+ 8.660254-1 6.009513-2 8.829476-1 1.259068-1 8.987941-1 2.892346-11225 6  2  436
+ 9.135454-1 6.104867-1 9.271839-1 1.182093+0 9.396926-1 2.148451+01225 6  2  437
+ 9.510565-1 3.741568+0 9.612617-1 6.347612+0 9.702957-1 1.063760+11225 6  2  438
+ 9.781476-1 1.783970+1 9.848077-1 3.034674+1 9.902681-1 5.316926+11225 6  2  439
+ 9.945219-1 9.751342+1                                            1225 6  2  440
+ 0.000000+0 1.600000+7         12          0        176         881225 6  2  441
+-1.000000+0-7.203117-2-9.993908-1-7.182858-2-9.975641-1-7.122844-21225 6  2  442
+-9.945219-1-7.025489-2-9.902681-1-6.894837-2-9.848077-1-6.736001-21225 6  2  443
+-9.781476-1-6.555124-2-9.702957-1-6.358892-2-9.612617-1-6.154183-21225 6  2  444
+-9.510565-1-5.947610-2-9.396927-1-5.745151-2-9.271839-1-5.551722-21225 6  2  445
+-9.135455-1-5.370905-2-8.987941-1-5.204634-2-8.829476-1-5.053073-21225 6  2  446
+-8.660255-1-4.914543-2-8.480482-1-4.785570-2-8.290376-1-4.661064-21225 6  2  447
+-8.090171-1-4.534606-2-7.880108-1-4.398856-2-7.660446-1-4.245997-21225 6  2  448
+-7.431448-1-4.068236-2-7.193399-1-3.858380-2-6.946585-1-3.610339-21225 6  2  449
+-6.691307-1-3.319547-2-6.427876-1-2.983367-2-6.156614-1-2.601221-21225 6  2  450
+-5.877854-1-2.174599-2-5.591930-1-1.706793-2-5.299193-1-1.202510-21225 6  2  451
+-5.000001-1-6.680219-3-4.694716-1-1.135674-3-4.383711-1 4.372189-31225 6  2  452
+-4.067367-1 9.263248-3-3.746067-1 1.243146-2-3.420201-1 1.267321-21225 6  2  453
+-3.090170-1 9.726551-3-2.756374-1 4.339397-3-2.419220-1-2.754335-31225 6  2  454
+-2.079118-1-1.131081-2-1.736482-1-2.137800-2-1.391732-1-3.304427-21225 6  2  455
+-1.045285-1-4.631991-2-6.975660-2-6.109786-2-3.489946-2-7.714535-21225 6  2  456
+-4.371139-8-9.410566-2 3.489938-2-1.115034-1 6.975651-2-1.287530-11225 6  2  457
+ 1.045284-1-1.451711-1 1.391731-1-1.599957-1 1.736481-1-1.724061-11225 6  2  458
+ 2.079117-1-1.815545-1 2.419219-1-1.865966-1 2.756373-1-1.867346-11225 6  2  459
+ 3.090170-1-1.812591-1 3.420200-1-1.695986-1 3.746065-1-1.513640-11225 6  2  460
+ 4.067366-1-1.263966-1 4.383712-1-9.479883-2 4.694715-1-5.695136-21225 6  2  461
+ 5.000000-1-1.348597-2 5.299193-1 3.479584-2 5.591928-1 8.705212-21225 6  2  462
+ 5.877852-1 1.422311-1 6.156614-1 1.969948-1 6.427876-1 2.410677-11225 6  2  463
+ 6.691306-1 2.639194-1 6.946584-1 2.686753-1 7.193397-1 2.600654-11225 6  2  464
+ 7.431448-1 2.373714-1 7.660444-1 1.986953-1 7.880108-1 1.436333-11225 6  2  465
+ 8.090170-1 7.433949-2 8.290375-1-3.516448-3 8.480481-1-7.942441-21225 6  2  466
+ 8.660254-1-1.359664-1 8.829476-1-1.458005-1 8.987941-1-6.686442-21225 6  2  467
+ 9.135454-1 1.654359-1 9.271839-1 6.511031-1 9.396926-1 1.548018+01225 6  2  468
+ 9.510565-1 3.112559+0 9.612617-1 5.776675+0 9.702957-1 1.030222+11225 6  2  469
+ 9.781476-1 1.811146+1 9.848077-1 3.205145+1 9.902681-1 5.833877+11225 6  2  470
+ 9.945219-1 1.120055+2                                            1225 6  2  471
+ 0.000000+0 1.800000+7         12          0        176         881225 6  2  472
+-1.000000+0-5.436950-2-9.993908-1-5.420845-2-9.975641-1-5.373532-21225 6  2  473
+-9.945219-1-5.297931-2-9.902681-1-5.198693-2-9.848077-1-5.081943-21225 6  2  474
+-9.781476-1-4.954863-2-9.702957-1-4.825225-2-9.612617-1-4.700929-21225 6  2  475
+-9.510565-1-4.589409-2-9.396927-1-4.497141-2-9.271839-1-4.429129-21225 6  2  476
+-9.135455-1-4.388495-2-8.987941-1-4.376144-2-8.829476-1-4.390548-21225 6  2  477
+-8.660255-1-4.427746-2-8.480482-1-4.481413-2-8.290376-1-4.543136-21225 6  2  478
+-8.090171-1-4.602839-2-7.880108-1-4.649265-2-7.660446-1-4.670603-21225 6  2  479
+-7.431448-1-4.655167-2-7.193399-1-4.592085-2-6.946585-1-4.472003-21225 6  2  480
+-6.691307-1-4.287780-2-6.427876-1-4.035064-2-6.156614-1-3.712755-21225 6  2  481
+-5.877854-1-3.323369-2-5.591930-1-2.873095-2-5.299193-1-2.371704-21225 6  2  482
+-5.000001-1-1.832224-2-4.694716-1-1.270737-2-4.383711-1-7.072316-31225 6  2  483
+-4.067367-1-1.698664-3-3.746067-1 2.941955-3-3.420201-1 6.065671-31225 6  2  484
+-3.090170-1 6.752057-3-2.756374-1 4.550527-3-2.419220-1-3.116152-41225 6  2  485
+-2.079118-1-7.477994-3-1.736482-1-1.683246-2-1.391732-1-2.841911-21225 6  2  486
+-1.045285-1-4.227823-2-6.975660-2-5.835315-2-3.489946-2-7.645357-21225 6  2  487
+-4.371139-8-9.624434-2 3.489938-2-1.172405-1 6.975651-2-1.388111-11225 6  2  488
+ 1.045284-1-1.601858-1 1.391731-1-1.804698-1 1.736481-1-1.986654-11225 6  2  489
+ 2.079117-1-2.136976-1 2.419219-1-2.244578-1 2.756373-1-2.298464-11225 6  2  490
+ 3.090170-1-2.288297-1 3.420200-1-2.205038-1 3.746065-1-2.041648-11225 6  2  491
+ 4.067366-1-1.793769-1 4.383712-1-1.460445-1 4.694715-1-1.044649-11225 6  2  492
+ 5.000000-1-5.535426-2 5.299193-1 1.943308-4 5.591928-1 6.090345-21225 6  2  493
+ 5.877852-1 1.257811-1 6.156614-1 1.944196-1 6.427876-1 2.613136-11225 6  2  494
+ 6.691306-1 3.015395-1 6.946584-1 3.087455-1 7.193397-1 2.990010-11225 6  2  495
+ 7.431448-1 2.715675-1 7.660444-1 2.211585-1 7.880108-1 1.447559-11225 6  2  496
+ 8.090170-1 4.254882-2 8.290375-1-8.128020-2 8.480481-1-2.171288-11225 6  2  497
+ 8.660254-1-3.477859-1 8.829476-1-4.449295-1 8.987941-1-4.639300-11225 6  2  498
+ 9.135454-1-3.350565-1 9.271839-1 5.094577-2 9.396926-1 8.680961-11225 6  2  499
+ 9.510565-1 2.401513+0 9.612617-1 5.136121+0 9.702957-1 9.937105+01225 6  2  500
+ 9.781476-1 1.844340+1 9.848077-1 3.400309+1 9.902681-1 6.414683+11225 6  2  501
+ 9.945219-1 1.280426+2                                            1225 6  2  502
+ 0.000000+0 2.000000+7         12          0        176         881225 6  2  503
+-1.000000+0-3.939248-2-9.993908-1-3.925138-2-9.975641-1-3.884013-21225 6  2  504
+-9.945219-1-3.819405-2-9.902681-1-3.736975-2-9.848077-1-3.644123-21225 6  2  505
+-9.781476-1-3.549566-2-9.702957-1-3.462704-2-9.612617-1-3.393066-21225 6  2  506
+-9.510565-1-3.349555-2-9.396927-1-3.339813-2-9.271839-1-3.369557-21225 6  2  507
+-9.135455-1-3.442058-2-8.987941-1-3.557726-2-8.829476-1-3.713932-21225 6  2  508
+-8.660255-1-3.905020-2-8.480482-1-4.122444-2-8.290376-1-4.355124-21225 6  2  509
+-8.090171-1-4.589898-2-7.880108-1-4.812109-2-7.660446-1-5.006304-21225 6  2  510
+-7.431448-1-5.157005-2-7.193399-1-5.249486-2-6.946585-1-5.270695-21225 6  2  511
+-6.691307-1-5.209985-2-6.427876-1-5.059950-2-6.156614-1-4.817067-21225 6  2  512
+-5.877854-1-4.482193-2-5.591930-1-4.060963-2-5.299193-1-3.563915-21225 6  2  513
+-5.000001-1-3.006410-2-4.694716-1-2.408412-2-4.383711-1-1.794174-21225 6  2  514
+-4.067367-1-1.192586-2-3.746067-1-6.393230-3-3.420201-1-1.822527-31225 6  2  515
+-3.090170-1 1.131363-3-2.756374-1 1.745531-3-2.419220-1-4.437485-41225 6  2  516
+-2.079118-1-5.509731-3-1.736482-1-1.340238-2-1.391732-1-2.415182-21225 6  2  517
+-1.045285-1-3.783170-2-6.975660-2-5.445933-2-3.489946-2-7.392924-21225 6  2  518
+-4.371139-8-9.597880-2 3.489938-2-1.201712-1 6.975651-2-1.458845-11225 6  2  519
+ 1.045284-1-1.723141-1 1.391731-1-1.984732-1 1.736481-1-2.232112-11225 6  2  520
+ 2.079117-1-2.452385-1 2.419219-1-2.631619-1 2.756373-1-2.755403-11225 6  2  521
+ 3.090170-1-2.809457-1 3.420200-1-2.780447-1 3.746065-1-2.656898-11225 6  2  522
+ 4.067366-1-2.430200-1 4.383712-1-2.095698-1 4.694715-1-1.653716-11225 6  2  523
+ 5.000000-1-1.110470-1 5.299193-1-4.785016-2 5.591928-1 2.239909-21225 6  2  524
+ 5.877852-1 9.768289-2 6.156614-1 1.770209-1 6.427876-1 2.622343-11225 6  2  525
+ 6.691306-1 3.363076-1 6.946584-1 3.511183-1 7.193397-1 3.405652-11225 6  2  526
+ 7.431448-1 3.103774-1 7.660444-1 2.494004-1 7.880108-1 1.509148-11225 6  2  527
+ 8.090170-1 1.250879-2 8.290375-1-1.636330-1 8.480481-1-3.692309-11225 6  2  528
+ 8.660254-1-5.874068-1 8.829476-1-7.887833-1 8.987941-1-9.255003-11225 6  2  529
+ 9.135454-1-9.214337-1 9.271839-1-6.557921-1 9.396926-1 6.538680-21225 6  2  530
+ 9.510565-1 1.562392+0 9.612617-1 4.383912+0 9.702957-1 9.517843+01225 6  2  531
+ 9.781476-1 1.885698+1 9.848077-1 3.632825+1 9.902681-1 7.096423+11225 6  2  532
+ 9.945219-1 1.466120+2                                            1225 6  2  533
+ 0.000000+0 2.200000+7         12          0        176         881225 6  2  534
+-1.000000+0-2.909069-2-9.993908-1-2.893984-2-9.975641-1-2.850213-21225 6  2  535
+-9.945219-1-2.782052-2-9.902681-1-2.696378-2-9.848077-1-2.602265-21225 6  2  536
+-9.781476-1-2.510401-2-9.702957-1-2.432395-2-9.612617-1-2.380083-21225 6  2  537
+-9.510565-1-2.364584-2-9.396927-1-2.395460-2-9.271839-1-2.479901-21225 6  2  538
+-9.135455-1-2.622031-2-8.987941-1-2.822553-2-8.829476-1-3.078540-21225 6  2  539
+-8.660255-1-3.383581-2-8.480482-1-3.727887-2-8.290376-1-4.098740-21225 6  2  540
+-8.090171-1-4.480878-2-7.880108-1-4.857116-2-7.660446-1-5.209099-21225 6  2  541
+-7.431448-1-5.518089-2-7.193399-1-5.765871-2-6.946585-1-5.935737-21225 6  2  542
+-6.691307-1-6.013310-2-6.427876-1-5.987531-2-6.156614-1-5.851332-21225 6  2  543
+-5.877854-1-5.602391-2-5.591930-1-5.243606-2-5.299193-1-4.783446-21225 6  2  544
+-5.000001-1-4.236127-2-4.694716-1-3.621561-2-4.383711-1-2.965177-21225 6  2  545
+-4.067367-1-2.297658-2-3.746067-1-1.655063-2-3.420201-1-1.079818-21225 6  2  546
+-3.090170-1-6.231577-3-2.756374-1-3.464418-3-2.419220-1-3.134892-31225 6  2  547
+-2.079118-1-5.733177-3-1.736482-1-1.153299-2-1.391732-1-2.070825-21225 6  2  548
+-1.045285-1-3.342451-2-6.975660-2-4.981200-2-3.489946-2-6.989883-21225 6  2  549
+-4.371139-8-9.355669-2 3.489938-2-1.204654-1 6.975651-2-1.500853-11225 6  2  550
+ 1.045284-1-1.816408-1 1.391731-1-2.141138-1 1.736481-1-2.462422-11225 6  2  551
+ 2.079117-1-2.765414-1 2.419219-1-3.033282-1 2.756373-1-3.247804-11225 6  2  552
+ 3.090170-1-3.390020-1 3.420200-1-3.441182-1 3.746065-1-3.383932-11225 6  2  553
+ 4.067366-1-3.203634-1 4.383712-1-2.889898-1 4.694715-1-2.438201-11225 6  2  554
+ 5.000000-1-1.851489-1 5.299193-1-1.141564-1 5.591928-1-3.298747-21225 6  2  555
+ 5.877852-1 5.534507-2 6.156614-1 1.476165-1 6.427876-1 2.430835-11225 6  2  556
+ 6.691306-1 3.448746-1 6.946584-1 3.919085-1 7.193397-1 3.836803-11225 6  2  557
+ 7.431448-1 3.535314-1 7.660444-1 2.831462-1 7.880108-1 1.609640-11225 6  2  558
+ 8.090170-1-1.884510-2 8.290375-1-2.568292-1 8.480481-1-5.466246-11225 6  2  559
+ 8.660254-1-8.720031-1 8.829476-1-1.202404+0 8.987941-1-1.485886+01225 6  2  560
+ 9.135454-1-1.638146+0 9.271839-1-1.523634+0 9.396926-1-9.227282-11225 6  2  561
+ 9.510565-1 5.293865-1 9.612617-1 3.461574+0 9.702957-1 9.013962+01225 6  2  562
+ 9.781476-1 1.939112+1 9.848077-1 3.922309+1 9.902681-1 7.934595+11225 6  2  563
+ 9.945219-1 1.691752+2                                            1225 6  2  564
+ 0.000000+0 2.400000+7         12          0        176         881225 6  2  565
+-1.000000+0-2.462419-2-9.993908-1-2.443134-2-9.975641-1-2.387047-21225 6  2  566
+-9.945219-1-2.299335-2-9.902681-1-2.188303-2-9.848077-1-2.064932-21225 6  2  567
+-9.781476-1-1.942229-2-9.702957-1-1.834500-2-9.612617-1-1.756482-21225 6  2  568
+-9.510565-1-1.722294-2-9.396927-1-1.744323-2-9.271839-1-1.832174-21225 6  2  569
+-9.135455-1-1.991777-2-8.987941-1-2.224975-2-8.829476-1-2.529534-21225 6  2  570
+-8.660255-1-2.899227-2-8.480482-1-3.324115-2-8.290376-1-3.790868-21225 6  2  571
+-8.090171-1-4.283193-2-7.880108-1-4.782412-2-7.660446-1-5.268168-21225 6  2  572
+-7.431448-1-5.719309-2-7.193399-1-6.114802-2-6.946585-1-6.434727-21225 6  2  573
+-6.691307-1-6.661174-2-6.427876-1-6.779215-2-6.156614-1-6.777734-21225 6  2  574
+-5.877854-1-6.650160-2-5.591930-1-6.395090-2-5.299193-1-6.016821-21225 6  2  575
+-5.000001-1-5.525644-2-4.694716-1-4.938139-2-4.383711-1-4.277218-21225 6  2  576
+-4.067367-1-3.572083-2-3.746067-1-2.858159-2-3.420201-1-2.177165-21225 6  2  577
+-3.090170-1-1.577516-2-2.756374-1-1.115293-2-2.419220-1-8.537509-31225 6  2  578
+-2.079118-1-8.580237-3-1.736482-1-1.185466-2-1.391732-1-1.881097-21225 6  2  579
+-1.045285-1-2.981650-2-6.975660-2-4.518355-2-3.489946-2-6.513755-21225 6  2  580
+-4.371139-8-8.975790-2 3.489938-2-1.189231-1 6.975651-2-1.522605-11225 6  2  581
+ 1.045284-1-1.891126-1 1.391731-1-2.285001-1 1.736481-1-2.691095-11225 6  2  582
+ 2.079117-1-3.092908-1 2.419219-1-3.470730-1 2.756373-1-3.802079-11225 6  2  583
+ 3.090170-1-4.062471-1 3.420200-1-4.226458-1 3.746065-1-4.268982-11225 6  2  584
+ 4.067366-1-4.167195-1 4.383712-1-3.902456-1 4.694715-1-3.462655-11225 6  2  585
+ 5.000000-1-2.844660-1 5.299193-1-2.056772-1 5.591928-1-1.120834-11225 6  2  586
+ 5.877852-1-7.349014-3 6.156614-1 1.035214-1 6.427876-1 2.152486-11225 6  2  587
+ 6.691306-1 3.261667-1 6.946584-1 4.155399-1 7.193397-1 4.276381-11225 6  2  588
+ 7.431448-1 4.020077-1 7.660444-1 3.231536-1 7.880108-1 1.741199-11225 6  2  589
+ 8.090170-1-5.544562-2 8.290375-1-3.699395-1 8.480481-1-7.658469-11225 6  2  590
+ 8.660254-1-1.228095+0 8.829476-1-1.724732+0 8.987941-1-2.198710+01225 6  2  591
+ 9.135454-1-2.554865+0 9.271839-1-2.638033+0 9.396926-1-2.194754+01225 6  2  592
+ 9.510565-1-8.013684-1 9.612617-1 2.275849+0 9.702957-1 8.374614+01225 6  2  593
+ 9.781476-1 2.010035+1 9.848077-1 4.297881+1 9.902681-1 9.012514+11225 6  2  594
+ 9.945219-1 1.979213+2                                            1225 6  2  595
+ 0.000000+0 2.600000+7         12          0        176         881225 6  2  596
+-1.000000+0-2.627722-2-9.993908-1-2.601042-2-9.975641-1-2.523116-21225 6  2  597
+-9.945219-1-2.400140-2-9.902681-1-2.242031-2-9.848077-1-2.061921-21225 6  2  598
+-9.781476-1-1.875424-2-9.702957-1-1.699758-2-9.612617-1-1.552914-21225 6  2  599
+-9.510565-1-1.452518-2-9.396927-1-1.414640-2-9.271839-1-1.452441-21225 6  2  600
+-9.135455-1-1.574968-2-8.987941-1-1.786434-2-8.829476-1-2.086256-21225 6  2  601
+-8.660255-1-2.469313-2-8.480482-1-2.926366-2-8.290376-1-3.444419-21225 6  2  602
+-8.090171-1-4.007101-2-7.880108-1-4.595230-2-7.660446-1-5.187519-21225 6  2  603
+-7.431448-1-5.761346-2-7.193399-1-6.293785-2-6.946585-1-6.762400-21225 6  2  604
+-6.691307-1-7.146242-2-6.427876-1-7.426755-2-6.156614-1-7.588533-21225 6  2  605
+-5.877854-1-7.620101-2-5.591930-1-7.514600-2-5.299193-1-7.270361-21225 6  2  606
+-5.000001-1-6.891435-2-4.694716-1-6.388134-2-4.383711-1-5.777429-21225 6  2  607
+-4.067367-1-5.083316-2-3.746067-1-4.337131-2-3.420201-1-3.577897-21225 6  2  608
+-3.090170-1-2.852610-2-2.756374-1-2.216584-2-2.419220-1-1.733808-21225 6  2  609
+-2.079118-1-1.476072-2-1.736482-1-1.519112-2-1.391732-1-1.936238-21225 6  2  610
+-1.045285-1-2.794029-2-6.975660-2-4.151834-2-3.489946-2-6.060676-21225 6  2  611
+-4.371139-8-8.558466-2 3.489938-2-1.166304-1 6.975651-2-1.536480-11225 6  2  612
+ 1.045284-1-1.962018-1 1.391731-1-2.434497-1 1.736481-1-2.941033-11225 6  2  613
+ 2.079117-1-3.463891-1 2.419219-1-3.980508-1 2.756373-1-4.463682-11225 6  2  614
+ 3.090170-1-4.882323-1 3.420200-1-5.202546-1 3.746065-1-5.389304-11225 6  2  615
+ 4.067366-1-5.408595-1 4.383712-1-5.230178-1 4.694715-1-4.830739-11225 6  2  616
+ 5.000000-1-4.197433-1 5.299193-1-3.331659-1 5.591928-1-2.252695-11225 6  2  617
+ 5.877852-1-1.000885-1 6.156614-1 3.605312-2 6.427876-1 1.747448-11225 6  2  618
+ 6.691306-1 3.068160-1 6.946584-1 4.202591-1 7.193397-1 4.717920-11225 6  2  619
+ 7.431448-1 4.580706-1 7.660444-1 3.713672-1 7.880108-1 1.898761-11225 6  2  620
+ 8.090170-1-1.029226-1 8.290375-1-5.170543-1 8.480481-1-1.053237+01225 6  2  621
+ 8.660254-1-1.698421+0 8.829476-1-2.419148+0 8.987941-1-3.151567+01225 6  2  622
+ 9.135454-1-3.785810+0 9.271839-1-4.139840+0 9.396926-1-3.913497+01225 6  2  623
+ 9.510565-1-2.602660+0 9.612617-1 6.696190-1 9.702957-1 7.508942+01225 6  2  624
+ 9.781476-1 2.106045+1 9.848077-1 4.804815+1 9.902681-1 1.046136+21225 6  2  625
+ 9.945219-1 2.363239+2                                            1225 6  2  626
+ 0.000000+0 2.800000+7         12          0        176         881225 6  2  627
+-1.000000+0-3.398403-2-9.993908-1-3.360969-2-9.975641-1-3.251199-21225 6  2  628
+-9.945219-1-3.076561-2-9.902681-1-2.849003-2-9.848077-1-2.584337-21225 6  2  629
+-9.781476-1-2.301295-2-9.702957-1-2.020558-2-9.612617-1-1.763744-21225 6  2  630
+-9.510565-1-1.552240-2-9.396927-1-1.406098-2-9.271839-1-1.342775-21225 6  2  631
+-9.135455-1-1.375621-2-8.987941-1-1.512780-2-8.829476-1-1.756667-21225 6  2  632
+-8.660255-1-2.104328-2-8.480482-1-2.548004-2-8.290376-1-3.075751-21225 6  2  633
+-8.090171-1-3.671949-2-7.880108-1-4.317820-2-7.660446-1-4.992065-21225 6  2  634
+-7.431448-1-5.671706-2-7.193399-1-6.332831-2-6.946585-1-6.951423-21225 6  2  635
+-6.691307-1-7.504245-2-6.427876-1-7.969503-2-6.156614-1-8.327593-21225 6  2  636
+-5.877854-1-8.561778-2-5.591930-1-8.658738-2-5.299193-1-8.609294-21225 6  2  637
+-5.000001-1-8.409053-2-4.694716-1-8.059131-2-4.383711-1-7.567083-21225 6  2  638
+-4.067367-1-6.947718-2-3.746067-1-6.224212-2-3.420201-1-5.429071-21225 6  2  639
+-3.090170-1-4.605173-2-2.756374-1-3.806668-2-2.419220-1-3.099718-21225 6  2  640
+-2.079118-1-2.562888-2-1.736482-1-2.286196-2-1.391732-1-2.367939-21225 6  2  641
+-1.045285-1-2.909233-2-6.975660-2-4.008639-2-3.489946-2-5.758214-21225 6  2  642
+-4.371139-8-8.238700-2 3.489938-2-1.151171-1 6.975651-2-1.560985-11225 6  2  643
+ 1.045284-1-2.052608-1 1.391731-1-2.620319-1 1.736481-1-3.252479-11225 6  2  644
+ 2.079117-1-3.930795-1 2.419219-1-4.629809-1 2.756373-1-5.316923-11225 6  2  645
+ 3.090170-1-5.952867-1 3.420200-1-6.492827-1 3.746065-1-6.888388-11225 6  2  646
+ 4.067366-1-7.090144-1 4.383712-1-7.051350-1 4.694715-1-6.732153-11225 6  2  647
+ 5.000000-1-6.104695-1 5.299193-1-5.158666-1 5.591928-1-3.907010-11225 6  2  648
+ 5.877852-1-2.391473-1 6.156614-1-6.872386-2 6.427876-1 1.094589-11225 6  2  649
+ 6.691306-1 2.809227-1 6.946584-1 4.279073-1 7.193397-1 5.196565-11225 6  2  650
+ 7.431448-1 5.267476-1 7.660444-1 4.322663-1 7.880108-1 2.083642-11225 6  2  651
+ 8.090170-1-1.704207-1 8.290375-1-7.225909-1 8.480481-1-1.455538+01225 6  2  652
+ 8.660254-1-2.359659+0 8.829476-1-3.399824+0 8.987941-1-4.502820+01225 6  2  653
+ 9.135454-1-5.537773+0 9.271839-1-6.283901+0 9.396926-1-6.373572+01225 6  2  654
+ 9.510565-1-5.186254+0 9.612617-1-1.639212+0 9.702957-1 6.257709+01225 6  2  655
+ 9.781476-1 2.241916+1 9.848077-1 5.526866+1 9.902681-1 1.252191+21225 6  2  656
+ 9.945219-1 2.907220+2                                            1225 6  2  657
+ 0.000000+0 3.000000+7         12          0        176         881225 6  2  658
+-1.000000+0-4.852784-2-9.993908-1-4.800097-2-9.975641-1-4.645219-21225 6  2  659
+-9.945219-1-4.397278-2-9.902681-1-4.071022-2-9.848077-1-3.685855-21225 6  2  660
+-9.781476-1-3.264849-2-9.702957-1-2.833370-2-9.612617-1-2.417940-21225 6  2  661
+-9.510565-1-2.044769-2-9.396927-1-1.738620-2-9.271839-1-1.521674-21225 6  2  662
+-9.135455-1-1.412185-2-8.987941-1-1.423311-2-8.829476-1-1.561975-21225 6  2  663
+-8.660255-1-1.828706-2-8.480482-1-2.218203-2-8.290376-1-2.720267-21225 6  2  664
+-8.090171-1-3.320665-2-7.880108-1-4.001709-2-7.660446-1-4.743015-21225 6  2  665
+-7.431448-1-5.522132-2-7.193399-1-6.315212-2-6.946585-1-7.097650-21225 6  2  666
+-6.691307-1-7.844692-2-6.427876-1-8.531962-2-6.156614-1-9.135861-21225 6  2  667
+-5.877854-1-9.634026-2-5.591930-1-1.000569-1-5.299193-1-1.023244-11225 6  2  668
+-5.000001-1-1.029878-1-4.694716-1-1.019325-1-4.383711-1-9.909739-21225 6  2  669
+-4.067367-1-9.449021-2-3.746067-1-8.820844-2-3.420201-1-8.046003-21225 6  2  670
+-3.090170-1-7.158685-2-2.756374-1-6.208707-2-2.419220-1-5.263615-21225 6  2  671
+-2.079118-1-4.410139-2-1.736482-1-3.754906-2-1.391732-1-3.423446-21225 6  2  672
+-1.045285-1-3.556732-2-6.975660-2-4.304626-2-3.489946-2-5.818046-21225 6  2  673
+-4.371139-8-8.240971-2 3.489938-2-1.170057-1 6.975651-2-1.629420-11225 6  2  674
+ 1.045284-1-2.207386-1 1.391731-1-2.902929-1 1.736481-1-3.707267-11225 6  2  675
+ 2.079117-1-4.602357-1 2.419219-1-5.559798-1 2.756373-1-6.540336-11225 6  2  676
+ 3.090170-1-7.493807-1 3.420200-1-8.360351-1 3.746065-1-9.072340-11225 6  2  677
+ 4.067366-1-9.557923-1 4.383712-1-9.745457-1 4.694715-1-9.569670-11225 6  2  678
+ 5.000000-1-8.978814-1 5.299193-1-7.942913-1 5.591928-1-6.462579-11225 6  2  679
+ 5.877852-1-4.578105-1 6.156614-1-2.377774-1 6.427876-1-4.487681-41225 6  2  680
+ 6.691306-1 2.340865-1 6.946584-1 4.399217-1 7.193397-1 5.826334-11225 6  2  681
+ 7.431448-1 6.200962-1 7.660444-1 5.163059-1 7.880108-1 2.308867-11225 6  2  682
+ 8.090170-1-2.759905-1 8.290375-1-1.036568+0 8.480481-1-2.069354+01225 6  2  683
+ 8.660254-1-3.370847+0 8.829476-1-4.904073+0 8.987941-1-6.581806+01225 6  2  684
+ 9.135454-1-8.240965+0 9.271839-1-9.600443+0 9.396926-1-1.018723+11225 6  2  685
+ 9.510565-1-9.199418+0 9.612617-1-5.232738+0 9.702957-1 4.298396+01225 6  2  686
+ 9.781476-1 2.450024+1 9.848077-1 6.641499+1 9.902681-1 1.570080+21225 6  2  687
+ 9.945219-1 3.744146+2                                            1225 6  2  688
+ 0.000000+0 3.500000+7         12          0        176         881225 6  2  689
+-1.000000+0-1.219269-1-9.993908-1-1.207287-1-9.975641-1-1.171919-11225 6  2  690
+-9.945219-1-1.114886-1-9.902681-1-1.038950-1-9.848077-1-9.477329-21225 6  2  691
+-9.781476-1-8.455392-2-9.702957-1-7.371221-2-9.612617-1-6.274094-21225 6  2  692
+-9.510565-1-5.212804-2-9.396927-1-4.233380-2-9.271839-1-3.377096-21225 6  2  693
+-9.135455-1-2.679310-2-8.987941-1-2.168405-2-8.829476-1-1.865097-21225 6  2  694
+-8.660255-1-1.782085-2-8.480482-1-1.923718-2-8.290376-1-2.286699-21225 6  2  695
+-8.090171-1-2.861636-2-7.880108-1-3.634843-2-7.660446-1-4.589665-21225 6  2  696
+-7.431448-1-5.707326-2-7.193399-1-6.967232-2-6.946585-1-8.346872-21225 6  2  697
+-6.691307-1-9.821339-2-6.427876-1-1.136252-1-6.156614-1-1.293792-11225 6  2  698
+-5.877854-1-1.450982-1-5.591930-1-1.603421-1-5.299193-1-1.746045-11225 6  2  699
+-5.000001-1-1.873167-1-4.694716-1-1.978596-1-4.383711-1-2.055953-11225 6  2  700
+-4.067367-1-2.099040-1-3.746067-1-2.102439-1-3.420201-1-2.062239-11225 6  2  701
+-3.090170-1-1.976883-1-2.756374-1-1.848099-1-2.419220-1-1.681870-11225 6  2  702
+-2.079118-1-1.489343-1-1.736482-1-1.287594-1-1.391732-1-1.100161-11225 6  2  703
+-1.045285-1-9.571388-2-6.975660-2-8.948617-2-3.489946-2-9.547532-21225 6  2  704
+-4.371139-8-1.181458-1 3.489938-2-1.620287-1 6.975651-2-2.314090-11225 6  2  705
+ 1.045284-1-3.299457-1 1.391731-1-4.602159-1 1.736481-1-6.232157-11225 6  2  706
+ 2.079117-1-8.178483-1 2.419219-1-1.040457+0 2.756373-1-1.284422+01225 6  2  707
+ 3.090170-1-1.539922+0 3.420200-1-1.793902+0 3.746065-1-2.030285+01225 6  2  708
+ 4.067366-1-2.230547+0 4.383712-1-2.374708+0 4.694715-1-2.442681+01225 6  2  709
+ 5.000000-1-2.416095+0 5.299193-1-2.280561+0 5.591928-1-2.028179+01225 6  2  710
+ 5.877852-1-1.660390+0 6.156614-1-1.190805+0 6.427876-1-6.478902-11225 6  2  711
+ 6.691306-1-7.718740-2 6.946584-1 4.572566-1 7.193397-1 8.721814-11225 6  2  712
+ 7.431448-1 1.065103+0 7.660444-1 9.206302-1 7.880108-1 3.163193-11225 6  2  713
+ 8.090170-1-8.719889-1 8.290375-1-2.757240+0 8.480481-1-5.424664+01225 6  2  714
+ 8.660254-1-8.910557+0 8.829476-1-1.317328+1 8.987941-1-1.805256+11225 6  2  715
+ 9.135454-1-2.320886+1 9.271839-1-2.802535+1 9.396926-1-3.143972+11225 6  2  716
+ 9.510565-1-3.163086+1 9.612617-1-2.539660+1 9.702957-1-6.820841+01225 6  2  717
+ 9.781476-1 3.582499+1 9.848077-1 1.280914+2 9.902681-1 3.330817+21225 6  2  718
+ 9.945219-1 8.369841+2                                            1225 6  2  719
+ 0.000000+0 4.000000+7         12          0        176         881225 6  2  720
+-1.000000+0 6.705438-1-9.993908-1 6.644890-1-9.975641-1 6.465979-11225 6  2  721
+-9.945219-1 6.176682-1-9.902681-1 5.789697-1-9.848077-1 5.321711-11225 6  2  722
+-9.781476-1 4.792359-1-9.702957-1 4.222935-1-9.612617-1 3.635501-11225 6  2  723
+-9.510565-1 3.051393-1-9.396927-1 2.490519-1-9.271839-1 1.970371-11225 6  2  724
+-9.135455-1 1.505610-1-8.987941-1 1.107849-1-8.829476-1 7.857431-21225 6  2  725
+-8.660255-1 5.454272-2-8.480482-1 3.910033-2-8.290376-1 3.251430-21225 6  2  726
+-8.090171-1 3.496575-2-7.880108-1 4.660987-2-7.660446-1 6.763219-21225 6  2  727
+-7.431448-1 9.829084-2-7.193399-1 1.389094-1-6.946585-1 1.898403-11225 6  2  728
+-6.691307-1 2.513748-1-6.427876-1 3.236136-1-6.156614-1 4.063189-11225 6  2  729
+-5.877854-1 4.987416-1-5.591930-1 5.994726-1-5.299193-1 7.062909-11225 6  2  730
+-5.000001-1 8.160901-1-4.694716-1 9.248446-1-4.383711-1 1.027687+01225 6  2  731
+-4.067367-1 1.119089+0-3.746067-1 1.193166+0-3.420201-1 1.244106+01225 6  2  732
+-3.090170-1 1.266747+0-2.756374-1 1.257245+0-2.419220-1 1.213832+01225 6  2  733
+-2.079118-1 1.137637+0-1.736482-1 1.033456+0-1.391732-1 9.104654-11225 6  2  734
+-1.045285-1 7.827528-1-6.975660-2 6.695984-1-3.489946-2 5.953849-11225 6  2  735
+-4.371139-8 5.890346-1 3.489938-2 6.828966-1 6.975651-2 9.109839-11225 6  2  736
+ 1.045284-1 1.306685+0 1.391731-1 1.899896+0 1.736481-1 2.713597+01225 6  2  737
+ 2.079117-1 3.760023+0 2.419219-1 5.036652+0 2.756373-1 6.522399+01225 6  2  738
+ 3.090170-1 8.174315+0 3.420200-1 9.925418+0 3.746065-1 1.168391+11225 6  2  739
+ 4.067366-1 1.333490+1 4.383712-1 1.474452+1 4.694715-1 1.576742+11225 6  2  740
+ 5.000000-1 1.625805+1 5.299193-1 1.608507+1 5.591928-1 1.514973+11225 6  2  741
+ 5.877852-1 1.340691+1 6.156614-1 1.088816+1 6.427876-1 7.725216+01225 6  2  742
+ 6.691306-1 4.171771+0 6.946584-1 6.212276-1 7.193397-1-2.382605+01225 6  2  743
+ 7.431448-1-4.144245+0 7.660444-1-3.831866+0 7.880108-1-5.131555-11225 6  2  744
+ 8.090170-1 6.794291+0 8.290375-1 1.904405+1 8.480481-1 3.704962+11225 6  2  745
+ 8.660254-1 6.133539+1 8.829476-1 9.193931+1 8.987941-1 1.281364+21225 6  2  746
+ 9.135454-1 1.680408+2 9.271839-1 2.079830+2 9.396926-1 2.414508+21225 6  2  747
+ 9.510565-1 2.571449+2 9.612617-1 2.351177+2 9.702957-1 1.384756+21225 6  2  748
+ 9.781476-1-1.060327+2 9.848077-1-6.585601+2 9.902681-1-1.917599+31225 6  2  749
+ 9.945219-1-5.073659+3                                            1225 6  2  750
+ 0.000000+0 4.500000+7         12          0        176         881225 6  2  751
+-1.000000+0 6.427573-2-9.993908-1 6.371480-2-9.975641-1 6.205804-21225 6  2  752
+-9.945219-1 5.938349-2-9.902681-1 5.581253-2-9.848077-1 5.150390-21225 6  2  753
+-9.781476-1 4.664057-2-9.702957-1 4.141693-2-9.612617-1 3.602663-21225 6  2  754
+-9.510565-1 3.065059-2-9.396927-1 2.544690-2-9.271839-1 2.054407-21225 6  2  755
+-9.135455-1 1.603755-2-8.987941-1 1.199047-2-8.829476-1 8.437824-31225 6  2  756
+-8.660255-1 5.394564-3-8.480482-1 2.866187-3-8.290376-1 8.612518-41225 6  2  757
+-8.090171-1-5.971537-4-7.880108-1-1.459379-3-7.660446-1-1.642018-31225 6  2  758
+-7.431448-1-1.023962-3-7.193399-1 5.520331-4-6.946585-1 3.272222-31225 6  2  759
+-6.691307-1 7.339495-3-6.427876-1 1.295409-2-6.156614-1 2.029017-21225 6  2  760
+-5.877854-1 2.946767-2-5.591930-1 4.052201-2-5.299193-1 5.337467-21225 6  2  761
+-5.000001-1 6.780905-2-4.694716-1 8.345167-2-4.383711-1 9.976382-21225 6  2  762
+-4.067367-1 1.160490-1-3.746067-1 1.314749-1-3.420201-1 1.451133-11225 6  2  763
+-3.090170-1 1.560034-1-2.756374-1 1.632321-1-2.419220-1 1.660348-11225 6  2  764
+-2.079118-1 1.639111-1-1.736482-1 1.567520-1-1.391732-1 1.449659-11225 6  2  765
+-1.045285-1 1.295992-1-6.975660-2 1.124381-1-3.489946-2 9.606932-21225 6  2  766
+-4.371139-8 8.389669-2 3.489938-2 8.008273-2 6.975651-2 8.940943-21225 6  2  767
+ 1.045284-1 1.170365-1 1.391731-1 1.681626-1 1.736481-1 2.475810-11225 6  2  768
+ 2.079117-1 3.591460-1 2.419219-1 5.051583-1 2.756373-1 6.857099-11225 6  2  769
+ 3.090170-1 8.980519-1 3.420200-1 1.136033+0 3.746065-1 1.389701+01225 6  2  770
+ 4.067366-1 1.645162+0 4.383712-1 1.884821+0 4.694715-1 2.088108+01225 6  2  771
+ 5.000000-1 2.232725+0 5.299193-1 2.296581+0 5.591928-1 2.260361+01225 6  2  772
+ 5.877852-1 2.110677+0 6.156614-1 1.843798+0 6.427876-1 1.469625+01225 6  2  773
+ 6.691306-1 1.015788+0 6.946584-1 5.312849-1 7.193397-1 8.933765-21225 6  2  774
+ 7.431448-1-2.112094-1 7.660444-1-2.465992-1 7.880108-1 1.282086-11225 6  2  775
+ 8.090170-1 1.072566+0 8.290375-1 2.748939+0 8.480481-1 5.306748+01225 6  2  776
+ 8.660254-1 8.860202+0 8.829476-1 1.345835+1 8.987941-1 1.904459+11225 6  2  777
+ 9.135454-1 2.539923+1 9.271839-1 3.205153+1 9.396926-1 3.813475+11225 6  2  778
+ 9.510565-1 4.212218+1 9.612617-1 4.130659+1 9.702957-1 3.068253+11225 6  2  779
+ 9.781476-1 3.154823-1 9.848077-1-7.153723+1 9.902681-1-2.392168+21225 6  2  780
+ 9.945219-1-6.664711+2                                            1225 6  2  781
+ 0.000000+0 5.000000+7         12          0        176         881225 6  2  782
+-1.000000+0 2.059464-2-9.993908-1 2.040101-2-9.975641-1 1.983131-21225 6  2  783
+-9.945219-1 1.891814-2-9.902681-1 1.771258-2-9.848077-1 1.627980-21225 6  2  784
+-9.781476-1 1.469335-2-9.702957-1 1.302903-2-9.612617-1 1.135840-21225 6  2  785
+-9.510565-1 9.743148-3-9.396927-1 8.230714-3-9.271839-1 6.851135-31225 6  2  786
+-9.135455-1 5.616101-3-8.987941-1 4.520155-3-8.829476-1 3.543642-31225 6  2  787
+-8.660255-1 2.657702-3-8.480482-1 1.831142-3-8.290376-1 1.037139-31225 6  2  788
+-8.090171-1 2.620937-4-7.880108-1-4.879084-4-7.660446-1-1.179992-31225 6  2  789
+-7.431448-1-1.751027-3-7.193399-1-2.105795-3-6.946585-1-2.119111-31225 6  2  790
+-6.691307-1-1.641434-3-6.427876-1-5.079850-4-6.156614-1 1.448733-31225 6  2  791
+-5.877854-1 4.384174-3-5.591930-1 8.424532-3-5.299193-1 1.364826-21225 6  2  792
+-5.000001-1 2.006772-2-4.694716-1 2.761255-2-4.383711-1 3.611657-21225 6  2  793
+-4.067367-1 4.531115-2-3.746067-1 5.482340-2-3.420201-1 6.418771-21225 6  2  794
+-3.090170-1 7.286388-2-2.756374-1 8.027066-2-2.419220-1 8.582982-21225 6  2  795
+-2.079118-1 8.902426-2-1.736482-1 8.946606-2-1.391732-1 8.697510-21225 6  2  796
+-1.045285-1 8.166020-2-6.975660-2 7.400110-2-3.489946-2 6.492000-21225 6  2  797
+-4.371139-8 5.583705-2 3.489938-2 4.869445-2 6.975651-2 4.594010-21225 6  2  798
+ 1.045284-1 5.045704-2 1.391731-1 6.542718-2 1.736481-1 9.412488-21225 6  2  799
+ 2.079117-1 1.396378-1 2.419219-1 2.045183-1 2.756373-1 2.903782-11225 6  2  800
+ 3.090170-1 3.974420-1 3.420200-1 5.241282-1 3.746065-1 6.666320-11225 6  2  801
+ 4.067366-1 8.186702-1 4.383712-1 9.713687-1 4.694715-1 1.113449+01225 6  2  802
+ 5.000000-1 1.231729+0 5.299193-1 1.312074+0 5.591928-1 1.340798+01225 6  2  803
+ 5.877852-1 1.306527+0 6.156614-1 1.202542+0 6.427876-1 1.029471+01225 6  2  804
+ 6.691306-1 7.981611-1 6.946584-1 5.325429-1 7.193397-1 2.721281-11225 6  2  805
+ 7.431448-1 7.373677-2 7.660444-1 1.200790-2 7.880108-1 1.781421-11225 6  2  806
+ 8.090170-1 6.763268-1 8.290375-1 1.617385+0 8.480481-1 3.109025+01225 6  2  807
+ 8.660254-1 5.242011+0 8.829476-1 8.071525+0 8.987941-1 1.159166+11225 6  2  808
+ 9.135454-1 1.570023+1 9.271839-1 2.014623+1 9.396926-1 2.444507+11225 6  2  809
+ 9.510565-1 2.772745+1 9.612617-1 2.844329+1 9.702957-1 2.372744+11225 6  2  810
+ 9.781476-1 7.905921+0 9.848077-1-3.143558+1 9.902681-1-1.253801+21225 6  2  811
+ 9.945219-1-3.681448+2                                            1225 6  2  812
+ 0.000000+0 5.500000+7         12          0        176         881225 6  2  813
+-1.000000+0 6.043412-3-9.993908-1 5.960574-3-9.975641-1 5.718629-31225 6  2  814
+-9.945219-1 5.336807-3-9.902681-1 4.844999-3-9.848077-1 4.281112-31225 6  2  815
+-9.781476-1 3.687159-3-9.702957-1 3.105474-3-9.612617-1 2.574331-31225 6  2  816
+-9.510565-1 2.124186-3-9.396927-1 1.774715-3-9.271839-1 1.532658-31225 6  2  817
+-9.135455-1 1.391483-3-8.987941-1 1.331543-3-8.829476-1 1.322798-31225 6  2  818
+-8.660255-1 1.327498-3-8.480482-1 1.304855-3-8.290376-1 1.216188-31225 6  2  819
+-8.090171-1 1.030226-3-7.880108-1 7.287513-4-7.660446-1 3.118184-41225 6  2  820
+-7.431448-1-1.981410-4-7.193399-1-7.538571-4-6.946585-1-1.282371-31225 6  2  821
+-6.691307-1-1.686512-3-6.427876-1-1.848636-3-6.156614-1-1.636756-31225 6  2  822
+-5.877854-1-9.129272-4-5.591930-1 4.564531-4-5.299193-1 2.588765-31225 6  2  823
+-5.000001-1 5.571805-3-4.694716-1 9.450722-3-4.383711-1 1.421436-21225 6  2  824
+-4.067367-1 1.978410-2-3.746067-1 2.600624-2-3.420201-1 3.264832-21225 6  2  825
+-3.090170-1 3.940158-2-2.756374-1 4.589170-2-2.419220-1 5.169836-21225 6  2  826
+-2.079118-1 5.638497-2-1.736482-1 5.953788-2-1.391732-1 6.081843-21225 6  2  827
+-1.045285-1 6.002207-2-6.975660-2 5.714368-2-3.489946-2 5.244728-21225 6  2  828
+-4.371139-8 4.652956-2 3.489938-2 4.037509-2 6.975651-2 3.538736-21225 6  2  829
+ 1.045284-1 3.339005-2 1.391731-1 3.658338-2 1.736481-1 4.744513-21225 6  2  830
+ 2.079117-1 6.856979-2 2.419219-1 1.024424-1 2.756373-1 1.511483-11225 6  2  831
+ 3.090170-1 2.160311-1 3.420200-1 2.973151-1 3.746065-1 3.937296-11225 6  2  832
+ 4.067366-1 5.021669-1 4.383712-1 6.174520-1 4.694715-1 7.322716-11225 6  2  833
+ 5.000000-1 8.373513-1 5.299193-1 9.219728-1 5.591928-1 9.748563-11225 6  2  834
+ 5.877852-1 9.854933-1 6.156614-1 9.459161-1 6.427876-1 8.528576-11225 6  2  835
+ 6.691306-1 7.102266-1 6.946584-1 5.317088-1 7.193397-1 3.432468-11225 6  2  836
+ 7.431448-1 1.850801-1 7.660444-1 1.128988-1 7.880108-1 1.976787-11225 6  2  837
+ 8.090170-1 5.236281-1 8.290375-1 1.183796+0 8.480481-1 2.272748+01225 6  2  838
+ 8.660254-1 3.875839+0 8.829476-1 6.054301+0 8.987941-1 8.825010+01225 6  2  839
+ 9.135454-1 1.213255+1 9.271839-1 1.580884+1 9.396926-1 1.950919+11225 6  2  840
+ 9.510565-1 2.260112+1 9.612617-1 2.394872+1 9.702957-1 2.145265+11225 6  2  841
+ 9.781476-1 1.096593+1 9.848077-1-1.656420+1 9.902681-1-8.381683+11225 6  2  842
+ 9.945219-1-2.597847+2                                            1225 6  2  843
+ 0.000000+0 6.000000+7         12          0        176         881225 6  2  844
+-1.000000+0-1.244792-3-9.993908-1-1.277006-3-9.975641-1-1.370332-31225 6  2  845
+-9.945219-1-1.515145-3-9.902681-1-1.696375-3-9.848077-1-1.894862-31225 6  2  846
+-9.781476-1-2.088955-3-9.702957-1-2.256312-3-9.612617-1-2.375685-31225 6  2  847
+-9.510565-1-2.428804-3-9.396927-1-2.402184-3-9.271839-1-2.288513-31225 6  2  848
+-9.135455-1-2.087552-3-8.987941-1-1.806430-3-8.829476-1-1.459252-31225 6  2  849
+-8.660255-1-1.066272-3-8.480482-1-6.527384-4-8.290376-1-2.472674-41225 6  2  850
+-8.090171-1 1.199446-4-7.880108-1 4.193890-4-7.660446-1 6.245039-41225 6  2  851
+-7.431448-1 7.144941-4-7.193399-1 6.768111-4-6.946585-1 5.093967-41225 6  2  852
+-6.691307-1 2.223404-4-6.427876-1-1.607914-4-6.156614-1-6.025133-41225 6  2  853
+-5.877854-1-1.051174-3-5.591930-1-1.441662-3-5.299193-1-1.697013-31225 6  2  854
+-5.000001-1-1.731340-3-4.694716-1-1.454345-3-4.383711-1-7.774735-41225 6  2  855
+-4.067367-1 3.785035-4-3.746067-1 2.074596-3-3.420201-1 4.344134-31225 6  2  856
+-3.090170-1 7.182348-3-2.756374-1 1.053710-2-2.419220-1 1.430075-21225 6  2  857
+-2.079118-1 1.830615-2-1.736482-1 2.232801-2-1.391732-1 2.609274-21225 6  2  858
+-1.045285-1 2.929659-2-6.975660-2 3.163611-2-3.489946-2 3.284739-21225 6  2  859
+-4.371139-8 3.275650-2 3.489938-2 3.133842-2 6.975651-2 2.877953-21225 6  2  860
+ 1.045284-1 2.554106-2 1.391731-1 2.241076-2 1.736481-1 2.053541-21225 6  2  861
+ 2.079117-1 2.141856-2 2.419219-1 2.687114-2 2.756373-1 3.890299-21225 6  2  862
+ 3.090170-1 5.954934-2 3.420200-1 9.062806-2 3.746065-1 1.334373-11225 6  2  863
+ 4.067366-1 1.884081-1 4.383712-1 2.547401-1 4.694715-1 3.300826-11225 6  2  864
+ 5.000000-1 4.102949-1 5.299193-1 4.894033-1 5.591928-1 5.598081-11225 6  2  865
+ 5.877852-1 6.128486-1 6.156614-1 6.398019-1 6.427876-1 6.333441-11225 6  2  866
+ 6.691306-1 5.894989-1 6.946584-1 5.099936-1 7.193397-1 4.048863-11225 6  2  867
+ 7.431448-1 2.952005-1 7.660444-1 2.152400-1 7.880108-1 2.140927-11225 6  2  868
+ 8.090170-1 3.557949-1 8.290375-1 7.175479-1 8.480481-1 1.385342+01225 6  2  869
+ 8.660254-1 2.446345+0 8.829476-1 3.977463+0 8.987941-1 6.029052+01225 6  2  870
+ 9.135454-1 8.602583+0 9.271839-1 1.161930+1 9.396926-1 1.487352+11225 6  2  871
+ 9.510565-1 1.795553+1 9.612617-1 2.010828+1 9.702957-1 1.992843+11225 6  2  872
+ 9.781476-1 1.466328+1 9.848077-1-1.646620+0 9.902681-1-4.387070+11225 6  2  873
+ 9.945219-1-1.573838+2                                            1225 6  2  874
+ 0.000000+0 7.000000+7         12          0        176         881225 6  2  875
+-1.000000+0-7.287744-4-9.993908-1-7.535229-4-9.975641-1-8.260682-41225 6  2  876
+-9.945219-1-9.414428-4-9.902681-1-1.091852-3-9.848077-1-1.267258-31225 6  2  877
+-9.781476-1-1.456119-3-9.702957-1-1.646039-3-9.612617-1-1.824532-31225 6  2  878
+-9.510565-1-1.979697-3-9.396927-1-2.100948-3-9.271839-1-2.179551-31225 6  2  879
+-9.135455-1-2.209209-3-8.987941-1-2.186592-3-8.829476-1-2.111545-31225 6  2  880
+-8.660255-1-1.986683-3-8.480482-1-1.817314-3-8.290376-1-1.611296-31225 6  2  881
+-8.090171-1-1.378805-3-7.880108-1-1.132106-3-7.660446-1-8.852200-41225 6  2  882
+-7.431448-1-6.533984-4-7.193399-1-4.524784-4-6.946585-1-2.980205-41225 6  2  883
+-6.691307-1-2.042880-4-6.427876-1-1.830773-4-6.156614-1-2.422557-41225 6  2  884
+-5.877854-1-3.840422-4-5.591930-1-6.030450-4-5.299193-1-8.842525-41225 6  2  885
+-5.000001-1-1.201269-3-4.694716-1-1.515184-3-4.383711-1-1.774398-31225 6  2  886
+-4.067367-1-1.915808-3-3.746067-1-1.867381-3-3.420201-1-1.552442-31225 6  2  887
+-3.090170-1-8.958246-4-2.756374-1 1.680142-4-2.419220-1 1.685139-31225 6  2  888
+-2.079118-1 3.670685-3-1.736482-1 6.097536-3-1.391732-1 8.886580-31225 6  2  889
+-1.045285-1 1.190067-2-6.975660-2 1.494478-2-3.489946-2 1.777599-21225 6  2  890
+-4.371139-8 2.012306-2 3.489938-2 2.171902-2 6.975651-2 2.234738-21225 6  2  891
+ 1.045284-1 2.189872-2 1.391731-1 2.043687-2 1.736481-1 1.826784-21225 6  2  892
+ 2.079117-1 1.600264-2 2.419219-1 1.460204-2 2.756373-1 1.538799-21225 6  2  893
+ 3.090170-1 2.000575-2 3.420200-1 3.032174-2 3.746065-1 4.824394-21225 6  2  894
+ 4.067366-1 7.546174-2 4.383712-1 1.131129-1 4.694715-1 1.614012-11225 6  2  895
+ 5.000000-1 2.192100-1 5.299193-1 2.837639-1 5.591928-1 3.504570-11225 6  2  896
+ 5.877852-1 4.128949-1 6.156614-1 4.633359-1 6.427876-1 4.935719-11225 6  2  897
+ 6.691306-1 4.964053-1 6.946584-1 4.676989-1 7.193397-1 4.090052-11225 6  2  898
+ 7.431448-1 3.306013-1 7.660444-1 2.546266-1 7.880108-1 2.178882-11225 6  2  899
+ 8.090170-1 2.737428-1 8.290375-1 4.923089-1 8.480481-1 9.581900-11225 6  2  900
+ 8.660254-1 1.764856+0 8.829476-1 3.004740+0 8.987941-1 4.754138+01225 6  2  901
+ 9.135454-1 7.051569+0 9.271839-1 9.867599+0 9.396926-1 1.306123+11225 6  2  902
+ 9.510565-1 1.631185+1 9.612617-1 1.899846+1 9.702957-1 1.995584+11225 6  2  903
+ 9.781476-1 1.690879+1 9.848077-1 4.980031+0 9.902681-1-2.790430+11225 6  2  904
+ 9.945219-1-1.185037+2                                            1225 6  2  905
+ 0.000000+0 8.000000+7         12          0        176         881225 6  2  906
+-1.000000+0-6.574827-4-9.993908-1-6.700815-4-9.975641-1-7.073309-41225 6  2  907
+-9.945219-1-7.675741-4-9.902681-1-8.481661-4-9.848077-1-9.455961-41225 6  2  908
+-9.781476-1-1.055677-3-9.702957-1-1.173770-3-9.612617-1-1.295012-31225 6  2  909
+-9.510565-1-1.414569-3-9.396927-1-1.527833-3-9.271839-1-1.630634-31225 6  2  910
+-9.135455-1-1.719292-3-8.987941-1-1.790633-3-8.829476-1-1.841959-31225 6  2  911
+-8.660255-1-1.870974-3-8.480482-1-1.875932-3-8.290376-1-1.855726-31225 6  2  912
+-8.090171-1-1.809851-3-7.880108-1-1.738712-3-7.660446-1-1.643801-31225 6  2  913
+-7.431448-1-1.527955-3-7.193399-1-1.395484-3-6.946585-1-1.252425-31225 6  2  914
+-6.691307-1-1.106638-3-6.427876-1-9.678724-4-6.156614-1-8.475567-41225 6  2  915
+-5.877854-1-7.582819-4-5.591930-1-7.127299-4-5.299193-1-7.222139-41225 6  2  916
+-5.000001-1-7.946345-4-4.694716-1-9.321356-4-4.383711-1-1.128533-31225 6  2  917
+-4.067367-1-1.366925-3-3.746067-1-1.617711-3-3.420201-1-1.837648-31225 6  2  918
+-3.090170-1-1.970300-3-2.756374-1-1.948429-3-2.419220-1-1.698656-31225 6  2  919
+-2.079118-1-1.148317-3-1.736482-1-2.347873-4-1.391732-1 1.083422-31225 6  2  920
+-1.045285-1 2.814435-3-6.975660-2 4.920752-3-3.489946-2 7.309527-31225 6  2  921
+-4.371139-8 9.827753-3 3.489938-2 1.226626-2 6.975651-2 1.437574-21225 6  2  922
+ 1.045284-1 1.589719-2 1.391731-1 1.660861-2 1.736481-1 1.638552-21225 6  2  923
+ 2.079117-1 1.527283-2 2.419219-1 1.356108-2 2.756373-1 1.185642-21225 6  2  924
+ 3.090170-1 1.113145-2 3.420200-1 1.273581-2 3.746065-1 1.834811-21225 6  2  925
+ 4.067366-1 2.984666-2 4.383712-1 4.908407-2 4.694715-1 7.756547-21225 6  2  926
+ 5.000000-1 1.160448-1 5.299193-1 1.640799-1 5.591928-1 2.196198-11225 6  2  927
+ 5.877852-1 2.787090-1 6.156614-1 3.354532-1 6.427876-1 3.823753-11225 6  2  928
+ 6.691306-1 4.113374-1 6.946584-1 4.151400-1 7.193397-1 3.899157-11225 6  2  929
+ 7.431448-1 3.382504-1 7.660444-1 2.728726-1 7.880108-1 2.205208-11225 6  2  930
+ 8.090170-1 2.253720-1 8.290375-1 3.512205-1 8.480481-1 6.813632-11225 6  2  931
+ 8.660254-1 1.315030+0 8.829476-1 2.359114+0 8.987941-1 3.913806+01225 6  2  932
+ 9.135454-1 6.050764+0 9.271839-1 8.781750+0 9.396926-1 1.201366+11225 6  2  933
+ 9.510565-1 1.548103+1 9.612617-1 1.863194+1 9.702957-1 2.040678+11225 6  2  934
+ 9.781476-1 1.873494+1 9.848077-1 9.216290+0 9.902681-1-1.893924+11225 6  2  935
+ 9.945219-1-9.841275+1                                            1225 6  2  936
+ 0.000000+0 1.000000+8         12          0        176         881225 6  2  937
+-1.000000+0-9.419842-4-9.993908-1-9.460680-4-9.975641-1-9.581824-41225 6  2  938
+-9.945219-1-9.779308-4-9.902681-1-1.004692-3-9.848077-1-1.037686-31225 6  2  939
+-9.781476-1-1.076027-3-9.702957-1-1.118784-3-9.612617-1-1.165008-31225 6  2  940
+-9.510565-1-1.213786-3-9.396927-1-1.264255-3-9.271839-1-1.315696-31225 6  2  941
+-9.135455-1-1.367528-3-8.987941-1-1.419256-3-8.829476-1-1.470347-31225 6  2  942
+-8.660255-1-1.520020-3-8.480482-1-1.567020-3-8.290376-1-1.609515-31225 6  2  943
+-8.090171-1-1.645075-3-7.880108-1-1.670879-3-7.660446-1-1.683955-31225 6  2  944
+-7.431448-1-1.681450-3-7.193399-1-1.660927-3-6.946585-1-1.620704-31225 6  2  945
+-6.691307-1-1.560255-3-6.427876-1-1.480845-3-6.156614-1-1.386042-31225 6  2  946
+-5.877854-1-1.282105-3-5.591930-1-1.177971-3-5.299193-1-1.084752-31225 6  2  947
+-5.000001-1-1.014854-3-4.694716-1-9.808094-4-4.383711-1-9.938827-41225 6  2  948
+-4.067367-1-1.062305-3-3.746067-1-1.189004-3-3.420201-1-1.368758-31225 6  2  949
+-3.090170-1-1.585055-3-2.756374-1-1.807640-3-2.419220-1-1.991294-31225 6  2  950
+-2.079118-1-2.077016-3-1.736482-1-1.995727-3-1.391732-1-1.674721-31225 6  2  951
+-1.045285-1-1.046398-3-6.975660-2-5.917704-5-3.489946-2 1.309717-31225 6  2  952
+-4.371139-8 3.040764-3 3.489938-2 5.059482-3 6.975651-2 7.229031-31225 6  2  953
+ 1.045284-1 9.351826-3 1.391731-1 1.118559-2 1.736481-1 1.247704-21225 6  2  954
+ 2.079117-1 1.301407-2 2.419219-1 1.269541-2 2.756373-1 1.161280-21225 6  2  955
+ 3.090170-1 1.013722-2 3.420200-1 8.995161-3 3.746065-1 9.315520-31225 6  2  956
+ 4.067366-1 1.262227-2 4.383712-1 2.074335-2 4.694715-1 3.561227-21225 6  2  957
+ 5.000000-1 5.894992-2 5.299193-1 9.183611-2 5.591928-1 1.342078-11225 6  2  958
+ 5.877852-1 1.843590-1 6.156614-1 2.385595-1 6.427876-1 2.909456-11225 6  2  959
+ 6.691306-1 3.338855-1 6.946584-1 3.590224-1 7.193397-1 3.592007-11225 6  2  960
+ 7.431448-1 3.313970-1 7.660444-1 2.806112-1 7.880108-1 2.244715-11225 6  2  961
+ 8.090170-1 1.980237-1 8.290375-1 2.578204-1 8.480481-1 4.841443-11225 6  2  962
+ 8.660254-1 9.798750-1 8.829476-1 1.864285+0 8.987941-1 3.259946+01225 6  2  963
+ 9.135454-1 5.270632+0 9.271839-1 7.948140+0 9.396926-1 1.124405+11225 6  2  964
+ 9.510565-1 1.493846+1 9.612617-1 1.852503+1 9.702957-1 2.099622+11225 6  2  965
+ 9.781476-1 2.036967+1 9.848077-1 1.245870+1 9.902681-1-1.290679+11225 6  2  966
+ 9.945219-1-8.632664+1                                            1225 6  2  967
+ 0.000000+0 1.200000+8         12          0        176         881225 6  2  968
+-1.000000+0-1.066550-3-9.993908-1-1.067691-3-9.975641-1-1.071069-31225 6  2  969
+-9.945219-1-1.076556-3-9.902681-1-1.083955-3-9.848077-1-1.093014-31225 6  2  970
+-9.781476-1-1.103514-3-9.702957-1-1.115361-3-9.612617-1-1.128626-31225 6  2  971
+-9.510565-1-1.143522-3-9.396927-1-1.160331-3-9.271839-1-1.179359-31225 6  2  972
+-9.135455-1-1.200912-3-8.987941-1-1.225340-3-8.829476-1-1.253056-31225 6  2  973
+-8.660255-1-1.284475-3-8.480482-1-1.319859-3-8.290376-1-1.359068-31225 6  2  974
+-8.090171-1-1.401415-3-7.880108-1-1.445587-3-7.660446-1-1.489749-31225 6  2  975
+-7.431448-1-1.531629-3-7.193399-1-1.568551-3-6.946585-1-1.597446-31225 6  2  976
+-6.691307-1-1.614863-3-6.427876-1-1.617317-3-6.156614-1-1.601936-31225 6  2  977
+-5.877854-1-1.567343-3-5.591930-1-1.514543-3-5.299193-1-1.447327-31225 6  2  978
+-5.000001-1-1.372308-3-4.694716-1-1.298447-3-4.383711-1-1.236430-31225 6  2  979
+-4.067367-1-1.198009-3-3.746067-1-1.195157-3-3.420201-1-1.238645-31225 6  2  980
+-3.090170-1-1.335668-3-2.756374-1-1.486560-3-2.419220-1-1.681146-31225 6  2  981
+-2.079118-1-1.895627-3-1.736482-1-2.090926-3-1.391732-1-2.213172-31225 6  2  982
+-1.045285-1-2.196624-3-6.975660-2-1.969252-3-3.489946-2-1.461362-31225 6  2  983
+-4.371139-8-6.174098-4 3.489938-2 5.892597-4 6.975651-2 2.140455-31225 6  2  984
+ 1.045284-1 3.958824-3 1.391731-1 5.900701-3 1.736481-1 7.760327-31225 6  2  985
+ 2.079117-1 9.291131-3 2.419219-1 1.024752-2 2.756373-1 1.044838-21225 6  2  986
+ 3.090170-1 9.861462-3 3.420200-1 8.701338-3 3.746065-1 7.527872-31225 6  2  987
+ 4.067366-1 7.321577-3 4.383712-1 9.506214-3 4.694715-1 1.588370-21225 6  2  988
+ 5.000000-1 2.844807-2 5.299193-1 4.906080-2 5.591928-1 7.898733-21225 6  2  989
+ 5.877852-1 1.183317-1 6.156614-1 1.654501-1 6.427876-1 2.164804-11225 6  2  990
+ 6.691306-1 2.651983-1 6.946584-1 3.034611-1 7.193397-1 3.225347-11225 6  2  991
+ 7.431448-1 3.155691-1 7.660444-1 2.813641-1 7.880108-1 2.293561-11225 6  2  992
+ 8.090170-1 1.854283-1 8.290375-1 1.977596-1 8.480481-1 3.414491-11225 6  2  993
+ 8.660254-1 7.201877-1 8.829476-1 1.462790+0 8.987941-1 2.712042+01225 6  2  994
+ 9.135454-1 4.603123+0 9.271839-1 7.228562+0 9.396926-1 1.058581+11225 6  2  995
+ 9.510565-1 1.449984+1 9.612617-1 1.850214+1 9.702957-1 2.161376+11225 6  2  996
+ 9.781476-1 2.188197+1 9.848077-1 1.519444+1 9.902681-1-8.351959+01225 6  2  997
+ 9.945219-1-7.834045+1                                            1225 6  2  998
+ 0.000000+0 1.400000+8         12          0        176         881225 6  2  999
+-1.000000+0-1.051222-3-9.993908-1-1.051809-3-9.975641-1-1.053582-31225 6  2 1000
+-9.945219-1-1.056537-3-9.902681-1-1.060586-3-9.848077-1-1.065540-31225 6  2 1001
+-9.781476-1-1.071163-3-9.702957-1-1.077257-3-9.612617-1-1.083738-31225 6  2 1002
+-9.510565-1-1.090673-3-9.396927-1-1.098311-3-9.271839-1-1.106978-31225 6  2 1003
+-9.135455-1-1.117097-3-8.987941-1-1.129173-3-8.829476-1-1.143825-31225 6  2 1004
+-8.660255-1-1.161800-3-8.480482-1-1.183864-3-8.290376-1-1.210661-31225 6  2 1005
+-8.090171-1-1.242489-3-7.880108-1-1.279223-3-7.660446-1-1.320289-31225 6  2 1006
+-7.431448-1-1.364775-3-7.193399-1-1.411448-3-6.946585-1-1.458766-31225 6  2 1007
+-6.691307-1-1.504717-3-6.427876-1-1.546722-3-6.156614-1-1.581761-31225 6  2 1008
+-5.877854-1-1.606531-3-5.591930-1-1.618045-3-5.299193-1-1.614180-31225 6  2 1009
+-5.000001-1-1.594274-3-4.694716-1-1.559706-3-4.383711-1-1.514254-31225 6  2 1010
+-4.067367-1-1.464544-3-3.746067-1-1.419991-3-3.420201-1-1.392340-31225 6  2 1011
+-3.090170-1-1.394388-3-2.756374-1-1.438003-3-2.419220-1-1.531427-31225 6  2 1012
+-2.079118-1-1.676228-3-1.736482-1-1.864153-3-1.391732-1-2.074117-31225 6  2 1013
+-1.045285-1-2.269860-3-6.975660-2-2.399066-3-3.489946-2-2.395309-31225 6  2 1014
+-4.371139-8-2.184064-3 3.489938-2-1.693654-3 6.975651-2-8.704153-41225 6  2 1015
+ 1.045284-1 3.037345-4 1.391731-1 1.794557-3 1.736481-1 3.502887-31225 6  2 1016
+ 2.079117-1 5.261448-3 2.419219-1 6.845237-3 2.756373-1 8.002022-31225 6  2 1017
+ 3.090170-1 8.508772-3 3.420200-1 8.256638-3 3.746065-1 7.360437-31225 6  2 1018
+ 4.067366-1 6.276754-3 4.383712-1 5.903892-3 4.694715-1 7.625372-31225 6  2 1019
+ 5.000000-1 1.325792-2 5.299193-1 2.486432-2 5.591928-1 4.440596-21225 6  2 1020
+ 5.877852-1 7.323068-2 6.156614-1 1.114251-1 6.427876-1 1.571297-11225 6  2 1021
+ 6.691306-1 2.059921-1 6.946584-1 2.510377-1 7.193397-1 2.833251-11225 6  2 1022
+ 7.431448-1 2.937770-1 7.660444-1 2.765241-1 7.880108-1 2.338973-11225 6  2 1023
+ 8.090170-1 1.828889-1 8.290375-1 1.624682-1 8.480481-1 2.405096-11225 6  2 1024
+ 8.660254-1 5.185047-1 8.829476-1 1.131401+0 8.987941-1 2.239323+01225 6  2 1025
+ 9.135454-1 4.007433+0 9.271839-1 6.569759+0 9.396926-1 9.972420+01225 6  2 1026
+ 9.510565-1 1.408855+1 9.612617-1 1.848755+1 9.702957-1 2.220953+11225 6  2 1027
+ 9.781476-1 2.329896+1 9.848077-1 1.763502+1 9.902681-1-4.635079+01225 6  2 1028
+ 9.945219-1-7.272979+1                                            1225 6  2 1029
+ 0.000000+0 1.600000+8         12          0        176         881225 6  2 1030
+-1.000000+0-9.813766-4-9.993908-1-9.820078-4-9.975641-1-9.839366-41225 6  2 1031
+-9.945219-1-9.872275-4-9.902681-1-9.918804-4-9.848077-1-9.977779-41225 6  2 1032
+-9.781476-1-1.004752-3-9.702957-1-1.012633-3-9.612617-1-1.021320-31225 6  2 1033
+-9.510565-1-1.030750-3-9.396927-1-1.040923-3-9.271839-1-1.051836-31225 6  2 1034
+-9.135455-1-1.063521-3-8.987941-1-1.075996-3-8.829476-1-1.089390-31225 6  2 1035
+-8.660255-1-1.104061-3-8.480482-1-1.120520-3-8.290376-1-1.139457-31225 6  2 1036
+-8.090171-1-1.161526-3-7.880108-1-1.187317-3-7.660446-1-1.217336-31225 6  2 1037
+-7.431448-1-1.251978-3-7.193399-1-1.291497-3-6.946585-1-1.335761-31225 6  2 1038
+-6.691307-1-1.384073-3-6.427876-1-1.435002-3-6.156614-1-1.486463-31225 6  2 1039
+-5.877854-1-1.535994-3-5.591930-1-1.581082-3-5.299193-1-1.619275-31225 6  2 1040
+-5.000001-1-1.648185-3-4.694716-1-1.665506-3-4.383711-1-1.669393-31225 6  2 1041
+-4.067367-1-1.659429-3-3.746067-1-1.637773-3-3.420201-1-1.610164-31225 6  2 1042
+-3.090170-1-1.585984-3-2.756374-1-1.577334-3-2.419220-1-1.597086-31225 6  2 1043
+-2.079118-1-1.656554-3-1.736482-1-1.763190-3-1.391732-1-1.918128-31225 6  2 1044
+-1.045285-1-2.113143-3-6.975660-2-2.326836-3-3.489946-2-2.520897-31225 6  2 1045
+-4.371139-8-2.638547-3 3.489938-2-2.607852-3 6.975651-2-2.350975-31225 6  2 1046
+ 1.045284-1-1.799164-3 1.391731-1-9.110369-4 1.736481-1 3.090076-41225 6  2 1047
+ 2.079117-1 1.795464-3 2.419219-1 3.412531-3 2.756373-1 4.956827-31225 6  2 1048
+ 3.090170-1 6.179061-3 3.420200-1 6.835084-3 3.746065-1 6.772929-31225 6  2 1049
+ 4.067366-1 6.052859-3 4.383712-1 5.083538-3 4.694715-1 4.741166-31225 6  2 1050
+ 5.000000-1 6.427811-3 5.299193-1 1.202223-2 5.591928-1 2.367692-21225 6  2 1051
+ 5.877852-1 4.342803-2 6.156614-1 7.260404-2 6.427876-1 1.110699-11225 6  2 1052
+ 6.691306-1 1.564286-1 6.946584-1 2.034255-1 7.193397-1 2.439459-11225 6  2 1053
+ 7.431448-1 2.680843-1 7.660444-1 2.668272-1 7.880108-1 2.366830-11225 6  2 1054
+ 8.090170-1 1.864001-1 8.290375-1 1.453392-1 8.480481-1 1.725080-11225 6  2 1055
+ 8.660254-1 3.643303-1 8.829476-1 8.582646-1 8.987941-1 1.828281+01225 6  2 1056
+ 9.135454-1 3.467252+0 9.271839-1 5.950856+0 9.396926-1 9.376809+01225 6  2 1057
+ 9.510565-1 1.367126+1 9.612617-1 1.844573+1 9.702957-1 2.275708+11225 6  2 1058
+ 9.781476-1 2.463005+1 9.848077-1 1.988151+1 9.902681-1-1.433019+01225 6  2 1059
+ 9.945219-1-6.859872+1                                            1225 6  2 1060
+ 0.000000+0 2.000000+8         12          0        176         881225 6  2 1061
+-1.000000+0-9.226738-4-9.993908-1-9.232496-4-9.975641-1-9.250885-41225 6  2 1062
+-9.945219-1-9.284022-4-9.902681-1-9.332794-4-9.848077-1-9.395861-41225 6  2 1063
+-9.781476-1-9.470746-4-9.702957-1-9.555367-4-9.612617-1-9.648589-41225 6  2 1064
+-9.510565-1-9.750400-4-9.396927-1-9.861777-4-9.271839-1-9.984231-41225 6  2 1065
+-9.135455-1-1.011890-3-8.987941-1-1.026531-3-8.829476-1-1.042212-31225 6  2 1066
+-8.660255-1-1.058904-3-8.480482-1-1.076787-3-8.290376-1-1.096185-31225 6  2 1067
+-8.090171-1-1.117407-3-7.880108-1-1.140637-3-7.660446-1-1.166020-31225 6  2 1068
+-7.431448-1-1.193867-3-7.193399-1-1.224811-3-6.946585-1-1.259797-31225 6  2 1069
+-6.691307-1-1.299806-3-6.427876-1-1.345371-3-6.156614-1-1.396123-31225 6  2 1070
+-5.877854-1-1.450678-3-5.591930-1-1.507010-3-5.299193-1-1.563012-31225 6  2 1071
+-5.000001-1-1.616730-3-4.694716-1-1.666118-3-4.383711-1-1.708632-31225 6  2 1072
+-4.067367-1-1.741314-3-3.746067-1-1.761632-3-3.420201-1-1.768969-31225 6  2 1073
+-3.090170-1-1.766001-3-2.756374-1-1.759198-3-2.419220-1-1.758342-31225 6  2 1074
+-2.079118-1-1.775005-3-1.736482-1-1.820902-3-1.391732-1-1.906333-31225 6  2 1075
+-1.045285-1-2.038315-3-6.975660-2-2.217323-3-3.489946-2-2.432389-31225 6  2 1076
+-4.371139-8-2.655777-3 3.489938-2-2.839582-3 6.975651-2-2.917279-31225 6  2 1077
+ 1.045284-1-2.811564-3 1.391731-1-2.447711-3 1.736481-1-1.770892-31225 6  2 1078
+ 2.079117-1-7.646205-4 2.419219-1 5.309895-4 2.756373-1 2.004495-31225 6  2 1079
+ 3.090170-1 3.468297-3 3.420200-1 4.674924-3 3.746065-1 5.367779-31225 6  2 1080
+ 4.067366-1 5.375349-3 4.383712-1 4.743993-3 4.694715-1 3.888733-31225 6  2 1081
+ 5.000000-1 3.724286-3 5.299193-1 5.729443-3 5.591928-1 1.189043-21225 6  2 1082
+ 5.877852-1 2.446827-2 6.156614-1 4.553789-2 6.427876-1 7.628015-21225 6  2 1083
+ 6.691306-1 1.160749-1 6.946584-1 1.615816-1 7.193397-1 2.061682-11225 6  2 1084
+ 7.431448-1 2.402215-1 7.660444-1 2.530071-1 7.880108-1 2.366432-11225 6  2 1085
+ 8.090170-1 1.926293-1 8.290375-1 1.408436-1 8.480481-1 1.302700-11225 6  2 1086
+ 8.660254-1 2.497342-1 8.829476-1 6.355898-1 8.987941-1 1.471734+01225 6  2 1087
+ 9.135454-1 2.975821+0 9.271839-1 5.364405+0 9.396926-1 8.789128+01225 6  2 1088
+ 9.510565-1 1.323451+1 9.612617-1 1.836026+1 9.702957-1 2.324311+11225 6  2 1089
+ 9.781476-1 2.587904+1 9.848077-1 2.198813+1 9.902681-1 1.432929+01225 6  2 1090
+ 9.945219-1-6.544559+1                                            1225 6  2 1091
+ 1.202400+4 2.377900+1          0          4          1          21225 6  2 1092
+          2          2                                            1225 6  2 1093
+ 2.500000+5 1.000000+0 2.000000+8 1.000000+0                      1225 6  2 1094
+                                                                  1225 6  099999
+                                                                  1225 0  0    0
+                                                                     0 0  0    0
+                                                                    -1 0  0    0

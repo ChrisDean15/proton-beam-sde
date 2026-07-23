@@ -116,4 +116,3 @@ moscovium 115 290.0
 livermorium 116 293.0
 tennessine 117 294.0
 oganesson 118 294.0
-

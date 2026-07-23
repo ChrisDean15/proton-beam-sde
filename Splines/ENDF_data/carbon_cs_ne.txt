@@ -1,0 +1,164 @@
+Retrieved by E4-Web: 2026/06/29,05:42:55                             1 0  0    0
+ 6.012000+3 1.189691+1         -1          0          0          2 625 1451    1
+ 0.000000+0 0.000000+0          0          0          0          6 625 1451    2
+ 9.986200-1 1.500000+8          1          0      10010          8 625 1451    3
+ 0.000000+0 0.000000+0          0          0        137          2 625 1451    4
+  6-C - 12 LANL       EVAL-JUN96 M.B.CHADWICK AND P.G.YOUNG        625 1451    5
+ CH96A,CH96b,Ch99     DIST-AUG24 REV1-NOV19            20240830    625 1451    6
+---- ENDF/B-VIII.1    MATERIAL  625         REVISION 1             625 1451    7
+----- INCIDENT-PROTON DATA                                         625 1451    8
+------ ENDF-6                                                      625 1451    9
+                                                                   625 1451   10
+ ****************************************************************  625 1451   11
+                                                                   625 1451   12
+ ENDF/B-VI MOD 2 Revisions, October 1998, M.B. Chadwick and        625 1451   13
+                 P.G. Young (LANL)                                 625 1451   14
+                                                                   625 1451   15
+ MF=6, MT=5  Minor revisions to yields for A<5 ejectiles to        625 1451   16
+       include corrected below-threshold behavior.                 625 1451   17
+                                                                   625 1451   18
+ ****************************************************************  625 1451   19
+                                                                   625 1451   20
+ ENDF/B-VI MOD 1 Evaluation, July 1996, M.B. Chadwick,             625 1451   21
+                 P.G. Young (LANL)                                 625 1451   22
+                                                                   625 1451   23
+ Produced with FKK/GNASH/GSCAN code in cooperation with ECN Petten 625 1451   24
+                                                                   625 1451   25
+  This evaluation provides a complete representation of the        625 1451   26
+nuclear data needed for transport, damage, heating,                625 1451   27
+radioactivity, and shielding applications over the incident        625 1451   28
+proton energy range from 1 to 150 MeV.                             625 1451   29
+                                                                   625 1451   30
+  The evaluation utilizes MF=6, MT=5 to represent all reaction     625 1451   31
+data.  Production cross sections and emission spectra are given    625 1451   32
+for emission neutrons, protons, deuterons, alpha particles,        625 1451   33
+gamma rays, and all residual nuclides produced (A>5) in the        625 1451   34
+reaction chains. To summarize, the following ENDF sections are     625 1451   35
+included:                                                          625 1451   36
+                                                                   625 1451   37
+  MF=3 MT=  2  Integral of nuclear plus interference components    625 1451   38
+               of the elastic scattering cross section             625 1451   39
+                                                                   625 1451   40
+       MT=  5  Sum of binary (n,n') and (n,x) reactions            625 1451   41
+                                                                   625 1451   42
+  MF=6 MT=  2  Elastic angular distributions given as ratios of    625 1451   43
+               the differential nuclear-plus-interference to the   625 1451   44
+               integrated value.                                   625 1451   45
+                                                                   625 1451   46
+       MT=  5  Production cross sections and energy-angle          625 1451   47
+               distributions for emission neutrons, protons,       625 1451   48
+               deuterons, and alphas; and angle-integrated         625 1451   49
+               spectra for gamma rays and residual nuclei that     625 1451   50
+               are stable against particle emission                625 1451   51
+                                                                   625 1451   52
+  The evaluation is based on nuclear model calculations that       625 1451   53
+have been benchmarked to experimental data, especially for n +     625 1451   54
+C12 and p + C12 reactions (Ch96a, Ch96b, Ch96c). We use the        625 1451   55
+GNASH code system (Yo92), which utilizes Hauser-Feshbach           625 1451   56
+statistical, preequi-librium and direct-reaction theories.         625 1451   57
+Coupled-channel and spherical optical model calculations are       625 1451   58
+used to obtain particle transmission coefficients for the          625 1451   59
+Hauser-Feshbach calculations, as well as for the elastic neutron   625 1451   60
+angular distributions.                                             625 1451   61
+                                                                   625 1451   62
+  Cross sections and spectra for producing individual residual     625 1451   63
+nuclei are included for reactions that exceed a cross section of   625 1451   64
+approximately 1 nb at any energy.  The energy-angle-correlations   625 1451   65
+for all outgoing particles are based on Kalbach systematics        625 1451   66
+(Ka88).                                                            625 1451   67
+                                                                   625 1451   68
+  A model was developed to calculate the energy distributions of   625 1451   69
+all recoil nuclei in the GNASH calculations (Ch96b). The recoil    625 1451   70
+energy distributions are represented in the laboratory system in   625 1451   71
+MT=5, MF=6, and are given as isotropic in the lab system. Note     625 1451   72
+that all other data in MT=5,MF=6 are given in the center-of-mass   625 1451   73
+system. This method of representation requires a modification of   625 1451   74
+the original ENDF-6 format.                                        625 1451   75
+                                                                   625 1451   76
+  Preequilibrium corrections were performed in the course of the   625 1451   77
+GNASH calculations using either Feshbach, Kerman, Koonin (FKK)     625 1451   78
+theory [Ch93d] or the exciton model of Kalbach (Ka77, Ka85).       625 1451   79
+Discrete level data from nuclear data sheets were matched to       625 1451   80
+continuum level densities using the formulation of Ignatyuk        625 1451   81
+(Ig75) and pairing and shell parameters from the Cook (Co67)       625 1451   82
+analysis.  Neutron and charged-particle transmission               625 1451   83
+coefficients were obtained from the optical potentials, as         625 1451   84
+discussed below.  Gamma-ray transmission coefficients were         625 1451   85
+calculated using the Kopecky-Uhl model (Ko90).                     625 1451   86
+                                                                   625 1451   87
+  MT=2 elastic scattering data in MF=3 and MF=6 are based on       625 1451   88
+optical model calculations with the SCAT2 code (Be92).  We have    625 1451   89
+made use of the "nuclear-plus-interference" option in MF=6,        625 1451   90
+which corresponds to LAW=5, LTP=12, and the appropriate            625 1451   91
+integrated cross section is stored in MF=3.  Note that because     625 1451   92
+of the interference effect, the tabulations in both MF=6 and       625 1451   93
+MF=3 can be negative at some energies and angles.                  625 1451   94
+                                                                   625 1451   95
+****************************************************************   625 1451   96
+                                                                   625 1451   97
+REFERENCES                                                         625 1451   98
+                                                                   625 1451   99
+[Be92]  O.Bersillon, "SCAT2 - A Spherical Optical Model Code,"     625 1451  100
+  in Proc. ICTP Workshop on Computation and Analysis of Nuclear    625 1451  101
+  Data Relevant to Nuclear Energy and Safety, 10 February-13       625 1451  102
+  March, 1992, Trieste, Italy, [published in World Scientific      625 1451  103
+  Press, 1993]; see also progress report of the Nuclear Physics    625 1451  104
+  Division, Bruyeres-le-Chatel 1977, CEA-N-2037 (1978) p.111       625 1451  105
+[Ch96a] M.B. Chadwick and P.G. Young, "Proton Nuclear              625 1451  106
+  Interactions Up to 250 MeV for Radiation Transport Simulations   625 1451  107
+  of Particle Therapy," Proc. Int. Particle Therapy Meeting and    625 1451  108
+  PTCOG XXIV, April 24-26, 1996, Detroit, Mich. [Proc. to be       625 1451  109
+  published in Journal of Endocurie Therapy / Hypothermia          625 1451  110
+  Oncology].                                                       625 1451  111
+[Ch96b] M.B. Chadwick, P.G. Young, R.E. MacFarlane, and A.J.       625 1451  112
+  Koning, "High-Energy Nuclear Data Libraries for Accelerator-     625 1451  113
+  Driven Technologies:  Calculational Method for Heavy Recoils,"   625 1451  114
+  Proc. of 2nd Int. Conf. on Accelerator Driven Transmutation      625 1451  115
+  Technology and Applications, Kalmar, Sweden, 3-7 June 1996.      625 1451  116
+[Ch96c] M.B. Chadwick, H.B. Blann, L.J. Cox, et al., Nucl.Sci.Eng. 625 1451  117
+  123, 17 (1996)                                                   625 1451  118
+[Ch93d] M.B. Chadwick and P G. Young, Phys.Rev.C 47, 2255 (1993)   625 1451  119
+[Ch99]  M.B. Chadwick, P.G. Young, R.E. MacFarlane, et al., Los    625 1451  120
+  National Laboratory report LA-UR-99-1222 (1999)                  625 1451  121
+[Co67]  J.L. Cook, H. Ferguson, and A.R. deL Musgrove, Aust.J.     625 1451  122
+  Phys. 20, 477 (1967)                                             625 1451  123
+[Fu90]  C.Y. Fu, E.J. Axton, and F.G. Perey, Nucl.Sci.Eng. 106,    625 1451  124
+  494 (1990); E.J. Axton, report NISTIR 4838 [ENDF-353] (1992)     625 1451  125
+[Ig75]  A.V. Ignatyuk, G.N. Smirenkin, and A.S. Tishin,            625 1451  126
+  Sov.J.Nucl.Phys. 21, 255 (1975); tranlation of Yad.Fiz. 21, 485  625 1451  127
+  (1975)                                                           625 1451  128
+[Ka77]  C. Kalbach, Z.Phys.A  283, 401 (1977)                      625 1451  129
+[Ka85]  C. Kalbach, "PRECO-D2: Program for Calculating             625 1451  130
+  Preequilibrium and Direct Reaction Double Differential Cross     625 1451  131
+  Sections," Los Alamos National Laboratory report LA-10248-MS     625 1451  132
+  (1985)                                                           625 1451  133
+[Ka88]  C. Kalbach, Phys.Rev.C 37, 2350 (1988); see also           625 1451  134
+  C. Kalbach and F. M. Mann, Phys.Rev.C 23, 112 (1981)             625 1451  135
+[Ko90]  J. Kopecky and M. Uhl, Phys.Rev.C 41, 1941 (1990)          625 1451  136
+[Yo92]  P.G. Young, E.D. Arthur, and M.B. Chadwick,                625 1451  137
+  "Comprehensive Nuclear Model Calculations: Introduction to the   625 1451  138
+  Theory and Use of the GNASH Code," report LA-12343-MS (1992)     625 1451  139
+                                                                   625 1451  140
+ ************************ C O N T E N T S ************************ 625 1451  141
+                                1        451        146          2 625 1451  142
+                                3          5         14          1 625 1451  143
+ 0.000000+0 0.000000+0          0          0          0          0 625 1  099999
+ 0.000000+0 0.000000+0          0          0          0          0 625 0  0    0
+ 6.012000+3 1.189691+1          0          0          0          0 625 3  5    1
+-4.438900+6-4.438900+6          0          0          1         33 625 3  5    2
+         33          2                                             625 3  5    3
+ 4.812014+6 0.000000+0 5.000000+6 7.556569-2 6.000000+6 1.450000-1 625 3  5    4
+ 7.000000+6 1.960000-1 8.000000+6 2.560000-1 9.000000+6 2.920000-1 625 3  5    5
+ 1.000000+7 3.100000-1 1.100000+7 3.323987-1 1.200000+7 3.447988-1 625 3  5    6
+ 1.300000+7 3.571989-1 1.400000+7 3.695989-1 1.500000+7 3.819987-1 625 3  5    7
+ 1.600000+7 3.958584-1 1.700000+7 4.108879-1 1.800000+7 4.246472-1 625 3  5    8
+ 1.900000+7 4.357263-1 2.000000+7 4.409950-1 2.300000+7 4.339869-1 625 3  5    9
+ 2.700000+7 4.148872-1 3.000000+7 4.005864-1 3.500000+7 3.785361-1 625 3  5   10
+ 4.000000+7 3.629983-1 5.000000+7 3.339994-1 6.000000+7 3.059997-1 625 3  5   11
+ 7.000000+7 2.809998-1 8.000000+7 2.559999-1 9.000000+7 2.366299-1 625 3  5   12
+ 1.000000+8 2.269999-1 1.100000+8 2.230499-1 1.200000+8 2.220000-1 625 3  5   13
+ 1.300000+8 2.234100-1 1.400000+8 2.240000-1 1.500000+8 2.223500-1 625 3  5   14
+ 0.000000+0 0.000000+0          0          0          0          0 625 3  099999
+ 0.000000+0 0.000000+0          0          0          0          0 625 0  0    0
+ 0.000000+0 0.000000+0          0          0          0          0   0 0  0    0
+ 0.000000+0 0.000000+0          0          0          0          0  -1 0  0    0
