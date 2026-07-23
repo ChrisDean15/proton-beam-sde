@@ -18,8 +18,6 @@ from SDE_vs_G4 import (
 )
 import numpy as np
 
-from SDE_vs_G4_executionScript import MeV_g_to_Gy
-
 """
 Suffix must be selected to compare appropriate files. The options are:
 - "_water": For homogeneous water phantom
