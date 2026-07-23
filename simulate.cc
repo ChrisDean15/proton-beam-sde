@@ -18,11 +18,11 @@ int main(int argc, char **argv) {
   }
   gsl_rng *gen = gsl_rng_alloc(gsl_rng_mt19937);
   gsl_rng_set(gen, time(NULL));
-  double rutherford_cutoff, backscatter_cutoff;
+  double rutherford_cutoff, lynch_dahl_timestep;
   libconfig::Config cfg;
   cfg.readFile(argv[1]);
   cfg.lookupValue("rutherford_cutoff", rutherford_cutoff);
-  cfg.lookupValue("backscatter_cutoff", backscatter_cutoff);
+  cfg.lookupValue("lynch_dahl_timestep", lynch_dahl_timestep);
   std::vector<Atom> atoms;
   double a;
   int z;
@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
     a = atof(token.c_str());
     if (name == "hydrogen") {
       Atom tmp(a, z, "./Splines/" + name + "_el_ruth_cross_sec.txt",
-               rutherford_cutoff, backscatter_cutoff);
+               rutherford_cutoff);
       atoms.push_back(tmp);
     } else {
       Atom tmp(a, z, "./Splines/" + name + "_ne_rate.txt",
@@ -62,7 +62,8 @@ int main(int argc, char **argv) {
 
   std::vector<Material> materials(material_names.size());
   for (unsigned int i = 0; i < material_names.size(); i++) {
-    materials[i].read_material("./Materials/" + material_names[i], atoms);
+    materials[i].read_material("./Materials/" + material_names[i], atoms,
+                               lynch_dahl_timestep);
   }
 
   double nozzle_radius, e0, initial_x_sd;

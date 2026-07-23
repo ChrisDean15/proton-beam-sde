@@ -14,9 +14,9 @@ struct Atom {
 
   // Constructor for zero non-elastic rate for hydrogen
   Atom(const double a0, const int z0, const std::string el_ruth_cs,
-       const double cutoff, const double back_cutoff)
-      : a(a0), z(z0), el_ruth_rate(el_ruth_cs, cutoff, back_cutoff), ne_rate(),
-        el_ruth_angle_cdf(el_ruth_cs, cutoff, back_cutoff), ne_energy_angle() {}
+       const double cutoff)
+      : a(a0), z(z0), el_ruth_rate(el_ruth_cs, cutoff), ne_rate(),
+        el_ruth_angle_cdf(el_ruth_cs, cutoff), ne_energy_angle() {}
 
   Atom(const Atom &other)
       : a(other.a), z(other.z), el_ruth_rate(other.el_ruth_rate),
@@ -84,16 +84,19 @@ struct Atom {
 struct Material {
 
   Material(std::vector<Atom> &atoms, const std::vector<int> &id,
-           const std::vector<double> &x0, const double d0, const double I0)
-      : density(d0), I(I0 / 1e6), x(x0), at() {
+           const std::vector<double> &x0, const double d0, const double I0,
+           const double lynch_dahl_timestep0)
+      : density(d0), lynch_dahl_timestep(lynch_dahl_timestep0), I(I0 / 1e6),
+        x(x0), at() {
     for (unsigned int i = 0; i < id.size(); i++) {
       at.push_back(atoms[id[i]]);
     }
   }
 
-  Material() : density(), I(), x(), at() {}
+  Material() : density(), lynch_dahl_timestep(), I(), x(), at() {}
 
-  void read_material(const std::string filename, std::vector<Atom> &atoms) {
+  void read_material(const std::string filename, std::vector<Atom> &atoms,
+                     const double lynch_dahl_timestep0) {
     std::ifstream file;
     file.open(filename + ".txt");
     std::string line, token;
@@ -110,6 +113,7 @@ struct Material {
       x.push_back(atof(token.c_str()));
     }
     file.close();
+    lynch_dahl_timestep = lynch_dahl_timestep0;
     return;
   }
 
@@ -140,7 +144,7 @@ struct Material {
                         (1 + 3.34 * pow(at[i].z / (137 * sqrt(betasq)), 2)) /
                         (p * p);
     }
-    chi_c_sq *= 0.157 * 0.05 * density / (pv * pv);
+    chi_c_sq *= 0.157 * lynch_dahl_timestep * density / (pv * pv);
     // effective chi_a_sq is a weighted average on the log-scale
     double chi_a_sq = 0;
     double denom = 0;
@@ -153,8 +157,9 @@ struct Material {
     double omega = chi_c_sq / chi_a_sq;
     double F = 0.98;
     double v = omega / (2 * (1 - F));
-    double ret = sqrt(chi_c_sq * ((1 + v) * log(1 + v) / v - 1) / (1 + F * F) *
-                      (dt / 0.05));
+    double ret =
+        sqrt((chi_c_sq * ((1 + v) * log(1 + v) / v - 1) / (1 + F * F)) *
+             (dt / lynch_dahl_timestep));
     return ret;
   }
 
@@ -288,8 +293,8 @@ struct Material {
     return;
   }
 
-  double density; // density, g / cm^3
-  double I;       // mean excitation energy, MeV
+  double density, lynch_dahl_timestep; // density, g / cm^3
+  double I;                            // mean excitation energy, MeV
   std::vector<double> x;
   std::vector<Atom> at;
 };
