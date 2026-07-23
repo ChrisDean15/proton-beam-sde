@@ -128,6 +128,7 @@ struct Material {
 
   double multiple_scattering_sd(const double e, const double dt) const {
     double mpcsq = 938.346; // mass of proton * speed of light squared, MeV
+    double default_dt = 0.05; // fixed step length for sampling, scaled to dt
     double pv = (2 * mpcsq + e) * e / (mpcsq + e);
     double betasq = (2 * mpcsq + e) * e / pow(mpcsq + e, 2);
     double p = pv / sqrt(betasq); // momentum in MeV / c.
@@ -140,7 +141,7 @@ struct Material {
                         (1 + 3.34 * pow(at[i].z / (137 * sqrt(betasq)), 2)) /
                         (p * p);
     }
-    chi_c_sq *= 0.157 * 0.05 * density / (pv * pv);
+    chi_c_sq *= 0.157 * default_dt * density / (pv * pv);
     // effective chi_a_sq is a weighted average on the log-scale
     double chi_a_sq = 0;
     double denom = 0;
@@ -154,7 +155,7 @@ struct Material {
     double F = 0.98;
     double v = omega / (2 * (1 - F));
     double ret = sqrt(chi_c_sq * ((1 + v) * log(1 + v) / v - 1) / (1 + F * F) *
-                      (dt / 0.05));
+                      (dt / default_dt));
     return ret;
   }
 
