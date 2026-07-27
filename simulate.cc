@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
       Atom tmp(a, z, "./Splines/" + name + "_ne_rate.txt",
                "./Splines/" + name + "_el_ruth_cross_sec.txt",
                "./Splines/" + name + "_ne_energyangle_cdf.txt",
-               rutherford_cutoff);
+               rutherford_cutoff,"./Splines/" + name + "_neg_energyangle_cdf.txt" );
       atoms.push_back(tmp);
     }
   }

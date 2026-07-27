@@ -8,20 +8,20 @@
 struct Atom {
   Atom(const double a0, const int z0, const std::string ne_r,
        const std::string el_ruth_cs, const std::string ne_ea,
-       const double cutoff)
+       const double cutoff, const std::string ne_eag)
       : a(a0), z(z0), el_ruth_rate(el_ruth_cs, cutoff), ne_rate(ne_r),
-        el_ruth_angle_cdf(el_ruth_cs, cutoff), ne_energy_angle(ne_ea) {}
+        el_ruth_angle_cdf(el_ruth_cs, cutoff), ne_energy_angle(ne_ea), neg_energy_angle(ne_eag) {}
 
   // Constructor for zero non-elastic rate for hydrogen
   Atom(const double a0, const int z0, const std::string el_ruth_cs,
        const double cutoff)
       : a(a0), z(z0), el_ruth_rate(el_ruth_cs, cutoff), ne_rate(),
-        el_ruth_angle_cdf(el_ruth_cs, cutoff), ne_energy_angle() {}
+        el_ruth_angle_cdf(el_ruth_cs, cutoff), ne_energy_angle(), neg_energy_angle() {}
 
   Atom(const Atom &other)
       : a(other.a), z(other.z), el_ruth_rate(other.el_ruth_rate),
         ne_rate(other.ne_rate), el_ruth_angle_cdf(other.el_ruth_angle_cdf),
-        ne_energy_angle(other.ne_energy_angle) {}
+        ne_energy_angle(other.ne_energy_angle), neg_energy_angle(other.neg_energy_angle) {}
 
   double s() const {
     double a_c = a + 1;
@@ -42,7 +42,8 @@ struct Atom {
   }
 
   void sample_nonelastic_collision(double &e, double &alpha,
-                                   gsl_rng *gen) const {
+                                   gsl_rng *gen, std::vector<std::vector<GammaRay>> &GammaRays) const {
+    neg_energy_angle.sample(e, gen, GammaRays);
     double out_rvalue, out_energy_cm;
     ne_energy_angle.sample(e, out_rvalue, out_energy_cm, gen);
     double eps_a = a * e / (a + 1);
@@ -79,6 +80,7 @@ struct Atom {
   CS_1d el_ruth_rate, ne_rate;
   CS_2d el_ruth_angle_cdf;
   CS_3d ne_energy_angle;
+  CS_3dG neg_energy_angle;
 };
 
 struct Material {
@@ -232,7 +234,7 @@ struct Material {
   }
 
   void nonelastic_scatter(std::vector<double> &ang, double &e,
-                          gsl_rng *gen) const {
+                          gsl_rng *gen, std::vector<std::vector<GammaRay>> &GammaRays) const {
     double beta = 2 * M_PI * gsl_rng_uniform(gen);
     double rate = 0;
     for (unsigned int i = 0; i < at.size(); i++) {
@@ -247,7 +249,7 @@ struct Material {
     }
     double alpha;
     // ENDF non-elastic scattering, both energy + angle from CM to LAB
-    at[ind].sample_nonelastic_collision(e, alpha, gen);
+    at[ind].sample_nonelastic_collision(e, alpha, gen, GammaRays);
     alpha = acos(alpha);
     compute_new_angle(ang, alpha, beta);
     return;

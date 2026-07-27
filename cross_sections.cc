@@ -6,6 +6,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <array>
+#include "rng.hxx"
 
 #ifndef CS
 #define CS
@@ -227,6 +229,144 @@ struct CS_3d {
 
   std::vector<double> energy;
   std::vector<std::vector<double>> exit_energy, cdf, rvalue;
+};
+
+struct GammaRay {
+  public:
+    GammaRay(double Energy_) : Position(), Direction(), Energy(Energy_) {GenerateDirection();}
+
+    void GenerateDirection() {
+    std::uniform_real_distribution<double> dist(0,1);
+    std::uniform_real_distribution<double> dist_phi(0.0, 2.0*M_PI);
+    auto &gen = RNG::get_generator();
+    double theta = acos(2.0 * dist(gen) - 1.0); // Angle polaire
+    double phi = dist_phi(gen);                 // Angle azimutal
+    Direction[0] = sin(theta) * cos(phi);
+    Direction[1] = sin(theta) * sin(phi);
+    Direction[2] = cos(theta);
+
+    }
+
+    void UpdatePosition(double x, double y, double z) {
+      Position[0] = x;
+      Position[1] = y;
+      Position[2] = z;
+    }
+
+    std::array<double,3> Position;
+    std::array<double,3> Direction;
+    double Energy;
+};
+
+struct CS_3dG {
+
+  CS_3dG(const std::string filename) : energy(), yield(), exit_energy(), cdf() {
+    std::ifstream file;
+    file.open(filename);
+    std::string line, token;
+    getline(file, line);
+    std::stringstream iss;
+    iss << line;
+    while (getline(iss, token, ' ')) {
+      energy.push_back(atof(token.c_str()));
+    }
+    getline(file, line);
+    std::stringstream iss2;
+    iss2 << line;
+    while (getline(iss, token, ' ')) {
+      yield.push_back(atof(token.c_str()));
+    }
+    std::vector<double> tmp_vec;
+    while (getline(file, line)) {
+      tmp_vec.clear();
+      std::stringstream iss3;
+      iss3 << line;
+      while (getline(iss3, token, ' ')) {
+        tmp_vec.push_back(atof(token.c_str()));
+      }
+      exit_energy.push_back(tmp_vec);
+      getline(file, line);
+      tmp_vec.clear();
+      std::stringstream iss4;
+      iss4 << line;
+      while (getline(iss4, token, ' ')) {
+        tmp_vec.push_back(atof(token.c_str()));
+      }
+      cdf.push_back(tmp_vec);
+      getline(file, line);
+      tmp_vec.clear();
+    }
+    file.close();
+  }
+
+  CS_3dG(const CS_3dG &other)
+      : energy(other.energy), yield(other.yield), exit_energy(other.exit_energy), cdf(other.cdf) {}
+
+  CS_3dG() : energy(), yield(), exit_energy(), cdf() {}
+
+  void sample_from_energy_index(const double energy_index, gsl_rng *gen, std::vector<GammaRay>& out_gamma) const {
+    std::poisson_distribution<int> pois(yield[energy_index]);
+    int NumGammas = pois(RNG::get_generator());
+    double tol = 1e-7;
+    for (int i = 0; i < NumGammas; i++){
+      double CDFval = gsl_rng_uniform(gen);
+      double diff = 0;
+      int density_index =
+          std::distance(cdf[energy_index].begin(),
+                        std::lower_bound(cdf[energy_index].begin(),
+                                        cdf[energy_index].end(), CDFval));
+      if (density_index == 0) {
+        out_gamma.emplace_back(exit_energy[energy_index][0]);
+      } else if (density_index == int(cdf[energy_index].size())) {
+        out_gamma.emplace_back(exit_energy[energy_index].back());
+      } else {
+        if (cdf[energy_index][density_index] -
+                cdf[energy_index][density_index - 1] >
+          tol) {
+          diff = (CDFval - cdf[energy_index][density_index - 1]) /
+                (cdf[energy_index][density_index] -
+                  cdf[energy_index][density_index - 1]);
+          out_gamma.emplace_back(exit_energy[energy_index][density_index] * diff +
+              exit_energy[energy_index][density_index - 1] * (1 - diff));
+        } else {
+          out_gamma.emplace_back(exit_energy[energy_index][density_index]);
+        }
+      }
+    }
+    return;
+  }
+
+  void sample(const double e, gsl_rng *gen, std::vector<std::vector<GammaRay>> &GammaRayList)const {
+    int energy_index = std::distance(
+        energy.begin(), std::lower_bound(energy.begin(), energy.end(), e));
+    std::vector<GammaRay> out_gamma;
+    double tol = 1e-7;
+    if (energy_index == 0) {
+      sample_from_energy_index(0, gen, out_gamma);
+    } else if (energy_index == int(energy.size())) {
+      sample_from_energy_index(energy_index - 1, gen, out_gamma);
+    } else {
+      if (energy[energy_index] - energy[energy_index - 1] > tol) {
+        double diff = (e - energy[energy_index - 1]) /
+               (energy[energy_index] - energy[energy_index - 1]);
+        std::bernoulli_distribution bern(1-diff);
+        if (bern(RNG::get_generator())){
+          sample_from_energy_index(energy_index - 1, gen, out_gamma);
+        } else {
+          sample_from_energy_index(energy_index, gen, out_gamma);
+        }
+
+      } else {
+        sample_from_energy_index(energy_index, gen, out_gamma);
+      }
+    }
+    GammaRayList.push_back(out_gamma);
+    return;
+  }
+
+
+  std::vector<double> energy, yield;
+  std::vector<std::vector<double>> exit_energy, cdf;
 };
 
 struct CS_2d {

@@ -1,4 +1,5 @@
 #include "material.cc"
+#include "cross_sections.cc"
 #include <cmath>
 #include <cstdlib>
 #include <gsl/gsl_randist.h>
@@ -17,7 +18,7 @@ struct proton_path {
               const std::vector<double> &change_points_y,
               const std::vector<std::vector<int>> &interval_materials,
               std::vector<Material> &materials)
-      : energy(1), s(1), x(1), omega(1), u(3, 0), z(3, 0), w(3, 0) {
+      : energy(1), s(1), x(1), omega(1), u(3, 0), z(3, 0), w(3, 0), GammaRays() {
     unsigned int n =
         solve_central_ode(e0, dt, absorption_e, change_points_x,
                           change_points_y, interval_materials, materials)
@@ -36,6 +37,7 @@ struct proton_path {
     omega[0] = w0;
     energy[0] = e0;
     s[0] = 0;
+    GammaRays.clear();
     return;
   }
 
@@ -286,7 +288,14 @@ struct proton_path {
                                             s[ix - 1], gen);
           } else {
             materials[interval_materials[material_index - 1][y_half]]
-                .nonelastic_scatter(omega[ix - 1], energy[ix - 1], gen);
+                .nonelastic_scatter(omega[ix - 1], energy[ix - 1], gen, GammaRays);
+            if (GammaRays.back().empty()) {
+              GammaRays.pop_back();
+            } else {
+              for (auto &G : GammaRays.back()) {
+                G.UpdatePosition(x[ix][0],x[ix][1],x[ix][2]);
+              }
+            }
           }
         }
       }
@@ -311,12 +320,12 @@ struct proton_path {
       }
     }
     return ix;
-  }
-
+               }
   std::vector<double> energy, s;
   std::vector<std::vector<double>> x, omega;
   // Dummy vectors for spherical BM
   std::vector<double> u, z, w;
+  std::vector<std::vector<GammaRay>> GammaRays;
 };
 
 #endif
