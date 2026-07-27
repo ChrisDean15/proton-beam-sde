@@ -8,6 +8,7 @@
 #include <vector>
 #include <array>
 #include "rng.hxx"
+#include <cassert>
 
 #ifndef CS
 #define CS
@@ -273,7 +274,7 @@ struct CS_3dG {
     getline(file, line);
     std::stringstream iss2;
     iss2 << line;
-    while (getline(iss, token, ' ')) {
+    while (getline(iss2, token, ' ')) {
       yield.push_back(atof(token.c_str()));
     }
     std::vector<double> tmp_vec;
@@ -293,10 +294,9 @@ struct CS_3dG {
         tmp_vec.push_back(atof(token.c_str()));
       }
       cdf.push_back(tmp_vec);
-      getline(file, line);
-      tmp_vec.clear();
     }
     file.close();
+    assert(energy.size()==exit_energy.size() && exit_energy.size()==yield.size() && exit_energy.size()==cdf.size());
   }
 
   CS_3dG(const CS_3dG &other)
@@ -316,9 +316,11 @@ struct CS_3dG {
                         std::lower_bound(cdf[energy_index].begin(),
                                         cdf[energy_index].end(), CDFval));
       if (density_index == 0) {
-        out_gamma.emplace_back(exit_energy[energy_index][0]);
+        if (exit_energy[energy_index][0]>0){ 
+        out_gamma.emplace_back(exit_energy[energy_index][0]);}
       } else if (density_index == int(cdf[energy_index].size())) {
-        out_gamma.emplace_back(exit_energy[energy_index].back());
+        if (exit_energy[energy_index].back()>0){
+        out_gamma.emplace_back(exit_energy[energy_index].back());}
       } else {
         if (cdf[energy_index][density_index] -
                 cdf[energy_index][density_index - 1] >
@@ -326,10 +328,13 @@ struct CS_3dG {
           diff = (CDFval - cdf[energy_index][density_index - 1]) /
                 (cdf[energy_index][density_index] -
                   cdf[energy_index][density_index - 1]);
+          if((exit_energy[energy_index][density_index] * diff +
+              exit_energy[energy_index][density_index - 1] * (1 - diff))>0){
           out_gamma.emplace_back(exit_energy[energy_index][density_index] * diff +
-              exit_energy[energy_index][density_index - 1] * (1 - diff));
+              exit_energy[energy_index][density_index - 1] * (1 - diff));}
         } else {
-          out_gamma.emplace_back(exit_energy[energy_index][density_index]);
+          if(exit_energy[energy_index][density_index]>0){
+          out_gamma.emplace_back(exit_energy[energy_index][density_index]);}
         }
       }
     }

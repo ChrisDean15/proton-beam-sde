@@ -10,6 +10,7 @@
 #include <libconfig.h++>
 #include <string>
 #include <vector>
+#include <fstream>
 
 int main(int argc, char **argv) {
   if (argc != 2) {
@@ -121,6 +122,18 @@ int main(int argc, char **argv) {
     p.reset(e0, x, w);
     len = p.simulate(dt, absorption_e, change_points_x, change_points_y,
                      interval_materials, materials, gen);
+    if (!p.GammaRays.empty()) {
+      std::ofstream out("./Output/GammaRaySource.txt",std::ios::app);
+      out << "Proton " << i << "\n";
+      for (size_t j = 0; j<p.GammaRays.size(); j++) {
+        out << "Event " << j << "\n";
+        for (auto &ray : p.GammaRays[j]) {
+          out << "Position: " << ray.Position[0] << " " << ray.Position[1] << " " << ray.Position[2] << " ";
+          out << "Direction: " << ray.Direction[0] << " " << ray.Direction[1] << " " << ray.Direction[2] << " ";
+          out << "Energy: " << ray.Energy << "\n";
+        }
+      }
+    }
     grid.add(p.x, p.s, len);
   }
   grid.print(out_path);
