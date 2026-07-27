@@ -113,6 +113,7 @@ int main(int argc, char **argv) {
   Grid grid(n * grid_dx / dt, grid_dx);
 
   int len;
+  std::ofstream clear("./Output/GammaRaySource.txt", std::ios::trunc);
   for (int i = 0; i < nrep; i++) {
     e0 = initial_e_mean + gsl_ran_gaussian_ziggurat(gen, initial_e_sd);
     do {
